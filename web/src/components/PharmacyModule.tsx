@@ -8,7 +8,7 @@ import { CartPanel, MedicationSearch } from "@/components/pharmacy/MedicationSea
 import { useCart } from "@/lib/cart";
 import {
   DEFAULT_HOURS,
-  fetchPharmacies,
+  fetchPharmaciesMeta,
   getPharmacyOpenState,
   sortPharmaciesByDistance,
 } from "@/lib/pharmacies";
@@ -66,6 +66,8 @@ export function PharmacyModule() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [activeDutyGroups, setActiveDutyGroups] = useState<string[]>([]);
+  const [dutySource, setDutySource] = useState<"rotations" | "legacy" | null>(null);
   const [userLocation, setUserLocation] = useState<LatLng | null>(null);
   const [selected, setSelected] = useState<Pharmacy | null>(null);
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
@@ -101,9 +103,11 @@ export function PharmacyModule() {
   }, []);
 
   useEffect(() => {
-    fetchPharmacies()
+    fetchPharmaciesMeta()
       .then((data) => {
-        setPharmacies(data);
+        setPharmacies(data.pharmacies);
+        setActiveDutyGroups(data.activeDutyGroups ?? []);
+        setDutySource(data.dutySource ?? null);
         setLoaded(true);
       })
       .catch((e) => {
@@ -348,6 +352,26 @@ export function PharmacyModule() {
         {loadError && (
           <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {loadError}
+          </div>
+        )}
+        {tab === "carte" && activeDutyGroups.length > 0 && dutySource === "rotations" && (
+          <div className="flex flex-wrap items-center gap-2 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-orange-950">
+            <Shield className="h-4 w-4 shrink-0 text-orange-600" />
+            <span>
+              Cette semaine : groupe{" "}
+              <span className="font-semibold">{activeDutyGroups.join(", ")}</span> de garde
+              (programme 2026)
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setOnDutyOnly(true);
+                setShowFilters(true);
+              }}
+              className="ml-auto text-xs font-medium text-orange-800 underline"
+            >
+              Voir les pharmacies de garde
+            </button>
           </div>
         )}
         {geoError && tab === "carte" && (

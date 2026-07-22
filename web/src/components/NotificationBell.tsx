@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { useDashboardProfile } from "@/components/ProfileProvider";
-import { Bell, CheckCheck, Loader2, X } from "lucide-react";
+import { Bell, CheckCheck, Loader2, Trash2, X } from "lucide-react";
 
 type Notif = {
   id: string;
@@ -131,6 +131,15 @@ export function NotificationBell() {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ markAll: true }),
+    });
+  }
+
+  async function dismiss(id: string) {
+    setItems((prev) => prev.filter((n) => n.id !== id));
+    await fetch("/api/notifications", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, delete: true }),
     });
   }
 
@@ -272,7 +281,7 @@ export function NotificationBell() {
                     );
 
                     return (
-                      <li key={n.id} className="min-w-0">
+                      <li key={n.id} className="group relative min-w-0">
                         {n.href ? (
                           <Link
                             href={n.href}
@@ -280,7 +289,7 @@ export function NotificationBell() {
                               markRead(n.id);
                               setOpen(false);
                             }}
-                            className={`block min-w-0 px-3 py-3.5 active:bg-slate-100 sm:hover:bg-slate-50 ${
+                            className={`block min-w-0 px-3 py-3.5 pr-10 active:bg-slate-100 sm:hover:bg-slate-50 ${
                               unreadItem ? "bg-emerald-50/50" : ""
                             }`}
                           >
@@ -290,13 +299,22 @@ export function NotificationBell() {
                           <button
                             type="button"
                             onClick={() => markRead(n.id)}
-                            className={`block w-full min-w-0 px-3 py-3.5 text-left active:bg-slate-100 sm:hover:bg-slate-50 ${
+                            className={`block w-full min-w-0 px-3 py-3.5 pr-10 text-left active:bg-slate-100 sm:hover:bg-slate-50 ${
                               unreadItem ? "bg-emerald-50/50" : ""
                             }`}
                           >
                             {content}
                           </button>
                         )}
+                        <button
+                          type="button"
+                          onClick={() => dismiss(n.id)}
+                          className="absolute right-2 top-3 rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-red-600"
+                          title="Retirer de ma boîte"
+                          aria-label="Retirer la notification"
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                        </button>
                       </li>
                     );
                   })}

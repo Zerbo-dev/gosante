@@ -160,15 +160,23 @@ export function MedicalRecordModule() {
       }
       setUserId(user.id);
 
-      const [{ data: profile }, { data: rec }, { data: hist }] = await Promise.all([
-        supabase.from("profiles").select("full_name, phone").eq("id", user.id).single(),
-        supabase.from("medical_records").select("*").eq("user_id", user.id).maybeSingle(),
+      const histQuery = () =>
         supabase
           .from("medical_history_entries")
           .select("*")
           .eq("user_id", user.id)
-          .order("entry_date", { ascending: false }),
+          .order("entry_date", { ascending: false });
+
+      let histRes = await histQuery().is("deleted_at", null);
+      if (histRes.error && /deleted_at|does not exist/i.test(histRes.error.message)) {
+        histRes = await histQuery();
+      }
+
+      const [{ data: profile }, { data: rec }] = await Promise.all([
+        supabase.from("profiles").select("full_name, phone").eq("id", user.id).single(),
+        supabase.from("medical_records").select("*").eq("user_id", user.id).maybeSingle(),
       ]);
+      const hist = histRes.data;
 
       if (profile) setPatient({ fullName: profile.full_name, phone: profile.phone });
       if (rec) {
@@ -251,7 +259,17 @@ export function MedicalRecordModule() {
   }
 
   async function deleteHistory(id: string) {
-    await supabase.from("medical_history_entries").delete().eq("id", id);
+    if (!window.confirm("Retirer cette entrée de votre historique ?")) return;
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "medical_history", id }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(data.error || "Impossible de supprimer cette entrée.");
+      return;
+    }
     setHistory((h) => h.filter((x) => x.id !== id));
   }
 

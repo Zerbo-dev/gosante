@@ -63,8 +63,8 @@ function mapPharmacy(p) {
     longitude: p.longitude ?? null,
     is_on_duty: onDuty,
     opening_hours: OPENING_HOURS,
-    duty_group: null,
-    status_label: onDuty ? "De garde" : null,
+    duty_group: p.duty_group ?? null,
+    status_label: onDuty ? "De garde" : p.status_label ?? null,
   };
 }
 

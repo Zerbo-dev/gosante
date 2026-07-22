@@ -29,8 +29,9 @@ export async function GET() {
     supabase
       .from("pharmacy_duty_rotations")
       .select("duty_group")
+      // ends_on = jour de relève (exclu) : starts_on ≤ today < ends_on
       .lte("starts_on", today)
-      .gte("ends_on", today),
+      .gt("ends_on", today),
   ]);
 
   if (error) {
@@ -68,6 +69,7 @@ export async function GET() {
     count: enriched.length,
     cities,
     dutyGroups,
+    activeDutyGroups: [...activeGroups].sort(),
     dutySource: useRotations ? "rotations" : "legacy",
     timezone: "Africa/Ouagadougou",
   });

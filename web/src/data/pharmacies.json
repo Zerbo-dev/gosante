@@ -9,7 +9,8 @@
     "longitude": -1.568,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 51,
@@ -21,7 +22,8 @@
     "longitude": -1.521,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 104,
@@ -31,9 +33,10 @@
     "phone": "+226 25 39 63 99",
     "latitude": 12.339,
     "longitude": -1.48,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 82,
@@ -45,7 +48,8 @@
     "longitude": -1.54,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 74796,
@@ -57,7 +61,8 @@
     "longitude": -1.484,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1054,
@@ -69,7 +74,8 @@
     "longitude": -4.323,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1078,
@@ -79,9 +85,10 @@
     "phone": "+226 20 98 27 95",
     "latitude": 11.205,
     "longitude": -4.311,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 71,
@@ -93,7 +100,8 @@
     "longitude": -1.535,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 65,
@@ -105,7 +113,8 @@
     "longitude": -1.563,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 19145,
@@ -117,7 +126,8 @@
     "longitude": -4.292,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 94,
@@ -129,7 +139,8 @@
     "longitude": -1.574,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 19081,
@@ -139,9 +150,10 @@
     "phone": "+226 79 20 01 83",
     "latitude": 12.33184289,
     "longitude": -1.58468243,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 18918,
@@ -151,9 +163,10 @@
     "phone": "+226 25 48 01 53",
     "latitude": 12.333,
     "longitude": -1.575,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 58014,
@@ -163,9 +176,10 @@
     "phone": "+226 20 97 78 78",
     "latitude": 11.159,
     "longitude": -4.269,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1065,
@@ -177,7 +191,8 @@
     "longitude": -4.2420372,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 47,
@@ -189,7 +204,8 @@
     "longitude": -1.503,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 67352,
@@ -199,9 +215,10 @@
     "phone": "+226 77 52 00 36",
     "latitude": 12.271,
     "longitude": -1.49,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 60452,
@@ -213,7 +230,8 @@
     "longitude": -4.302,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 112,
@@ -223,9 +241,10 @@
     "phone": "+226 25 37 51 36",
     "latitude": 12.31,
     "longitude": -1.482,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 18920,
@@ -237,7 +256,8 @@
     "longitude": -1.586,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 67,
@@ -247,9 +267,10 @@
     "phone": "+226 25 41 44 99",
     "latitude": 12.404,
     "longitude": -1.577,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 18922,
@@ -261,7 +282,8 @@
     "longitude": -1.635,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 48,
@@ -271,9 +293,10 @@
     "phone": "+226 25 37 47 11",
     "latitude": 12.308,
     "longitude": -1.529,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 64485,
@@ -285,7 +308,8 @@
     "longitude": -1.48,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 18923,
@@ -295,9 +319,10 @@
     "phone": "+226 25 40 84 14",
     "latitude": 12.308,
     "longitude": -1.558,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 115,
@@ -307,9 +332,10 @@
     "phone": "+226 25 37 28 30",
     "latitude": 12.35,
     "longitude": -1.479,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 111,
@@ -321,7 +347,8 @@
     "longitude": -1.534,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1059,
@@ -331,9 +358,10 @@
     "phone": "+226 20 97 37 59",
     "latitude": 11.184,
     "longitude": -4.321,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 51172,
@@ -343,9 +371,10 @@
     "phone": "+226 01 75 99 75",
     "latitude": 12.282,
     "longitude": -1.579,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 19111,
@@ -355,9 +384,10 @@
     "phone": "+226 70 72 83 07",
     "latitude": 11.242,
     "longitude": -4.287,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 960,
@@ -367,9 +397,10 @@
     "phone": "+226 63 73 81 81",
     "latitude": 12.314,
     "longitude": -1.555,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1063,
@@ -379,9 +410,10 @@
     "phone": "+226 20 95 20 93",
     "latitude": 11.184,
     "longitude": -4.286,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 91,
@@ -393,7 +425,8 @@
     "longitude": -1.58,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 27,
@@ -403,9 +436,10 @@
     "phone": "+226 25 36 61 27",
     "latitude": 12.376,
     "longitude": -1.479,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 118,
@@ -417,7 +451,8 @@
     "longitude": -1.527,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 81,
@@ -427,9 +462,10 @@
     "phone": "+226 25 31 16 60",
     "latitude": 12.3702664,
     "longitude": -1.5244474,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1083,
@@ -439,9 +475,10 @@
     "phone": "+226 20 95 58 53",
     "latitude": 11.177,
     "longitude": -4.248,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 37937,
@@ -451,9 +488,10 @@
     "phone": "+226 25 48 59 59",
     "latitude": 12.392,
     "longitude": -1.536,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 90,
@@ -465,7 +503,8 @@
     "longitude": -1.516,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 58625,
@@ -477,7 +516,8 @@
     "longitude": -4.298,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 61,
@@ -487,9 +527,10 @@
     "phone": "+226 25 31 29 49",
     "latitude": 12.366,
     "longitude": -1.519,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 59302,
@@ -501,7 +542,8 @@
     "longitude": -1.57,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 46,
@@ -511,9 +553,10 @@
     "phone": "+226 25 38 83 90",
     "latitude": 12.327,
     "longitude": -1.519,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 18928,
@@ -523,9 +566,10 @@
     "phone": "+226 60 46 08 08",
     "latitude": 12.42,
     "longitude": -1.559,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 18929,
@@ -537,7 +581,8 @@
     "longitude": -1.565,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 126,
@@ -549,7 +594,8 @@
     "longitude": -1.523,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 7,
@@ -561,7 +607,8 @@
     "longitude": -1.472,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 51254,
@@ -573,7 +620,8 @@
     "longitude": -1.64,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 109,
@@ -583,9 +631,10 @@
     "phone": "+226 25 47 50 50",
     "latitude": 12.391,
     "longitude": -1.524,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 41,
@@ -595,9 +644,10 @@
     "phone": "+226 25 33 50 00",
     "latitude": 12.3654022,
     "longitude": -1.5163808,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 19287,
@@ -607,9 +657,10 @@
     "phone": "+226 56 89 89 12",
     "latitude": 11.1344723,
     "longitude": -4.3200125,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 50443,
@@ -619,9 +670,10 @@
     "phone": "+226 69 00 07 77",
     "latitude": 12.398,
     "longitude": -1.593,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 18932,
@@ -631,9 +683,10 @@
     "phone": "+226 78 83 62 74",
     "latitude": 12.401,
     "longitude": -1.514,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 43,
@@ -643,9 +696,10 @@
     "phone": "+226 25 38 48 84",
     "latitude": 12.33,
     "longitude": -1.526,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 29,
@@ -655,9 +709,10 @@
     "phone": "+226 25 36 20 51",
     "latitude": 12.359,
     "longitude": -1.495,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 133,
@@ -669,7 +724,8 @@
     "longitude": -1.463,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 110,
@@ -679,9 +735,10 @@
     "phone": "+226 71 68 45 55",
     "latitude": 12.398,
     "longitude": -1.613,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 20036,
@@ -693,7 +750,8 @@
     "longitude": -4.27,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1041,
@@ -705,7 +763,8 @@
     "longitude": -2.363,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 17730,
@@ -715,9 +774,10 @@
     "phone": "+226 25 41 05 75",
     "latitude": 12.413,
     "longitude": -1.571,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 59,
@@ -729,7 +789,8 @@
     "longitude": -1.5280526,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 5,
@@ -741,7 +802,8 @@
     "longitude": -1.482,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 19090,
@@ -751,9 +813,10 @@
     "phone": "+226 25 65 31 65",
     "latitude": 12.4,
     "longitude": -1.566,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 1039,
@@ -765,7 +828,8 @@
     "longitude": -2.383,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 68,
@@ -775,9 +839,10 @@
     "phone": "+226 25 50 05 28",
     "latitude": 12.41,
     "longitude": -1.632,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 69143,
@@ -787,9 +852,10 @@
     "phone": "+226 74 44 42 09",
     "latitude": 12.392,
     "longitude": -1.551,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 63489,
@@ -799,9 +865,10 @@
     "phone": "+226 75 21 20 00",
     "latitude": 12.363008,
     "longitude": -1.478586,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 55958,
@@ -811,9 +878,10 @@
     "phone": "+226 25 46 54 09",
     "latitude": 12.331,
     "longitude": -1.485,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1037,
@@ -823,9 +891,10 @@
     "phone": "+226 70 00 45 99",
     "latitude": 12.253,
     "longitude": -2.351,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 1064,
@@ -837,7 +906,8 @@
     "longitude": -4.273,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 72,
@@ -849,7 +919,8 @@
     "longitude": -1.551,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 796,
@@ -861,7 +932,8 @@
     "longitude": -1.454,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 48638,
@@ -873,7 +945,8 @@
     "longitude": -1.452,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1061,
@@ -885,7 +958,8 @@
     "longitude": -4.321,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 50305,
@@ -897,7 +971,8 @@
     "longitude": -4.305,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 93,
@@ -909,7 +984,8 @@
     "longitude": -1.557,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 10,
@@ -921,7 +997,8 @@
     "longitude": -1.432,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 128,
@@ -933,7 +1010,8 @@
     "longitude": -1.509,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1055,
@@ -945,7 +1023,8 @@
     "longitude": -4.303,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 19551,
@@ -957,7 +1036,8 @@
     "longitude": -1.545,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 134,
@@ -967,9 +1047,10 @@
     "phone": "+226 78 83 61 24",
     "latitude": 12.312,
     "longitude": -1.525,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 15777,
@@ -981,7 +1062,8 @@
     "longitude": -1.578,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 8,
@@ -993,7 +1075,8 @@
     "longitude": -1.458,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 486,
@@ -1003,9 +1086,10 @@
     "phone": "+226 25 34 35 04",
     "latitude": 12.372,
     "longitude": -1.558,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 50,
@@ -1015,9 +1099,10 @@
     "phone": "+226 25 45 51 75",
     "latitude": 12.324,
     "longitude": -1.556,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1056,
@@ -1029,7 +1114,8 @@
     "longitude": -4.315,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 73451,
@@ -1041,7 +1127,8 @@
     "longitude": -1.656,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 33,
@@ -1053,7 +1140,8 @@
     "longitude": -1.474,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 132,
@@ -1065,7 +1153,8 @@
     "longitude": -1.517,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 52910,
@@ -1075,9 +1164,10 @@
     "phone": "+226 25 43 21 21",
     "latitude": 12.316,
     "longitude": -1.564,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 19175,
@@ -1087,9 +1177,10 @@
     "phone": "+226 25 34 30 28",
     "latitude": 12.358,
     "longitude": -1.546,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 1060,
@@ -1101,7 +1192,8 @@
     "longitude": -4.33,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 129,
@@ -1113,7 +1205,8 @@
     "longitude": -1.493,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 39,
@@ -1123,9 +1216,10 @@
     "phone": "+226 25 37 20 13",
     "latitude": 12.3469307,
     "longitude": -1.5030307,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 76,
@@ -1137,7 +1231,8 @@
     "longitude": -1.469,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 12411,
@@ -1149,7 +1244,8 @@
     "longitude": -1.608,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 12,
@@ -1159,9 +1255,10 @@
     "phone": "+226 25 35 63 04",
     "latitude": 12.417,
     "longitude": -1.473,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 32,
@@ -1173,7 +1270,8 @@
     "longitude": -1.51,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 48329,
@@ -1185,7 +1283,8 @@
     "longitude": -1.529,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1043,
@@ -1197,7 +1296,8 @@
     "longitude": -2.374,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 57,
@@ -1209,7 +1309,8 @@
     "longitude": -1.544,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 70,
@@ -1221,7 +1322,8 @@
     "longitude": -1.582,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1040,
@@ -1233,7 +1335,8 @@
     "longitude": -2.362,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1529,
@@ -1243,9 +1346,10 @@
     "phone": "+226 20 95 54 37",
     "latitude": 11.215,
     "longitude": -4.31,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 19114,
@@ -1257,7 +1361,8 @@
     "longitude": -4.288,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 40064,
@@ -1269,7 +1374,8 @@
     "longitude": -4.315,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 68425,
@@ -1281,7 +1387,8 @@
     "longitude": -4.282,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 33711,
@@ -1291,9 +1398,10 @@
     "phone": "+226 25 48 07 97",
     "latitude": 12.416,
     "longitude": -1.524,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 19721,
@@ -1303,9 +1411,10 @@
     "phone": "+226 25 47 10 65",
     "latitude": 12.364,
     "longitude": -1.458,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 9756,
@@ -1317,7 +1426,8 @@
     "longitude": -1.472,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 44,
@@ -1329,7 +1439,8 @@
     "longitude": -1.518,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 38450,
@@ -1339,9 +1450,10 @@
     "phone": "+226 63 81 59 18",
     "latitude": 12.304,
     "longitude": -1.469,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 119,
@@ -1353,7 +1465,8 @@
     "longitude": -1.514,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 64,
@@ -1363,9 +1476,10 @@
     "phone": "+226 73 48 35 65",
     "latitude": 12.355,
     "longitude": -1.517,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 67726,
@@ -1377,7 +1491,8 @@
     "longitude": -1.535,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 108,
@@ -1389,7 +1504,8 @@
     "longitude": -1.528,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1077,
@@ -1399,9 +1515,10 @@
     "phone": "+226 20 97 51 52",
     "latitude": 11.173,
     "longitude": -4.297,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 84,
@@ -1411,9 +1528,10 @@
     "phone": "+226 25 41 29 90",
     "latitude": 12.329,
     "longitude": -1.477,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 85,
@@ -1423,9 +1541,10 @@
     "phone": "+226 25 34 11 28",
     "latitude": 12.367,
     "longitude": -1.551,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 19092,
@@ -1437,7 +1556,8 @@
     "longitude": -1.54,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 131,
@@ -1449,7 +1569,8 @@
     "longitude": -1.5510473,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1081,
@@ -1461,7 +1582,8 @@
     "longitude": -4.299,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 11,
@@ -1473,7 +1595,8 @@
     "longitude": -1.463,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 89,
@@ -1485,7 +1608,8 @@
     "longitude": -1.515,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 107,
@@ -1495,9 +1619,10 @@
     "phone": "+226 72 25 76 76",
     "latitude": 12.29,
     "longitude": -1.574,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 102,
@@ -1509,7 +1634,8 @@
     "longitude": -1.463,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 19544,
@@ -1521,7 +1647,8 @@
     "longitude": -1.46,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1085,
@@ -1533,7 +1660,8 @@
     "longitude": -4.298,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 6,
@@ -1545,7 +1673,8 @@
     "longitude": -1.469,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 77,
@@ -1555,9 +1684,10 @@
     "phone": "+226 70 14 39 77",
     "latitude": 12.3523313,
     "longitude": -1.5317179,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 79,
@@ -1567,9 +1697,10 @@
     "phone": "+226 25 48 33 34",
     "latitude": 12.399,
     "longitude": -1.503,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 49,
@@ -1579,9 +1710,10 @@
     "phone": "+226 25 46 90 48",
     "latitude": 12.266,
     "longitude": -1.531,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 53675,
@@ -1591,9 +1723,10 @@
     "phone": "+226 25 47 70 80",
     "latitude": 12.329,
     "longitude": -1.543,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 31,
@@ -1605,7 +1738,8 @@
     "longitude": -1.483,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 69391,
@@ -1615,9 +1749,10 @@
     "phone": "+226 25 40 73 25",
     "latitude": 12.364,
     "longitude": -1.617,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 75,
@@ -1629,7 +1764,8 @@
     "longitude": -1.474,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1527,
@@ -1639,9 +1775,10 @@
     "phone": "+226 20 97 57 57",
     "latitude": 11.196,
     "longitude": -4.292,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 1067,
@@ -1651,9 +1788,10 @@
     "phone": "+226 20 97 31 00",
     "latitude": 11.19,
     "longitude": -4.326,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 30,
@@ -1665,7 +1803,8 @@
     "longitude": -1.491,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 54880,
@@ -1677,7 +1816,8 @@
     "longitude": -1.432,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 66,
@@ -1689,7 +1829,8 @@
     "longitude": -1.575,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 19141,
@@ -1699,9 +1840,10 @@
     "phone": "+226 25 41 77 76",
     "latitude": 12.37467922,
     "longitude": -1.5702447,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 40265,
@@ -1713,7 +1855,8 @@
     "longitude": -1.499,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 64180,
@@ -1725,7 +1868,8 @@
     "longitude": -4.313,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 32600,
@@ -1737,7 +1881,8 @@
     "longitude": -1.4648036,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 52,
@@ -1747,9 +1892,10 @@
     "phone": "+226 25 43 13 35",
     "latitude": 12.337,
     "longitude": -1.564,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 61079,
@@ -1761,7 +1907,8 @@
     "longitude": -1.553,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 56582,
@@ -1773,7 +1920,8 @@
     "longitude": -1.569,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 19139,
@@ -1785,7 +1933,8 @@
     "longitude": -1.539,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 60555,
@@ -1795,9 +1944,10 @@
     "phone": "+226 25 40 70 09",
     "latitude": 12.439,
     "longitude": -1.601,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 69,
@@ -1809,7 +1959,8 @@
     "longitude": -1.569,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 34132,
@@ -1819,9 +1970,10 @@
     "phone": "+226 65 32 11 53",
     "latitude": 12.405,
     "longitude": -1.506,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1342,
@@ -1833,7 +1985,8 @@
     "longitude": -4.276,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 45400,
@@ -1843,9 +1996,10 @@
     "phone": "+226 68 91 10 10",
     "latitude": 12.334,
     "longitude": -1.529,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 38914,
@@ -1857,7 +2011,8 @@
     "longitude": -1.564,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 56315,
@@ -1869,7 +2024,8 @@
     "longitude": -1.615132,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 987,
@@ -1879,9 +2035,10 @@
     "phone": "+226 25 40 86 99",
     "latitude": 12.372,
     "longitude": -1.429,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 60,
@@ -1891,9 +2048,10 @@
     "phone": "+226 25 34 60 60",
     "latitude": 12.351,
     "longitude": -1.546,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 42,
@@ -1905,7 +2063,8 @@
     "longitude": -1.515,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 127,
@@ -1915,9 +2074,10 @@
     "phone": "+226 25 45 14 82",
     "latitude": 12.312,
     "longitude": -1.489,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 121,
@@ -1927,9 +2087,10 @@
     "phone": "+226 25 37 00 33",
     "latitude": 12.343,
     "longitude": -1.494,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 40,
@@ -1939,9 +2100,10 @@
     "phone": "+226 25 36 86 48",
     "latitude": 12.369,
     "longitude": -1.5,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 19113,
@@ -1951,9 +2113,10 @@
     "phone": "+226 60 75 36 36",
     "latitude": 11.217,
     "longitude": -4.286,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 790,
@@ -1965,7 +2128,8 @@
     "longitude": -1.534,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 58015,
@@ -1975,9 +2139,10 @@
     "phone": "+226 04 37 24 24",
     "latitude": 11.193,
     "longitude": -4.265,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 19110,
@@ -1989,7 +2154,8 @@
     "longitude": -4.251,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 55908,
@@ -1999,9 +2165,10 @@
     "phone": "+226 50 35 35 40",
     "latitude": 12.404,
     "longitude": -1.465,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 1079,
@@ -2013,7 +2180,8 @@
     "longitude": -4.251,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1098,
@@ -2023,9 +2191,10 @@
     "phone": "+226 20 97 19 65",
     "latitude": 11.182,
     "longitude": -4.307,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 101,
@@ -2037,7 +2206,8 @@
     "longitude": -1.5976862,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 53,
@@ -2049,7 +2219,8 @@
     "longitude": -1.549,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 55565,
@@ -2059,9 +2230,10 @@
     "phone": "+226 25 40 27 46",
     "latitude": 12.356,
     "longitude": -1.527,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 73,
@@ -2073,7 +2245,8 @@
     "longitude": -1.581,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 60297,
@@ -2085,7 +2258,8 @@
     "longitude": -4.344,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1082,
@@ -2097,7 +2271,8 @@
     "longitude": -4.302,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1525,
@@ -2109,7 +2284,8 @@
     "longitude": -4.296,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 19087,
@@ -2121,7 +2297,8 @@
     "longitude": -1.551,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 37936,
@@ -2133,7 +2310,8 @@
     "longitude": -1.598,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 3,
@@ -2143,9 +2321,10 @@
     "phone": "+226 25 36 64 62",
     "latitude": 12.395,
     "longitude": -1.46,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 1080,
@@ -2157,7 +2336,8 @@
     "longitude": -4.3,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 23,
@@ -2167,9 +2347,10 @@
     "phone": "+226 25 36 85 85",
     "latitude": 12.388,
     "longitude": -1.491,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 73487,
@@ -2179,9 +2360,10 @@
     "phone": "+226 79 79 18 24",
     "latitude": 12.375,
     "longitude": -1.598,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 50951,
@@ -2193,7 +2375,8 @@
     "longitude": -2.373,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 1166,
@@ -2205,7 +2388,8 @@
     "longitude": -1.463,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1044,
@@ -2215,9 +2399,10 @@
     "phone": "+226 25 44 11 44",
     "latitude": 12.243,
     "longitude": -2.363,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 67174,
@@ -2229,7 +2414,8 @@
     "longitude": -1.455,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 19249,
@@ -2239,9 +2425,10 @@
     "phone": "+226 20 97 79 93",
     "latitude": 11.174,
     "longitude": -4.279,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 34,
@@ -2253,7 +2440,8 @@
     "longitude": -1.491,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1002,
@@ -2263,9 +2451,10 @@
     "phone": "+226 71 62 08 08",
     "latitude": 12.333,
     "longitude": -1.605,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 116,
@@ -2277,7 +2466,8 @@
     "longitude": -1.556,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 14,
@@ -2287,9 +2477,10 @@
     "phone": "+226 25 36 69 27",
     "latitude": 12.387,
     "longitude": -1.468,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 19108,
@@ -2301,7 +2492,8 @@
     "longitude": -4.276,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 19093,
@@ -2311,9 +2503,10 @@
     "phone": "+226 63 93 00 19",
     "latitude": 12.464,
     "longitude": -1.555,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 15779,
@@ -2325,7 +2518,8 @@
     "longitude": -1.586,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 67725,
@@ -2337,7 +2531,8 @@
     "longitude": -1.573,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 86,
@@ -2347,9 +2542,10 @@
     "phone": "+226 25 33 29 41",
     "latitude": 12.381,
     "longitude": -1.51,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 58,
@@ -2361,7 +2557,8 @@
     "longitude": -1.556,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 2,
@@ -2373,7 +2570,8 @@
     "longitude": -1.426,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 117,
@@ -2385,7 +2583,8 @@
     "longitude": -1.551,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 36417,
@@ -2397,7 +2596,8 @@
     "longitude": -1.474,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 19289,
@@ -2409,7 +2609,8 @@
     "longitude": -4.314,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   },
   {
     "external_id": 70034,
@@ -2419,9 +2620,10 @@
     "phone": "+226 67 07 08 46",
     "latitude": 12.304,
     "longitude": -1.58,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "II"
   },
   {
     "external_id": 13,
@@ -2431,9 +2633,10 @@
     "phone": "+226 25 39 52 08",
     "latitude": 12.397,
     "longitude": -1.479,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 36,
@@ -2445,7 +2648,8 @@
     "longitude": -1.487486,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 123,
@@ -2455,9 +2659,10 @@
     "phone": "+226 78 83 63 41",
     "latitude": 12.381,
     "longitude": -1.55,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 68427,
@@ -2467,9 +2672,10 @@
     "phone": "+226 25 50 29 29",
     "latitude": 12.317,
     "longitude": -1.53,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 55866,
@@ -2479,9 +2685,10 @@
     "phone": "+226 71 50 94 92",
     "latitude": 12.377,
     "longitude": -1.544,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 99,
@@ -2493,7 +2700,8 @@
     "longitude": -1.591,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 1116,
@@ -2503,9 +2711,10 @@
     "phone": "+226 20 97 36 97",
     "latitude": 11.185,
     "longitude": -4.298,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "II"
   },
   {
     "external_id": 55743,
@@ -2517,7 +2726,8 @@
     "longitude": -1.597,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 124,
@@ -2527,9 +2737,10 @@
     "phone": "+226 25 40 23 88",
     "latitude": 12.373,
     "longitude": -1.42,
-    "is_on_duty": false,
+    "is_on_duty": true,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "De garde",
+    "duty_group": "I"
   },
   {
     "external_id": 19317,
@@ -2539,9 +2750,10 @@
     "phone": "+226 25 39 40 61",
     "latitude": 12.43629,
     "longitude": -1.45106,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 35,
@@ -2551,9 +2763,10 @@
     "phone": "+226 25 37 03 37",
     "latitude": 12.351,
     "longitude": -1.488,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 97,
@@ -2565,7 +2778,8 @@
     "longitude": -1.545,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "IV"
   },
   {
     "external_id": 113,
@@ -2577,7 +2791,8 @@
     "longitude": -1.476,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": "II"
   },
   {
     "external_id": 1341,
@@ -2587,9 +2802,10 @@
     "phone": "+226 63 10 07 75",
     "latitude": 11.155,
     "longitude": -4.325,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": null
   },
   {
     "external_id": 26,
@@ -2599,9 +2815,10 @@
     "phone": "+226 25 48 15 13",
     "latitude": 12.367,
     "longitude": -1.47,
-    "is_on_duty": true,
+    "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "De garde"
+    "status_label": "Ouverte",
+    "duty_group": "III"
   },
   {
     "external_id": 1042,
@@ -2613,6 +2830,7 @@
     "longitude": -2.36,
     "is_on_duty": false,
     "opening_hours": null,
-    "status_label": "Fermé"
+    "status_label": "Fermé",
+    "duty_group": null
   }
 ]
