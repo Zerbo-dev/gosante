@@ -805,6 +805,7 @@ export function VisioRoom({
               autoPlay
               playsInline
               muted
+              defaultMuted
               className={`h-full w-full scale-x-[-1] object-cover ${camOn ? "" : "hidden"}`}
             />
             {!camOn && (
@@ -874,6 +875,14 @@ export function VisioRoom({
       {error && (
         <div className="border-t border-red-500/20 bg-red-950/60 px-4 py-3">
           <p className="text-sm text-red-300">{error}</p>
+        </div>
+      )}
+      {connected && (
+        <div className="border-t border-white/5 bg-slate-900/80 px-4 py-2">
+          <p className="text-center text-[11px] text-slate-400">
+            Conseil : utilisez des écouteurs pour éviter l&apos;écho et les crissements
+            (le micro capte sinon le haut-parleur).
+          </p>
         </div>
       )}
     </div>
