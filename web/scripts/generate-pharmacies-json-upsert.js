@@ -77,8 +77,8 @@ norm AS (
     CASE WHEN COALESCE(is_on_duty, false) THEN 'De garde' ELSE NULL END AS status_label
   FROM src
 )
-INSERT INTO public.pharmacies (external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label, duty_group)
-SELECT external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label, NULL
+INSERT INTO public.pharmacies (external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label)
+SELECT external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label
 FROM norm
 ON CONFLICT (external_id) WHERE external_id IS NOT NULL DO UPDATE SET
   name = EXCLUDED.name,
@@ -90,6 +90,7 @@ ON CONFLICT (external_id) WHERE external_id IS NOT NULL DO UPDATE SET
   is_on_duty = EXCLUDED.is_on_duty,
   opening_hours = EXCLUDED.opening_hours,
   status_label = EXCLUDED.status_label;
+  -- duty_group intentionnellement non écrasé (géré via rotations / seed garde)
 `;
 }
 

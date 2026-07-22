@@ -1,0 +1,2493 @@
+{
+  "source": "Pharmacie_de_garde_pour_2026.pdf",
+  "timezone": "Africa/Ouagadougou",
+  "today": "2026-07-22",
+  "active_group": "I",
+  "groups": {
+    "I": [
+      "Archanges",
+      "Avenir",
+      "Baani",
+      "Bang-Pooré",
+      "Baowendsom",
+      "Barkwende",
+      "Beatitudes",
+      "Benaia",
+      "Bonheur",
+      "Camille",
+      "Centre",
+      "Crystal",
+      "Des Apotres",
+      "Desa",
+      "Diaby",
+      "Divine",
+      "Dominique Kaboré",
+      "El Wanogo",
+      "Elite",
+      "Gova",
+      "Gueswende",
+      "Guuduma",
+      "Hosanna",
+      "Jober",
+      "Katra",
+      "Keneya",
+      "Kossodo",
+      "Lanibougna",
+      "Lanzané",
+      "Lendimti",
+      "Les champions",
+      "Liberté",
+      "Lina",
+      "Magnificat",
+      "Maré",
+      "Minitché",
+      "Monderoué",
+      "Nanlé",
+      "Neerwaya",
+      "Nouvelle",
+      "Pelega",
+      "Rachel Yagma",
+      "Rayib-Tiga",
+      "Rivage",
+      "Saint Bernard",
+      "Saint François D'Assise",
+      "Saint Jean",
+      "Siloé",
+      "Song Taaba",
+      "Tale",
+      "Tenedia",
+      "Tengandogo",
+      "Trypano",
+      "Wend La Laafi",
+      "Wend Iamita",
+      "Wendpanga",
+      "Yathrib"
+    ],
+    "II": [
+      "Adadoua",
+      "Aéroport",
+      "Agora-Rood Wooko",
+      "Amaro",
+      "Amina",
+      "Ar-rahmá",
+      "Augustine",
+      "Bao Neeré",
+      "Boulmiougou",
+      "Cathédrale",
+      "Cité An 3",
+      "Danouma",
+      "Dapoya",
+      "Delwindé",
+      "Denisa",
+      "Faso",
+      "Flayiri",
+      "Hamdalaye",
+      "Hanniel",
+      "Hope",
+      "Horizon",
+      "Jabnéel",
+      "Jireh",
+      "Joriel",
+      "Jourdain",
+      "Karpala",
+      "Koulouba",
+      "Koumajer",
+      "Ko-Viiga",
+      "Les Lauriers",
+      "Marlass",
+      "Martin",
+      "Meira",
+      "Meteba",
+      "Mitspah",
+      "Nayyira",
+      "Neima",
+      "Nemadis",
+      "Prim'santé",
+      "Progrès",
+      "Raklsmanegré",
+      "Saint Joseph",
+      "Sainte Véronique",
+      "Samandin",
+      "Sangoulé Lamizana",
+      "Schifeyi",
+      "Sig-Noghin",
+      "Sigri",
+      "Somketa",
+      "Sud",
+      "Talba",
+      "Tanko",
+      "Ti-Bangré",
+      "Tiis Yondo",
+      "Univers",
+      "Viim",
+      "Vincent de Paul",
+      "Wapassi Lafi",
+      "Wati",
+      "Yobi",
+      "Zidou"
+    ],
+    "III": [
+      "Aïmèvo",
+      "Arzouma",
+      "Avé Maria",
+      "Balkuy",
+      "Baraka",
+      "Belle ville",
+      "Blessing",
+      "Carrefour",
+      "Charis",
+      "Christvi",
+      "Concorde",
+      "Coura",
+      "Djabal",
+      "Djimbia",
+      "Dunia",
+      "Ecoles",
+      "Fabéré",
+      "Galiam",
+      "Georgette",
+      "Hamamickely",
+      "Indépendance",
+      "Jeunesse",
+      "Jizreel",
+      "Kalifa Traore",
+      "Kamboinsin",
+      "Kamin",
+      "Kilwin",
+      "La famille",
+      "La Sainte Trinité",
+      "Marjean",
+      "Naab Raga",
+      "Naaba-Koom",
+      "Nagrin",
+      "Nayalgba",
+      "Ninrwa",
+      "Nonsin",
+      "Noom-Wendé",
+      "Pierre Tapsoba",
+      "Pissy",
+      "Renaissance",
+      "Saaba",
+      "Sacré Cœur",
+      "Saint Lazare",
+      "Saint Michel",
+      "Santé-vitalité",
+      "Savane",
+      "Seneve",
+      "Taoko",
+      "Téranga",
+      "Tiyéle",
+      "Wayalghin",
+      "Wend Denda",
+      "Yempabou",
+      "Yennenga",
+      "Zone",
+      "Zoungrana"
+    ],
+    "IV": [
+      "1200 Logements",
+      "Adama",
+      "Afiya",
+      "Amitié Miyougou",
+      "Angèle",
+      "Bassinko",
+      "Bedjou",
+      "Bethania",
+      "Blandine Congo",
+      "Choukroullah",
+      "Circulaire Sède",
+      "De l'Alliance",
+      "De l'Hippodrome",
+      "Des cités",
+      "Diawara",
+      "El Shaddaï",
+      "Espoir",
+      "Fraternité",
+      "Gare",
+      "Gemme",
+      "Hambila",
+      "Hamid",
+      "Hanahim",
+      "Hôpital",
+      "Iris",
+      "Jean Paul II",
+      "Kadiogo",
+      "Kamalia",
+      "Kawsar",
+      "Kouma",
+      "La Croix",
+      "La Roche",
+      "Lallé",
+      "Latando",
+      "Le Rocher",
+      "Les Grâces",
+      "Louis Pasteur",
+      "Maignon",
+      "Miséricorde",
+      "Musée",
+      "Natilgé",
+      "Nioko I",
+      "Nongui",
+      "Ouédraogo Rémi",
+      "Pingdba",
+      "Principale",
+      "Providence",
+      "Rima",
+      "Rimkièta",
+      "Sahel",
+      "Sainte Odile",
+      "Sira",
+      "Somgandé",
+      "Sondogo",
+      "Sotissé",
+      "Sü-Maasem",
+      "Unité",
+      "Vénégré",
+      "Vidal Bafa",
+      "Vièl",
+      "Wend Kuuni",
+      "Wend Yam",
+      "Wend Zinkré",
+      "Yan-marou",
+      "Yentema"
+    ]
+  },
+  "rotations": [
+    {
+      "duty_group": "IV",
+      "starts_on": "2025-12-27",
+      "ends_on": "2026-01-03",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-01-03",
+      "ends_on": "2026-01-10",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-01-10",
+      "ends_on": "2026-01-17",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-01-17",
+      "ends_on": "2026-01-24",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-01-24",
+      "ends_on": "2026-01-31",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-01-31",
+      "ends_on": "2026-02-07",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-02-07",
+      "ends_on": "2026-02-14",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-02-14",
+      "ends_on": "2026-02-21",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-02-21",
+      "ends_on": "2026-02-28",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-02-28",
+      "ends_on": "2026-03-07",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-03-07",
+      "ends_on": "2026-03-14",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-03-14",
+      "ends_on": "2026-03-21",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-03-21",
+      "ends_on": "2026-03-28",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-03-28",
+      "ends_on": "2026-04-04",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-04-04",
+      "ends_on": "2026-04-11",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-04-11",
+      "ends_on": "2026-04-18",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-04-18",
+      "ends_on": "2026-04-25",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-04-25",
+      "ends_on": "2026-05-02",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-05-02",
+      "ends_on": "2026-05-09",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-05-09",
+      "ends_on": "2026-05-16",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-05-16",
+      "ends_on": "2026-05-23",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-05-23",
+      "ends_on": "2026-05-30",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-05-30",
+      "ends_on": "2026-06-06",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-06-06",
+      "ends_on": "2026-06-13",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-06-13",
+      "ends_on": "2026-06-20",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-06-20",
+      "ends_on": "2026-06-27",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-06-27",
+      "ends_on": "2026-07-04",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-07-04",
+      "ends_on": "2026-07-11",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-07-11",
+      "ends_on": "2026-07-18",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-07-18",
+      "ends_on": "2026-07-25",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-07-25",
+      "ends_on": "2026-08-01",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-08-01",
+      "ends_on": "2026-08-08",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-08-08",
+      "ends_on": "2026-08-15",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-08-15",
+      "ends_on": "2026-08-22",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-08-22",
+      "ends_on": "2026-08-29",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-08-29",
+      "ends_on": "2026-09-05",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-09-05",
+      "ends_on": "2026-09-12",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-09-12",
+      "ends_on": "2026-09-19",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-09-19",
+      "ends_on": "2026-09-26",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-09-26",
+      "ends_on": "2026-10-03",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-10-03",
+      "ends_on": "2026-10-10",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-10-10",
+      "ends_on": "2026-10-17",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-10-17",
+      "ends_on": "2026-10-24",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-10-24",
+      "ends_on": "2026-10-31",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-10-31",
+      "ends_on": "2026-11-07",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-11-07",
+      "ends_on": "2026-11-14",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-11-14",
+      "ends_on": "2026-11-21",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-11-21",
+      "ends_on": "2026-11-28",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-11-28",
+      "ends_on": "2026-12-05",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "I",
+      "starts_on": "2026-12-05",
+      "ends_on": "2026-12-12",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "II",
+      "starts_on": "2026-12-12",
+      "ends_on": "2026-12-19",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "III",
+      "starts_on": "2026-12-19",
+      "ends_on": "2026-12-26",
+      "notes": "Programme de garde 2026 (PDF)"
+    },
+    {
+      "duty_group": "IV",
+      "starts_on": "2026-12-26",
+      "ends_on": "2027-01-02",
+      "notes": "Programme de garde 2026 (PDF)"
+    }
+  ],
+  "matches": [
+    {
+      "external_id": 19081,
+      "name": "Pharmacie ARCHANGES",
+      "duty_group": "I",
+      "pdf_name": "Archanges",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 67352,
+      "name": "Pharmacie BAANI",
+      "duty_group": "I",
+      "pdf_name": "Baani",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 67,
+      "name": "Pharmacie BAOWENDSOM",
+      "duty_group": "I",
+      "pdf_name": "Baowendsom",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 48,
+      "name": "Pharmacie BEATITUDES",
+      "duty_group": "I",
+      "pdf_name": "Beatitudes",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 115,
+      "name": "Pharmacie BENAIA",
+      "duty_group": "I",
+      "pdf_name": "Benaia",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 960,
+      "name": "Pharmacie BONHEUR",
+      "duty_group": "I",
+      "pdf_name": "Bonheur",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 27,
+      "name": "Pharmacie CAMILLE",
+      "duty_group": "I",
+      "pdf_name": "Camille",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 81,
+      "name": "Pharmacie CENTRE",
+      "duty_group": "I",
+      "pdf_name": "Centre",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18928,
+      "name": "Pharmacie CRYSTAL",
+      "duty_group": "I",
+      "pdf_name": "Crystal",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 109,
+      "name": "Pharmacie DESA",
+      "duty_group": "I",
+      "pdf_name": "Desa",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 41,
+      "name": "Pharmacie DIABY",
+      "duty_group": "I",
+      "pdf_name": "Diaby",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 50443,
+      "name": "Pharmacie DIVINE",
+      "duty_group": "I",
+      "pdf_name": "Divine",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 43,
+      "name": "Pharmacie DOMINIQUE KABORE",
+      "duty_group": "I",
+      "pdf_name": "Dominique Kaboré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 110,
+      "name": "Pharmacie ELITE",
+      "duty_group": "I",
+      "pdf_name": "Elite",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 69143,
+      "name": "Pharmacie GOVA",
+      "duty_group": "I",
+      "pdf_name": "Gova",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 63489,
+      "name": "Pharmacie GUESWENDE",
+      "duty_group": "I",
+      "pdf_name": "Gueswende",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 55958,
+      "name": "Pharmacie GUUDUMA",
+      "duty_group": "I",
+      "pdf_name": "Guuduma",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 50,
+      "name": "Pharmacie JoBeR",
+      "duty_group": "I",
+      "pdf_name": "Jober",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 39,
+      "name": "Pharmacie KATRA",
+      "duty_group": "I",
+      "pdf_name": "Katra",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 12,
+      "name": "Pharmacie KOSSODO",
+      "duty_group": "I",
+      "pdf_name": "Kossodo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 33711,
+      "name": "Pharmacie LANIBOUGNA",
+      "duty_group": "I",
+      "pdf_name": "Lanibougna",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19721,
+      "name": "Pharmacie LANZANE",
+      "duty_group": "I",
+      "pdf_name": "Lanzané",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 38450,
+      "name": "Pharmacie LENDIMI",
+      "duty_group": "I",
+      "pdf_name": "Lendimti",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 64,
+      "name": "Pharmacie LINA",
+      "duty_group": "I",
+      "pdf_name": "Lina",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 84,
+      "name": "Pharmacie MAGNIFICAT",
+      "duty_group": "I",
+      "pdf_name": "Magnificat",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 85,
+      "name": "Pharmacie MARE",
+      "duty_group": "I",
+      "pdf_name": "Maré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 107,
+      "name": "Pharmacie MINITCHE",
+      "duty_group": "I",
+      "pdf_name": "Minitché",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 53675,
+      "name": "Pharmacie NANLE",
+      "duty_group": "I",
+      "pdf_name": "Nanlé",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 58014,
+      "name": "Pharmacie AUBE NOUVELLE",
+      "duty_group": "I",
+      "pdf_name": "Nouvelle",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 60555,
+      "name": "Pharmacie RACHEL YAGMA",
+      "duty_group": "I",
+      "pdf_name": "Rachel Yagma",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 34132,
+      "name": "Pharmacie RAYIBTIGA",
+      "duty_group": "I",
+      "pdf_name": "Rayib-Tiga",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 127,
+      "name": "Pharmacie SAINT BERNARD",
+      "duty_group": "I",
+      "pdf_name": "Saint Bernard",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 23,
+      "name": "Pharmacie ST FRANCOIS D'ASSISE",
+      "duty_group": "I",
+      "pdf_name": "Saint François D'Assise",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 121,
+      "name": "Pharmacie SAINT JEAN",
+      "duty_group": "I",
+      "pdf_name": "Saint Jean",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 55565,
+      "name": "Pharmacie SILOE",
+      "duty_group": "I",
+      "pdf_name": "Siloé",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 3,
+      "name": "Pharmacie SONG-TAABA",
+      "duty_group": "I",
+      "pdf_name": "Song Taaba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 1002,
+      "name": "Pharmacie TALE",
+      "duty_group": "I",
+      "pdf_name": "Tale",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19093,
+      "name": "Pharmacie TENEDIA",
+      "duty_group": "I",
+      "pdf_name": "Tenedia",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 86,
+      "name": "Pharmacie TRYPANO",
+      "duty_group": "I",
+      "pdf_name": "Trypano",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 123,
+      "name": "Pharmacie WEND LAMITA",
+      "duty_group": "I",
+      "pdf_name": "Wend Iamita",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 68427,
+      "name": "Pharmacie WEND PANGA",
+      "duty_group": "I",
+      "pdf_name": "Wendpanga",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 124,
+      "name": "Pharmacie YATHRIB",
+      "duty_group": "I",
+      "pdf_name": "Yathrib",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 51,
+      "name": "Pharmacie AEROPORT",
+      "duty_group": "II",
+      "pdf_name": "Aéroport",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 82,
+      "name": "Pharmacie AMARO",
+      "duty_group": "II",
+      "pdf_name": "Amaro",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 74796,
+      "name": "Pharmacie AMINA",
+      "duty_group": "II",
+      "pdf_name": "Amina",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 94,
+      "name": "Pharmacie AR-RAHMA",
+      "duty_group": "II",
+      "pdf_name": "Ar-rahmá",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 47,
+      "name": "Pharmacie AUGUSTINE",
+      "duty_group": "II",
+      "pdf_name": "Augustine",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18920,
+      "name": "Pharmacie BAO NEERE",
+      "duty_group": "II",
+      "pdf_name": "Bao Neeré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 91,
+      "name": "Pharmacie BOULMIOUGOU",
+      "duty_group": "II",
+      "pdf_name": "Boulmiougou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 118,
+      "name": "Pharmacie CATHÉDRALE",
+      "duty_group": "II",
+      "pdf_name": "Cathédrale",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18929,
+      "name": "Pharmacie DANOUMA",
+      "duty_group": "II",
+      "pdf_name": "Danouma",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 126,
+      "name": "Pharmacie DAPOYA",
+      "duty_group": "II",
+      "pdf_name": "Dapoya",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 7,
+      "name": "Pharmacie DELWINDE",
+      "duty_group": "II",
+      "pdf_name": "Delwindé",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 59,
+      "name": "Pharmacie FASO",
+      "duty_group": "II",
+      "pdf_name": "Faso",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 72,
+      "name": "Pharmacie HAMDALAYE",
+      "duty_group": "II",
+      "pdf_name": "Hamdalaye",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 48638,
+      "name": "Pharmacie HANNIEL",
+      "duty_group": "II",
+      "pdf_name": "Hanniel",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 10,
+      "name": "Pharmacie HOPE",
+      "duty_group": "II",
+      "pdf_name": "Hope",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19551,
+      "name": "Pharmacie HORIZON",
+      "duty_group": "II",
+      "pdf_name": "Horizon",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 8,
+      "name": "Pharmacie JABNEEL",
+      "duty_group": "II",
+      "pdf_name": "Jabnéel",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 73451,
+      "name": "Pharmacie JORIEL",
+      "duty_group": "II",
+      "pdf_name": "Joriel",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 33,
+      "name": "Pharmacie JOURDAIN",
+      "duty_group": "II",
+      "pdf_name": "Jourdain",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 129,
+      "name": "Pharmacie KARPALA",
+      "duty_group": "II",
+      "pdf_name": "Karpala",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 32,
+      "name": "Pharmacie KOULOUBA",
+      "duty_group": "II",
+      "pdf_name": "Koulouba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 12411,
+      "name": "Pharmacie KO-VIIGA",
+      "duty_group": "II",
+      "pdf_name": "Ko-Viiga",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 9756,
+      "name": "Pharmacie LAURIERS",
+      "duty_group": "II",
+      "pdf_name": "Les Lauriers",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19092,
+      "name": "Pharmacie MARLASS",
+      "duty_group": "II",
+      "pdf_name": "Marlass",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 131,
+      "name": "Pharmacie MARTIN",
+      "duty_group": "II",
+      "pdf_name": "Martin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 11,
+      "name": "Pharmacie MEIRA",
+      "duty_group": "II",
+      "pdf_name": "Meira",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 89,
+      "name": "Pharmacie METEBA",
+      "duty_group": "II",
+      "pdf_name": "Meteba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19544,
+      "name": "Pharmacie MITSPAH",
+      "duty_group": "II",
+      "pdf_name": "Mitspah",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 75,
+      "name": "Pharmacie NAYYIRA",
+      "duty_group": "II",
+      "pdf_name": "Nayyira",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 30,
+      "name": "Pharmacie NEMADIS",
+      "duty_group": "II",
+      "pdf_name": "Nemadis",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 61079,
+      "name": "Pharmacie PRIM SANTE",
+      "duty_group": "II",
+      "pdf_name": "Prim'santé",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 56582,
+      "name": "Pharmacie PROGRES",
+      "duty_group": "II",
+      "pdf_name": "Progrès",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 69,
+      "name": "Pharmacie RAKISMANEGRE",
+      "duty_group": "II",
+      "pdf_name": "Raklsmanegré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 790,
+      "name": "Pharmacie SAMANDIN EX-HEERA",
+      "duty_group": "II",
+      "pdf_name": "Samandin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 101,
+      "name": "Pharmacie SIG-NOGHIN",
+      "duty_group": "II",
+      "pdf_name": "Sig-Noghin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 53,
+      "name": "Pharmacie SIGRI",
+      "duty_group": "II",
+      "pdf_name": "Sigri",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19087,
+      "name": "Pharmacie SOMKETA",
+      "duty_group": "II",
+      "pdf_name": "Somketa",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 34,
+      "name": "Pharmacie TALBA",
+      "duty_group": "II",
+      "pdf_name": "Talba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 116,
+      "name": "Pharmacie TANKO",
+      "duty_group": "II",
+      "pdf_name": "Tanko",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 15779,
+      "name": "Pharmacie TI BANGRE",
+      "duty_group": "II",
+      "pdf_name": "Ti-Bangré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 67725,
+      "name": "Pharmacie TIIS-YONDO",
+      "duty_group": "II",
+      "pdf_name": "Tiis Yondo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 2,
+      "name": "Pharmacie UNIVERS",
+      "duty_group": "II",
+      "pdf_name": "Univers",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 36417,
+      "name": "Pharmacie VINCENT DE PAUL",
+      "duty_group": "II",
+      "pdf_name": "Vincent de Paul",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 70034,
+      "name": "Pharmacie WAPPASI LAAFI",
+      "duty_group": "II",
+      "pdf_name": "Wapassi Lafi",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 1116,
+      "name": "Pharmacie WOBI",
+      "duty_group": "II",
+      "pdf_name": "Yobi",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 113,
+      "name": "Pharmacie ZIDOU",
+      "duty_group": "II",
+      "pdf_name": "Zidou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 104,
+      "name": "Pharmacie AIMEVO",
+      "duty_group": "III",
+      "pdf_name": "Aïmèvo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18918,
+      "name": "Pharmacie ARZOUMA",
+      "duty_group": "III",
+      "pdf_name": "Arzouma",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 112,
+      "name": "Pharmacie BALKUY",
+      "duty_group": "III",
+      "pdf_name": "Balkuy",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18923,
+      "name": "Pharmacie BELLE VILLE",
+      "duty_group": "III",
+      "pdf_name": "Belle ville",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 51172,
+      "name": "Pharmacie BLESSING",
+      "duty_group": "III",
+      "pdf_name": "Blessing",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 37937,
+      "name": "Pharmacie CHRIST VI",
+      "duty_group": "III",
+      "pdf_name": "Christvi",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 61,
+      "name": "Pharmacie CONCORDE",
+      "duty_group": "III",
+      "pdf_name": "Concorde",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 46,
+      "name": "Pharmacie COURA",
+      "duty_group": "III",
+      "pdf_name": "Coura",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18932,
+      "name": "Pharmacie DJIMBIA",
+      "duty_group": "III",
+      "pdf_name": "Djimbia",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 29,
+      "name": "Pharmacie DUNIA",
+      "duty_group": "III",
+      "pdf_name": "Dunia",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 17730,
+      "name": "Pharmacie FABERE",
+      "duty_group": "III",
+      "pdf_name": "Fabéré",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19090,
+      "name": "Pharmacie GALIAM",
+      "duty_group": "III",
+      "pdf_name": "Galiam",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 68,
+      "name": "Pharmacie GEORGETTE",
+      "duty_group": "III",
+      "pdf_name": "Georgette",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 134,
+      "name": "Pharmacie INDEPENDANCE",
+      "duty_group": "III",
+      "pdf_name": "Indépendance",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 486,
+      "name": "Pharmacie JEUNESSE",
+      "duty_group": "III",
+      "pdf_name": "Jeunesse",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 52910,
+      "name": "Pharmacie KALIFA TRAORE",
+      "duty_group": "III",
+      "pdf_name": "Kalifa Traore",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19175,
+      "name": "Pharmacie KAMIN",
+      "duty_group": "III",
+      "pdf_name": "Kamin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 77,
+      "name": "Pharmacie NAAB RAGA",
+      "duty_group": "III",
+      "pdf_name": "Naab Raga",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 79,
+      "name": "Pharmacie NAABA-KOOM",
+      "duty_group": "III",
+      "pdf_name": "Naaba-Koom",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 49,
+      "name": "Pharmacie NAGRIN",
+      "duty_group": "III",
+      "pdf_name": "Nagrin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 69391,
+      "name": "Pharmacie NAYALGBA",
+      "duty_group": "III",
+      "pdf_name": "Nayalgba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19141,
+      "name": "Pharmacie NONSIN",
+      "duty_group": "III",
+      "pdf_name": "Nonsin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 52,
+      "name": "Pharmacie PISSY",
+      "duty_group": "III",
+      "pdf_name": "Pissy",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 45400,
+      "name": "Pharmacie RENAISSANCE (Ex-St JULIEN)",
+      "duty_group": "III",
+      "pdf_name": "Renaissance",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 987,
+      "name": "Pharmacie SAABA",
+      "duty_group": "III",
+      "pdf_name": "Saaba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 60,
+      "name": "Pharmacie SACRE-COEUR",
+      "duty_group": "III",
+      "pdf_name": "Sacré Cœur",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 40,
+      "name": "Pharmacie SAINT LAZARE",
+      "duty_group": "III",
+      "pdf_name": "Saint Lazare",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 73487,
+      "name": "Pharmacie ST MICHEL",
+      "duty_group": "III",
+      "pdf_name": "Saint Michel",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 55908,
+      "name": "Pharmacie SENEVE",
+      "duty_group": "III",
+      "pdf_name": "Seneve",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 14,
+      "name": "Pharmacie TAOKO",
+      "duty_group": "III",
+      "pdf_name": "Taoko",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 13,
+      "name": "Pharmacie WAYALGHIN",
+      "duty_group": "III",
+      "pdf_name": "Wayalghin",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 55866,
+      "name": "Pharmacie WEND-DENDA",
+      "duty_group": "III",
+      "pdf_name": "Wend Denda",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19317,
+      "name": "Pharmacie YEMPABOU",
+      "duty_group": "III",
+      "pdf_name": "Yempabou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 35,
+      "name": "Pharmacie YENNENGA",
+      "duty_group": "III",
+      "pdf_name": "Yennenga",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 26,
+      "name": "Pharmacie ZONE 1",
+      "duty_group": "III",
+      "pdf_name": "Zone",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 17673,
+      "name": "Pharmacie ADAMA",
+      "duty_group": "IV",
+      "pdf_name": "Adama",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 71,
+      "name": "Pharmacie AMITIE MIYOUGOU",
+      "duty_group": "IV",
+      "pdf_name": "Amitié Miyougou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 65,
+      "name": "Pharmacie ANGELE",
+      "duty_group": "IV",
+      "pdf_name": "Angèle",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 18922,
+      "name": "Pharmacie BASSINKO",
+      "duty_group": "IV",
+      "pdf_name": "Bassinko",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 64485,
+      "name": "Pharmacie BEDJOU",
+      "duty_group": "IV",
+      "pdf_name": "Bedjou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 111,
+      "name": "Pharmacie BETHANIA",
+      "duty_group": "IV",
+      "pdf_name": "Bethania",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 59302,
+      "name": "Pharmacie CONGO BLANDINE",
+      "duty_group": "IV",
+      "pdf_name": "Blandine Congo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 90,
+      "name": "Pharmacie CIRCULAIRE SEDE",
+      "duty_group": "IV",
+      "pdf_name": "Circulaire Sède",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 93,
+      "name": "Pharmacie HIPPODROME",
+      "duty_group": "IV",
+      "pdf_name": "De l'Hippodrome",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 51254,
+      "name": "Pharmacie DES CITES",
+      "duty_group": "IV",
+      "pdf_name": "Des cités",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 133,
+      "name": "Pharmacie EL SHADDAI",
+      "duty_group": "IV",
+      "pdf_name": "El Shaddaï",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 5,
+      "name": "Pharmacie FRATERNITE",
+      "duty_group": "IV",
+      "pdf_name": "Fraternité",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 1064,
+      "name": "Pharmacie HADIM",
+      "duty_group": "IV",
+      "pdf_name": "Hamid",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 796,
+      "name": "Pharmacie HANAHIM",
+      "duty_group": "IV",
+      "pdf_name": "Hanahim",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 128,
+      "name": "Pharmacie HÔPITAL",
+      "duty_group": "IV",
+      "pdf_name": "Hôpital",
+      "match": "ambiguous",
+      "candidates": [
+        "Pharmacie HÔPITAL",
+        "Pharmacie HÔPITAL"
+      ],
+      "score": 1.0
+    },
+    {
+      "external_id": 15777,
+      "name": "Pharmacie IRIS",
+      "duty_group": "IV",
+      "pdf_name": "Iris",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 132,
+      "name": "Pharmacie KADIOGO",
+      "duty_group": "IV",
+      "pdf_name": "Kadiogo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 76,
+      "name": "Pharmacie KAWSAR",
+      "duty_group": "IV",
+      "pdf_name": "Kawsar",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 48329,
+      "name": "Pharmacie KOUMA",
+      "duty_group": "IV",
+      "pdf_name": "Kouma",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 57,
+      "name": "Pharmacie LA CROIX",
+      "duty_group": "IV",
+      "pdf_name": "La Croix",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 70,
+      "name": "Pharmacie LA ROCHE",
+      "duty_group": "IV",
+      "pdf_name": "La Roche",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 44,
+      "name": "Pharmacie LE ROCHER",
+      "duty_group": "IV",
+      "pdf_name": "Le Rocher",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 119,
+      "name": "Pharmacie LES GRÂCES",
+      "duty_group": "IV",
+      "pdf_name": "Les Grâces",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 108,
+      "name": "Pharmacie LOUIS PASTEUR",
+      "duty_group": "IV",
+      "pdf_name": "Louis Pasteur",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 102,
+      "name": "Pharmacie MISERICORDE",
+      "duty_group": "IV",
+      "pdf_name": "Miséricorde",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 6,
+      "name": "Pharmacie MUSEE",
+      "duty_group": "IV",
+      "pdf_name": "Musée",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 31,
+      "name": "Pharmacie NATILGE",
+      "duty_group": "IV",
+      "pdf_name": "Natilgé",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 54880,
+      "name": "Pharmacie NIOKO 1",
+      "duty_group": "IV",
+      "pdf_name": "Nioko I",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 66,
+      "name": "Pharmacie NONGUI",
+      "duty_group": "IV",
+      "pdf_name": "Nongui",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 40265,
+      "name": "Pharmacie OUEDRAOGO REMI",
+      "duty_group": "IV",
+      "pdf_name": "Ouédraogo Rémi",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 32600,
+      "name": "Pharmacie PINGDBA",
+      "duty_group": "IV",
+      "pdf_name": "Pingdba",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 19139,
+      "name": "Pharmacie PROVIDENCE",
+      "duty_group": "IV",
+      "pdf_name": "Providence",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 38914,
+      "name": "Pharmacie RIMA",
+      "duty_group": "IV",
+      "pdf_name": "Rima",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 56315,
+      "name": "Pharmacie RIMKIETA",
+      "duty_group": "IV",
+      "pdf_name": "Rimkièta",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 42,
+      "name": "Pharmacie SAHEL",
+      "duty_group": "IV",
+      "pdf_name": "Sahel",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 1166,
+      "name": "Pharmacie STE ODILE",
+      "duty_group": "IV",
+      "pdf_name": "Sainte Odile",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 73,
+      "name": "Pharmacie SIRA",
+      "duty_group": "IV",
+      "pdf_name": "Sira",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 37936,
+      "name": "Pharmacie SONDOGO",
+      "duty_group": "IV",
+      "pdf_name": "Sondogo",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 67174,
+      "name": "Pharmacie SŨ-MAASEM",
+      "duty_group": "IV",
+      "pdf_name": "Sü-Maasem",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 58,
+      "name": "Pharmacie UNITE",
+      "duty_group": "IV",
+      "pdf_name": "Unité",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 117,
+      "name": "Pharmacie VIEL",
+      "duty_group": "IV",
+      "pdf_name": "Vièl",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 36,
+      "name": "Pharmacie WEND KUUNI",
+      "duty_group": "IV",
+      "pdf_name": "Wend Kuuni",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 99,
+      "name": "Pharmacie WEND-YAM",
+      "duty_group": "IV",
+      "pdf_name": "Wend Yam",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 55743,
+      "name": "Pharmacie YAN-MAROU",
+      "duty_group": "IV",
+      "pdf_name": "Yan-marou",
+      "match": "exact",
+      "score": 1.0
+    },
+    {
+      "external_id": 97,
+      "name": "Pharmacie YENTEMA",
+      "duty_group": "IV",
+      "pdf_name": "Yentema",
+      "match": "exact",
+      "score": 1.0
+    }
+  ],
+  "unmatched_pdf": [
+    {
+      "pdf_name": "Avenir",
+      "duty_group": "I",
+      "key": "avenir"
+    },
+    {
+      "pdf_name": "Bang-Pooré",
+      "duty_group": "I",
+      "key": "bang poore"
+    },
+    {
+      "pdf_name": "Barkwende",
+      "duty_group": "I",
+      "key": "barkwende"
+    },
+    {
+      "pdf_name": "Des Apotres",
+      "duty_group": "I",
+      "key": "des apotres"
+    },
+    {
+      "pdf_name": "El Wanogo",
+      "duty_group": "I",
+      "key": "el wanogo"
+    },
+    {
+      "pdf_name": "Hosanna",
+      "duty_group": "I",
+      "key": "hosanna"
+    },
+    {
+      "pdf_name": "Keneya",
+      "duty_group": "I",
+      "key": "keneya"
+    },
+    {
+      "pdf_name": "Les champions",
+      "duty_group": "I",
+      "key": "les champions"
+    },
+    {
+      "pdf_name": "Liberté",
+      "duty_group": "I",
+      "key": "liberte"
+    },
+    {
+      "pdf_name": "Monderoué",
+      "duty_group": "I",
+      "key": "monderoue"
+    },
+    {
+      "pdf_name": "Neerwaya",
+      "duty_group": "I",
+      "key": "neerwaya"
+    },
+    {
+      "pdf_name": "Pelega",
+      "duty_group": "I",
+      "key": "pelega"
+    },
+    {
+      "pdf_name": "Rivage",
+      "duty_group": "I",
+      "key": "rivage"
+    },
+    {
+      "pdf_name": "Tengandogo",
+      "duty_group": "I",
+      "key": "tengandogo"
+    },
+    {
+      "pdf_name": "Wend La Laafi",
+      "duty_group": "I",
+      "key": "wend la laafi"
+    },
+    {
+      "pdf_name": "Adadoua",
+      "duty_group": "II",
+      "key": "adadoua"
+    },
+    {
+      "pdf_name": "Agora-Rood Wooko",
+      "duty_group": "II",
+      "key": "agora rood wooko"
+    },
+    {
+      "pdf_name": "Cité An 3",
+      "duty_group": "II",
+      "key": "cite an iii"
+    },
+    {
+      "pdf_name": "Denisa",
+      "duty_group": "II",
+      "key": "denisa"
+    },
+    {
+      "pdf_name": "Flayiri",
+      "duty_group": "II",
+      "key": "flayiri"
+    },
+    {
+      "pdf_name": "Jireh",
+      "duty_group": "II",
+      "key": "jireh"
+    },
+    {
+      "pdf_name": "Koumajer",
+      "duty_group": "II",
+      "key": "koumajer"
+    },
+    {
+      "pdf_name": "Neima",
+      "duty_group": "II",
+      "key": "neima"
+    },
+    {
+      "pdf_name": "Saint Joseph",
+      "duty_group": "II",
+      "key": "saint joseph"
+    },
+    {
+      "pdf_name": "Sainte Véronique",
+      "duty_group": "II",
+      "key": "ste veronique"
+    },
+    {
+      "pdf_name": "Sangoulé Lamizana",
+      "duty_group": "II",
+      "key": "sg lamizana"
+    },
+    {
+      "pdf_name": "Schifeyi",
+      "duty_group": "II",
+      "key": "schifeyi"
+    },
+    {
+      "pdf_name": "Sud",
+      "duty_group": "II",
+      "key": "sud"
+    },
+    {
+      "pdf_name": "Viim",
+      "duty_group": "II",
+      "key": "viim"
+    },
+    {
+      "pdf_name": "Wati",
+      "duty_group": "II",
+      "key": "wati"
+    },
+    {
+      "pdf_name": "Avé Maria",
+      "duty_group": "III",
+      "key": "ave marie"
+    },
+    {
+      "pdf_name": "Baraka",
+      "duty_group": "III",
+      "key": "baraka"
+    },
+    {
+      "pdf_name": "Carrefour",
+      "duty_group": "III",
+      "key": "carrefour"
+    },
+    {
+      "pdf_name": "Charis",
+      "duty_group": "III",
+      "key": "charis"
+    },
+    {
+      "pdf_name": "Djabal",
+      "duty_group": "III",
+      "key": "djabal"
+    },
+    {
+      "pdf_name": "Ecoles",
+      "duty_group": "III",
+      "key": "ecoles"
+    },
+    {
+      "pdf_name": "Hamamickely",
+      "duty_group": "III",
+      "key": "hamamickely"
+    },
+    {
+      "pdf_name": "Jizreel",
+      "duty_group": "III",
+      "key": "jizreel"
+    },
+    {
+      "pdf_name": "Kamboinsin",
+      "duty_group": "III",
+      "key": "kamboinsin"
+    },
+    {
+      "pdf_name": "Kilwin",
+      "duty_group": "III",
+      "key": "kilwin"
+    },
+    {
+      "pdf_name": "La famille",
+      "duty_group": "III",
+      "key": "la famille"
+    },
+    {
+      "pdf_name": "La Sainte Trinité",
+      "duty_group": "III",
+      "key": "la sainte trinite"
+    },
+    {
+      "pdf_name": "Marjean",
+      "duty_group": "III",
+      "key": "marjean"
+    },
+    {
+      "pdf_name": "Ninrwa",
+      "duty_group": "III",
+      "key": "ninrwa"
+    },
+    {
+      "pdf_name": "Noom-Wendé",
+      "duty_group": "III",
+      "key": "noom wende"
+    },
+    {
+      "pdf_name": "Pierre Tapsoba",
+      "duty_group": "III",
+      "key": "pierre tapsoba"
+    },
+    {
+      "pdf_name": "Santé-vitalité",
+      "duty_group": "III",
+      "key": "sante vitalite"
+    },
+    {
+      "pdf_name": "Savane",
+      "duty_group": "III",
+      "key": "savane"
+    },
+    {
+      "pdf_name": "Téranga",
+      "duty_group": "III",
+      "key": "teranga"
+    },
+    {
+      "pdf_name": "Tiyéle",
+      "duty_group": "III",
+      "key": "tiyele"
+    },
+    {
+      "pdf_name": "Zoungrana",
+      "duty_group": "III",
+      "key": "zoungrana"
+    },
+    {
+      "pdf_name": "1200 Logements",
+      "duty_group": "IV",
+      "key": "1200 logements"
+    },
+    {
+      "pdf_name": "Afiya",
+      "duty_group": "IV",
+      "key": "afiya"
+    },
+    {
+      "pdf_name": "Choukroullah",
+      "duty_group": "IV",
+      "key": "choukroullah"
+    },
+    {
+      "pdf_name": "De l'Alliance",
+      "duty_group": "IV",
+      "key": "de l alliance"
+    },
+    {
+      "pdf_name": "Diawara",
+      "duty_group": "IV",
+      "key": "diawara"
+    },
+    {
+      "pdf_name": "Espoir",
+      "duty_group": "IV",
+      "key": "espoir"
+    },
+    {
+      "pdf_name": "Gare",
+      "duty_group": "IV",
+      "key": "gare"
+    },
+    {
+      "pdf_name": "Gemme",
+      "duty_group": "IV",
+      "key": "gemme"
+    },
+    {
+      "pdf_name": "Hambila",
+      "duty_group": "IV",
+      "key": "hambila"
+    },
+    {
+      "pdf_name": "Jean Paul II",
+      "duty_group": "IV",
+      "key": "jean paul ii"
+    },
+    {
+      "pdf_name": "Kamalia",
+      "duty_group": "IV",
+      "key": "kamalia"
+    },
+    {
+      "pdf_name": "Lallé",
+      "duty_group": "IV",
+      "key": "lalle"
+    },
+    {
+      "pdf_name": "Latando",
+      "duty_group": "IV",
+      "key": "latando"
+    },
+    {
+      "pdf_name": "Maignon",
+      "duty_group": "IV",
+      "key": "maignon"
+    },
+    {
+      "pdf_name": "Principale",
+      "duty_group": "IV",
+      "key": "principale"
+    },
+    {
+      "pdf_name": "Somgandé",
+      "duty_group": "IV",
+      "key": "somgande"
+    },
+    {
+      "pdf_name": "Sotissé",
+      "duty_group": "IV",
+      "key": "sotisse"
+    },
+    {
+      "pdf_name": "Vénégré",
+      "duty_group": "IV",
+      "key": "venegre"
+    },
+    {
+      "pdf_name": "Vidal Bafa",
+      "duty_group": "IV",
+      "key": "vidal bafa"
+    },
+    {
+      "pdf_name": "Wend Zinkré",
+      "duty_group": "IV",
+      "key": "wend zinkre"
+    }
+  ],
+  "unmatched_db": [
+    {
+      "external_id": 1054,
+      "name": "Pharmacie AMINE"
+    },
+    {
+      "external_id": 1078,
+      "name": "Pharmacie AMIRBOUBA"
+    },
+    {
+      "external_id": 19145,
+      "name": "Pharmacie AOUDI"
+    },
+    {
+      "external_id": 1065,
+      "name": "Pharmacie AUDREY"
+    },
+    {
+      "external_id": 60452,
+      "name": "Pharmacie BADENYA"
+    },
+    {
+      "external_id": 1059,
+      "name": "Pharmacie BETHEL"
+    },
+    {
+      "external_id": 19111,
+      "name": "Pharmacie BOLIBANA"
+    },
+    {
+      "external_id": 1063,
+      "name": "Pharmacie BOULEVARD"
+    },
+    {
+      "external_id": 1083,
+      "name": "Pharmacie CHRIST ROI"
+    },
+    {
+      "external_id": 58625,
+      "name": "Pharmacie COLMA"
+    },
+    {
+      "external_id": 19287,
+      "name": "Pharmacie DINIE"
+    },
+    {
+      "external_id": 20036,
+      "name": "Pharmacie ESPERANCE"
+    },
+    {
+      "external_id": 1041,
+      "name": "Pharmacie FAAG-YONRE"
+    },
+    {
+      "external_id": 1039,
+      "name": "Pharmacie GALYS"
+    },
+    {
+      "external_id": 1037,
+      "name": "Pharmacie HABIB"
+    },
+    {
+      "external_id": 1061,
+      "name": "Pharmacie HARMONIE"
+    },
+    {
+      "external_id": 50305,
+      "name": "Pharmacie HAVVAH"
+    },
+    {
+      "external_id": 1055,
+      "name": "Pharmacie HÔPITAL"
+    },
+    {
+      "external_id": 1056,
+      "name": "Pharmacie JOLEAN"
+    },
+    {
+      "external_id": 1060,
+      "name": "Pharmacie KANTA"
+    },
+    {
+      "external_id": 1043,
+      "name": "Pharmacie KUILIG NOORE"
+    },
+    {
+      "external_id": 1040,
+      "name": "Pharmacie LAAFIA"
+    },
+    {
+      "external_id": 1529,
+      "name": "Pharmacie LAFIA"
+    },
+    {
+      "external_id": 19114,
+      "name": "Pharmacie LAKARI"
+    },
+    {
+      "external_id": 40064,
+      "name": "Pharmacie LAME"
+    },
+    {
+      "external_id": 68425,
+      "name": "Pharmacie LAMOUSSA DAVID"
+    },
+    {
+      "external_id": 67726,
+      "name": "Pharmacie LOBBO"
+    },
+    {
+      "external_id": 1077,
+      "name": "Pharmacie LUCIEN"
+    },
+    {
+      "external_id": 1081,
+      "name": "Pharmacie MEDINE"
+    },
+    {
+      "external_id": 1085,
+      "name": "Pharmacie MODERNE"
+    },
+    {
+      "external_id": 1527,
+      "name": "Pharmacie NAZINDI-GOUBA"
+    },
+    {
+      "external_id": 1067,
+      "name": "Pharmacie NAZOUNKI"
+    },
+    {
+      "external_id": 64180,
+      "name": "Pharmacie OULAGNAN TRAORE"
+    },
+    {
+      "external_id": 1342,
+      "name": "Pharmacie REMEDIS"
+    },
+    {
+      "external_id": 19113,
+      "name": "Pharmacie SAKABY"
+    },
+    {
+      "external_id": 58015,
+      "name": "Pharmacie SAMBA"
+    },
+    {
+      "external_id": 19110,
+      "name": "Pharmacie SANITAS"
+    },
+    {
+      "external_id": 1079,
+      "name": "Pharmacie SIBIRI"
+    },
+    {
+      "external_id": 1098,
+      "name": "Pharmacie SIFOMA"
+    },
+    {
+      "external_id": 60297,
+      "name": "Pharmacie SISAOLE"
+    },
+    {
+      "external_id": 1082,
+      "name": "Pharmacie SIYARA"
+    },
+    {
+      "external_id": 1525,
+      "name": "Pharmacie SOLIDARITE"
+    },
+    {
+      "external_id": 1080,
+      "name": "Pharmacie SOULIGNE"
+    },
+    {
+      "external_id": 50951,
+      "name": "Pharmacie STE HENRIETTE"
+    },
+    {
+      "external_id": 1044,
+      "name": "Pharmacie STE PHILOMENE"
+    },
+    {
+      "external_id": 19249,
+      "name": "Pharmacie SYA"
+    },
+    {
+      "external_id": 19108,
+      "name": "Pharmacie TENE"
+    },
+    {
+      "external_id": 19289,
+      "name": "Pharmacie VITALIS"
+    },
+    {
+      "external_id": 1341,
+      "name": "Pharmacie ZOE"
+    },
+    {
+      "external_id": 1042,
+      "name": "Pharmacie ZOODO"
+    }
+  ],
+  "stats": {
+    "pdf_names": 239,
+    "matched": 168,
+    "unmatched_pdf": 71,
+    "unmatched_db": 50,
+    "rotations": 53,
+    "active_group": "I",
+    "on_duty_today": 42
+  }
+}

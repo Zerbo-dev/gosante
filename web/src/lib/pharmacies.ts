@@ -64,14 +64,33 @@ export function getPharmacyOpenState(
   return { isOpen: false, label: "Fermée", detail: DEFAULT_HOURS };
 }
 
+export type PharmaciesResponse = {
+  pharmacies: Pharmacy[];
+  dutyGroups?: string[];
+  activeDutyGroups?: string[];
+  dutySource?: "rotations" | "legacy";
+  timezone?: string;
+};
+
 export async function fetchPharmacies(): Promise<Pharmacy[]> {
+  const data = await fetchPharmaciesMeta();
+  return data.pharmacies;
+}
+
+export async function fetchPharmaciesMeta(): Promise<PharmaciesResponse> {
   const res = await fetch("/api/pharmacies", { cache: "no-store" });
   if (!res.ok) {
     const data = await res.json().catch(() => ({}));
     throw new Error(data.error ?? "Impossible de charger les pharmacies");
   }
   const data = await res.json();
-  return (data.pharmacies ?? []) as Pharmacy[];
+  return {
+    pharmacies: (data.pharmacies ?? []) as Pharmacy[],
+    dutyGroups: data.dutyGroups ?? [],
+    activeDutyGroups: data.activeDutyGroups ?? [],
+    dutySource: data.dutySource,
+    timezone: data.timezone,
+  };
 }
 
 export function sortPharmaciesByDistance(
