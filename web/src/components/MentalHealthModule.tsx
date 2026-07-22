@@ -157,27 +157,38 @@ export function MentalHealthModule() {
         return;
       }
       setUserId(user.id);
-      const [{ data: journalData }, { data: vaultData }, { data: threadData }] = await Promise.all([
+      const journalQ = () =>
         supabase
           .from("mental_health_journal")
           .select("*")
           .eq("user_id", user.id)
-          .is("deleted_at", null)
           .order("created_at", { ascending: false })
-          .limit(60),
-        supabase
-          .from("mental_journal_vaults")
-          .select("salt, verifier, verifier_iv, iterations")
-          .eq("user_id", user.id)
-          .maybeSingle(),
+          .limit(60);
+      const threadsQ = () =>
         supabase
           .from("mental_chat_threads")
           .select("id, title, updated_at")
           .eq("user_id", user.id)
-          .is("deleted_at", null)
           .order("updated_at", { ascending: false })
-          .limit(40),
-      ]);
+          .limit(40);
+
+      let journalRes = await journalQ().is("deleted_at", null);
+      if (journalRes.error && /deleted_at|does not exist/i.test(journalRes.error.message)) {
+        journalRes = await journalQ();
+      }
+      let threadRes = await threadsQ().is("deleted_at", null);
+      if (threadRes.error && /deleted_at|does not exist/i.test(threadRes.error.message)) {
+        threadRes = await threadsQ();
+      }
+
+      const { data: vaultData } = await supabase
+        .from("mental_journal_vaults")
+        .select("salt, verifier, verifier_iv, iterations")
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      const journalData = journalRes.data;
+      const threadData = threadRes.data;
       setEntries((journalData as JournalEntry[]) ?? []);
       setVault((vaultData as Vault | null) ?? null);
       setThreads((threadData as ChatThread[]) ?? []);

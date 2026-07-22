@@ -160,16 +160,23 @@ export function MedicalRecordModule() {
       }
       setUserId(user.id);
 
-      const [{ data: profile }, { data: rec }, { data: hist }] = await Promise.all([
-        supabase.from("profiles").select("full_name, phone").eq("id", user.id).single(),
-        supabase.from("medical_records").select("*").eq("user_id", user.id).maybeSingle(),
+      const histQuery = () =>
         supabase
           .from("medical_history_entries")
           .select("*")
           .eq("user_id", user.id)
-          .is("deleted_at", null)
-          .order("entry_date", { ascending: false }),
+          .order("entry_date", { ascending: false });
+
+      let histRes = await histQuery().is("deleted_at", null);
+      if (histRes.error && /deleted_at|does not exist/i.test(histRes.error.message)) {
+        histRes = await histQuery();
+      }
+
+      const [{ data: profile }, { data: rec }] = await Promise.all([
+        supabase.from("profiles").select("full_name, phone").eq("id", user.id).single(),
+        supabase.from("medical_records").select("*").eq("user_id", user.id).maybeSingle(),
       ]);
+      const hist = histRes.data;
 
       if (profile) setPatient({ fullName: profile.full_name, phone: profile.phone });
       if (rec) {

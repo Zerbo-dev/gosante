@@ -97,6 +97,16 @@ export async function POST(request: NextRequest) {
   }
 
   if (error) {
+    const msg = error.message || "";
+    if (/does not exist|n'existe pas|42703|PGRST204/i.test(msg)) {
+      return NextResponse.json(
+        {
+          error:
+            "Migration soft-delete manquante. Exécutez supabase/migrations/019_patient_soft_delete.sql dans le SQL Editor Supabase.",
+        },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 

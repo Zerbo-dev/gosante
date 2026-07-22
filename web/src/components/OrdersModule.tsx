@@ -38,13 +38,22 @@ export function OrdersModule() {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      const { data } = await supabase
+      const select =
+        "*, pharmacies(name, city, latitude, longitude), order_items(medication_dci, quantity, unit_price)";
+      let { data, error } = await supabase
         .from("orders")
-        .select(
-          "*, pharmacies(name, city, latitude, longitude), order_items(medication_dci, quantity, unit_price)"
-        )
+        .select(select)
         .is("patient_deleted_at", null)
         .order("created_at", { ascending: false });
+      if (error && /patient_deleted_at|does not exist/i.test(error.message)) {
+        ({ data, error } = await supabase
+          .from("orders")
+          .select(select)
+          .order("created_at", { ascending: false }));
+      }
+      if (error) {
+        console.error(error.message);
+      }
 
       const list = (data as OrderRow[]) ?? [];
       const orderIds = list.map((o) => o.id);
