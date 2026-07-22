@@ -71,48 +71,66 @@ function serializeCandidate(candidate: RTCIceCandidate): RTCIceCandidateInit {
 }
 
 /**
- * Safari / iOS est strict sur les contraintes vidéo.
- * On tente une qualité idéale, puis un repli progressif.
+ * Safari / iOS : contraintes audio trop agressives (surtout autoGainControl)
+ * provoquent souvent des crissements. On reste simple, puis on affine.
  */
 async function acquireMedia(startWithVideoMuted: boolean): Promise<MediaStream> {
-  const audioConstraints: MediaTrackConstraints = {
-    echoCancellation: true,
-    noiseSuppression: true,
-    autoGainControl: true,
-  };
+  const isSafari =
+    typeof navigator !== "undefined" &&
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-  if (startWithVideoMuted) {
-    return navigator.mediaDevices.getUserMedia({
+  // Sur Safari : audio minimal (l'AEC navigateur suffit mieux que la pile AGC+NS)
+  const audioConstraints: boolean | MediaTrackConstraints = isSafari
+    ? true
+    : {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: false,
+      };
+
+  async function withAudio(
+    video: boolean | MediaTrackConstraints
+  ): Promise<MediaStream> {
+    const stream = await navigator.mediaDevices.getUserMedia({
       audio: audioConstraints,
-      video: false,
+      video,
     });
+    // Affiner après coup si le navigateur le permet (sans bloquer)
+    for (const track of stream.getAudioTracks()) {
+      try {
+        await track.applyConstraints({
+          echoCancellation: true,
+          noiseSuppression: isSafari ? false : true,
+          autoGainControl: false,
+        });
+      } catch {
+        /* contraintes non supportées */
+      }
+    }
+    return stream;
   }
 
-  const videoAttempts: MediaTrackConstraints[] = [
-    { facingMode: "user", width: { ideal: 1280 }, height: { ideal: 720 } },
+  if (startWithVideoMuted) {
+    return withAudio(false);
+  }
+
+  const videoAttempts: Array<boolean | MediaTrackConstraints> = [
     { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } },
     { facingMode: "user" },
-    true as unknown as MediaTrackConstraints,
+    true,
   ];
 
   let lastError: unknown;
   for (const video of videoAttempts) {
     try {
-      return await navigator.mediaDevices.getUserMedia({
-        audio: audioConstraints,
-        video: video === (true as unknown as MediaTrackConstraints) ? true : video,
-      });
+      return await withAudio(video);
     } catch (e) {
       lastError = e;
     }
   }
 
-  // Dernier recours : audio seul (mieux qu'un échec total sur iPhone)
   try {
-    return await navigator.mediaDevices.getUserMedia({
-      audio: audioConstraints,
-      video: false,
-    });
+    return await withAudio(false);
   } catch {
     throw lastError instanceof Error
       ? lastError
@@ -176,6 +194,24 @@ export function VisioRoom({
     return () => document.removeEventListener("fullscreenchange", onChange);
   }, []);
 
+  // Après l'écran de démarrage, le <video> local n'existe qu'au rendu suivant :
+  // on y rattache le flux ici (sinon aperçu local vide sur Apple / partout).
+  useEffect(() => {
+    if (!mediaReady) return;
+    const el = localVideo.current;
+    const stream = localStreamRef.current;
+    if (!el || !stream) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    el.volume = 0;
+    el.setAttribute("playsinline", "true");
+    el.setAttribute("webkit-playsinline", "true");
+    if (el.srcObject !== stream) {
+      el.srcObject = stream;
+    }
+    void el.play().catch(() => {});
+  }, [mediaReady, camOn]);
+
   function toggleFullscreen() {
     const el = containerRef.current;
     if (!el) return;
@@ -207,15 +243,20 @@ export function VisioRoom({
     if (!el) return;
     el.setAttribute("playsinline", "true");
     el.setAttribute("webkit-playsinline", "true");
+    // Ne jamais laisser le flux distant démarrer en boucle de play() concurrente
+    if (!el.paused && !el.muted && el.srcObject) {
+      setNeedsTap(false);
+      return;
+    }
     el.muted = false;
-    el.play()
-      .then(() => setNeedsTap(false))
-      .catch(() => {
-        // Autoplay avec son bloqué (Safari/iOS) : muet + bouton
+    const p = el.play();
+    if (p && typeof p.then === "function") {
+      p.then(() => setNeedsTap(false)).catch(() => {
         el.muted = true;
         el.play().catch(() => {});
         setNeedsTap(true);
       });
+    }
   }, []);
 
   const destroyPc = useCallback(() => {
@@ -278,13 +319,26 @@ export function VisioRoom({
     };
 
     pc.ontrack = (e) => {
-      if (remoteVideo.current) {
-        const stream = e.streams[0] ?? new MediaStream([e.track]);
-        if (remoteVideo.current.srcObject !== stream) {
-          remoteVideo.current.srcObject = stream;
+      const el = remoteVideo.current;
+      if (!el) return;
+
+      // Safari peut envoyer audio et vidéo en événements séparés :
+      // on accumule les pistes sur un seul MediaStream (évite coupures / grésillements).
+      if (e.streams[0]) {
+        if (el.srcObject !== e.streams[0]) {
+          el.srcObject = e.streams[0];
         }
-        playRemote();
+      } else {
+        let remote = el.srcObject as MediaStream | null;
+        if (!(remote instanceof MediaStream)) {
+          remote = new MediaStream();
+          el.srcObject = remote;
+        }
+        if (!remote.getTracks().some((t) => t.id === e.track.id)) {
+          remote.addTrack(e.track);
+        }
       }
+      playRemote();
       setConnected(true);
       setStatus("Connecté");
     };
@@ -388,12 +442,7 @@ export function VisioRoom({
       setStatus("Accès caméra / micro…");
       const stream = await acquireMedia(startWithVideoMuted);
       localStreamRef.current = stream;
-      if (localVideo.current) {
-        localVideo.current.srcObject = stream;
-        localVideo.current.setAttribute("playsinline", "true");
-        localVideo.current.setAttribute("webkit-playsinline", "true");
-        await localVideo.current.play().catch(() => {});
-      }
+      // Le <video> local n'est monté qu'après setMediaReady — rattachement via useEffect
       const hasVideo = stream.getVideoTracks().length > 0;
       setCamOn(hasVideo && !startWithVideoMuted);
       if (!hasVideo && !startWithVideoMuted) {
