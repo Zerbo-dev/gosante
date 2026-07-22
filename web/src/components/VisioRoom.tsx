@@ -805,7 +805,6 @@ export function VisioRoom({
               autoPlay
               playsInline
               muted
-              defaultMuted
               className={`h-full w-full scale-x-[-1] object-cover ${camOn ? "" : "hidden"}`}
             />
             {!camOn && (
