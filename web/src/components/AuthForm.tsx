@@ -40,9 +40,9 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const [info, setInfo] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const supabase = createClient();
 
   async function finishLogin() {
+    const supabase = createClient();
     const {
       data: { session },
     } = await supabase.auth.getSession();
@@ -63,6 +63,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     setInfo(null);
 
     try {
+      const supabase = createClient();
       if (mode === "register" && !consent) {
         setError("Vous devez accepter la politique de confidentialité.");
         setLoading(false);
