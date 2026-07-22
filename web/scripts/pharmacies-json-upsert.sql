@@ -1,0 +1,2226 @@
+WITH src AS (
+  SELECT * FROM jsonb_to_recordset($PHARMACIES_JSON$
+[
+  {
+    "external_id": 17673,
+    "name": "Pharmacie ADAMA",
+    "address": "En face du Marché de Pissy non loin de la Caisse Populaire",
+    "city": "Ouagadougou",
+    "phone": "+226 62 33 77 77",
+    "latitude": 12.336,
+    "longitude": -1.568,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 51,
+    "name": "Pharmacie AEROPORT",
+    "address": "Face à l’ASECNA à 500m de l’Aeroport International de Ouagadougou",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 42 22",
+    "latitude": 12.351,
+    "longitude": -1.521,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 104,
+    "name": "Pharmacie AIMEVO",
+    "address": "Situé à côté de l'ONEA de Karpalla",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 63 99",
+    "latitude": 12.339,
+    "longitude": -1.48,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 82,
+    "name": "Pharmacie AMARO",
+    "address": "Av. du Kadiogo Gounghin Petit Paris entre le service passeport et le pont Kadiogo",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 33 28",
+    "latitude": 12.361,
+    "longitude": -1.54,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 74796,
+    "name": "Pharmacie AMINA",
+    "address": "Située à Wemtenga, sur le même alignement que le maquis YING YANG",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 76 65",
+    "latitude": 12.37,
+    "longitude": -1.484,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1054,
+    "name": "Pharmacie AMINE",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 19 97",
+    "latitude": 11.199,
+    "longitude": -4.323,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1078,
+    "name": "Pharmacie AMIRBOUBA",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 98 27 95",
+    "latitude": 11.205,
+    "longitude": -4.311,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 71,
+    "name": "Pharmacie AMITIE MIYOUGOU",
+    "address": "Boulevard de la circulaire, sect. 25 Cissin, à 200m du marché de Paagla yiri",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 52 36",
+    "latitude": 12.335,
+    "longitude": -1.535,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 65,
+    "name": "Pharmacie ANGELE",
+    "address": "Tampouy côté sud du Centre Médical Paul VI, face au monument des Martyrs.",
+    "city": "Ouagadougou",
+    "phone": "+226 25 35 07 17",
+    "latitude": 12.39,
+    "longitude": -1.563,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19145,
+    "name": "Pharmacie AOUDI",
+    "address": "CENTRE - VILLE SECTEUR 6",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 08 50",
+    "latitude": 11.163,
+    "longitude": -4.292,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 94,
+    "name": "Pharmacie AR-RAHMA",
+    "address": "Av. Yatenga à Tampouy, face à la Caisse Populaire",
+    "city": "Ouagadougou",
+    "phone": "+226 25 35 09 86",
+    "latitude": 12.39,
+    "longitude": -1.574,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19081,
+    "name": "Pharmacie ARCHANGES",
+    "address": "Située à Sondogo, OUAGADOUGOU",
+    "city": "Ouagadougou",
+    "phone": "+226 79 20 01 83",
+    "latitude": 12.33184289,
+    "longitude": -1.58468243,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 18918,
+    "name": "Pharmacie ARZOUMA",
+    "address": "Quartier Pissy, à 100m de la clinique du Plateau, non loin de la salle de ciné de Pissy",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 01 53",
+    "latitude": 12.333,
+    "longitude": -1.575,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 58014,
+    "name": "Pharmacie AUBE NOUVELLE",
+    "address": "Située à côté du CSPS de Sarfalao",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 78 78",
+    "latitude": 11.159,
+    "longitude": -4.269,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1065,
+    "name": "Pharmacie AUDREY",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 44 69",
+    "latitude": 11.1668502,
+    "longitude": -4.2420372,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 47,
+    "name": "Pharmacie AUGUSTINE",
+    "address": "Sise à Ouaga 2000 à environ 300m de l’échangeur en partance vers le monument des martyres",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 61 00",
+    "latitude": 12.326,
+    "longitude": -1.503,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 67352,
+    "name": "Pharmacie BAANI",
+    "address": "Arrondissement 12, Secteur 55, quartier Kossyam à 300m au nord de la colline de Tanwaka",
+    "city": "Ouagadougou",
+    "phone": "+226 77 52 00 36",
+    "latitude": 12.271,
+    "longitude": -1.49,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 60452,
+    "name": "Pharmacie BADENYA",
+    "address": "Bobo 2010, côté nord mosquée d'Hadja, marché du soir et face à la station super oil",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 78 95",
+    "latitude": 11.237,
+    "longitude": -4.302,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 112,
+    "name": "Pharmacie BALKUY",
+    "address": "Route de Pô, non loin de la Station Total",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 51 36",
+    "latitude": 12.31,
+    "longitude": -1.482,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 18920,
+    "name": "Pharmacie BAO NEERE",
+    "address": "A Rimkiéta, non loin du marché de Songpélsé",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 88 88",
+    "latitude": 12.374,
+    "longitude": -1.586,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 67,
+    "name": "Pharmacie BAOWENDSOM",
+    "address": "Tampouy sur le nouveau goudron du collège Notre Dame de l'Espérance non loin de \"La Roche\"",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 44 99",
+    "latitude": 12.404,
+    "longitude": -1.577,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 18922,
+    "name": "Pharmacie BASSINKO",
+    "address": "A Rimkiéta, non loin du marché de Songpélsé",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 71 50",
+    "latitude": 12.389,
+    "longitude": -1.635,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 48,
+    "name": "Pharmacie BEATITUDES",
+    "address": "Blvd. France-Afrique Ouaga 2000 en face de la cite Azimo",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 47 11",
+    "latitude": 12.308,
+    "longitude": -1.529,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 64485,
+    "name": "Pharmacie BEDJOU",
+    "address": "Située en face du CSPS du secteur 51, non loin du Château d'eau ONEA de Karpalla",
+    "city": "Ouagadougou",
+    "phone": "+226 25 47 58 25",
+    "latitude": 12.344,
+    "longitude": -1.48,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 18923,
+    "name": "Pharmacie BELLE VILLE",
+    "address": "Route de Komsilga / BRAFASO / 75e Anniversaire AD",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 84 14",
+    "latitude": 12.308,
+    "longitude": -1.558,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 115,
+    "name": "Pharmacie BENAIA",
+    "address": "Katre-yaare ex secteur 29",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 28 30",
+    "latitude": 12.35,
+    "longitude": -1.479,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 111,
+    "name": "Pharmacie BETHANIA",
+    "address": "Av.Oumarou KANAZOE coté Est CBC",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 31 41",
+    "latitude": 12.364,
+    "longitude": -1.534,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1059,
+    "name": "Pharmacie BETHEL",
+    "address": "639,RUE DR KAMBOU,SECTEUR 21,COLSAMA",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 37 59",
+    "latitude": 11.184,
+    "longitude": -4.321,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 51172,
+    "name": "Pharmacie BLESSING",
+    "address": "Belle ville à 1km du rond de la transition sur le goudron allant à BRAFASO",
+    "city": "Ouagadougou",
+    "phone": "+226 01 75 99 75",
+    "latitude": 12.282,
+    "longitude": -1.579,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19111,
+    "name": "Pharmacie BOLIBANA",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 70 72 83 07",
+    "latitude": 11.242,
+    "longitude": -4.287,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 960,
+    "name": "Pharmacie BONHEUR",
+    "address": "Située à Bonheur ville",
+    "city": "Ouagadougou",
+    "phone": "+226 63 73 81 81",
+    "latitude": 12.314,
+    "longitude": -1.555,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1063,
+    "name": "Pharmacie BOULEVARD",
+    "address": "Sur le boulevard, collé à l'Hôtel Tounouma City",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 20 93",
+    "latitude": 11.184,
+    "longitude": -4.286,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 91,
+    "name": "Pharmacie BOULMIOUGOU",
+    "address": "Arrdt n°6, Sect 27, 166 rue de Boassa, Pissy à 200m du Complexe Scolaire Sainte-Famille",
+    "city": "Ouagadougou",
+    "phone": "+226 25 43 12 68",
+    "latitude": 12.335,
+    "longitude": -1.58,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 27,
+    "name": "Pharmacie CAMILLE",
+    "address": "Av. Charles De Gaule - Hôtel des \u001fnances de Dassasgho",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 61 27",
+    "latitude": 12.376,
+    "longitude": -1.479,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 118,
+    "name": "Pharmacie CATHÉDRALE",
+    "address": "38, Av de la cathédrale, coté Ouest de la cathédrale, face à la station TOTAL",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 28 07",
+    "latitude": 12.363,
+    "longitude": -1.527,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 81,
+    "name": "Pharmacie CENTRE",
+    "address": "460, Av. de la nation collée à Telecel siège",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 16 60",
+    "latitude": 12.3702664,
+    "longitude": -1.5244474,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1083,
+    "name": "Pharmacie CHRIST ROI",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 58 53",
+    "latitude": 11.177,
+    "longitude": -4.248,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 37937,
+    "name": "Pharmacie CHRIST VI",
+    "address": "Située devant le marché de bétail de Tanghin",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 59 59",
+    "latitude": 12.392,
+    "longitude": -1.536,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 90,
+    "name": "Pharmacie CIRCULAIRE SEDE",
+    "address": "ex Sect. 15 face à la Station TOTAL Ouaga-inter",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 44 91",
+    "latitude": 12.333,
+    "longitude": -1.516,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 58625,
+    "name": "Pharmacie COLMA",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 17 02",
+    "latitude": 11.201,
+    "longitude": -4.298,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 61,
+    "name": "Pharmacie CONCORDE",
+    "address": "Av. Kwame N'krumah, au carrefour de Zabre Daaga",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 29 49",
+    "latitude": 12.366,
+    "longitude": -1.519,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 59302,
+    "name": "Pharmacie CONGO BLANDINE",
+    "address": "Située au quartier belle ville secteur 28 sur le goudron de wapassi non loin de la clinique YAAB-YIRI",
+    "city": "Ouagadougou",
+    "phone": "+226 50 65 66 31",
+    "latitude": 12.31,
+    "longitude": -1.57,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 46,
+    "name": "Pharmacie COURA",
+    "address": "200m côté ouest du rond-point des Droits Humains",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 83 90",
+    "latitude": 12.327,
+    "longitude": -1.519,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 18928,
+    "name": "Pharmacie CRYSTAL",
+    "address": "Face à la nouvelle Mairie de l’Arrdt 9 ; vers Centre  Medical DON ORIONE, sect 38\"",
+    "city": "Ouagadougou",
+    "phone": "+226 60 46 08 08",
+    "latitude": 12.42,
+    "longitude": -1.559,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 18929,
+    "name": "Pharmacie DANOUMA",
+    "address": "300m avant le rond-point de la transition en partant à Komsilga, à gauche",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 55 54",
+    "latitude": 12.297,
+    "longitude": -1.565,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 126,
+    "name": "Pharmacie DAPOYA",
+    "address": "Dapoya",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 84 31",
+    "latitude": 12.38,
+    "longitude": -1.523,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 7,
+    "name": "Pharmacie DELWINDE",
+    "address": "Sect. 42 de l'Arrdt. 10, à  700m de l'échangeur de l’EST (Kossodo) RN3",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 72 80",
+    "latitude": 12.401,
+    "longitude": -1.472,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 51254,
+    "name": "Pharmacie DES CITES",
+    "address": "Situé à Bassinko, sur le nouveau goudron allant à la zone des cités",
+    "city": "Ouagadougou",
+    "phone": "+226 73 92 97 02",
+    "latitude": 12.416,
+    "longitude": -1.64,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 109,
+    "name": "Pharmacie DESA",
+    "address": "Côté Hôtel Ricardo (Tanghin)",
+    "city": "Ouagadougou",
+    "phone": "+226 25 47 50 50",
+    "latitude": 12.391,
+    "longitude": -1.524,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 41,
+    "name": "Pharmacie DIABY",
+    "address": "A côté du laboratoire du Centre à Koulouba",
+    "city": "Ouagadougou",
+    "phone": "+226 25 33 50 00",
+    "latitude": 12.3654022,
+    "longitude": -1.5163808,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19287,
+    "name": "Pharmacie DINIE",
+    "address": "Sortie Banfora, kuadeni, Bobo-Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 56 89 89 12",
+    "latitude": 11.1344723,
+    "longitude": -4.3200125,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 50443,
+    "name": "Pharmacie DIVINE",
+    "address": "Située à KILWIN, sur la route menant à Marcoussi",
+    "city": "Ouagadougou",
+    "phone": "+226 69 00 07 77",
+    "latitude": 12.398,
+    "longitude": -1.593,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 18932,
+    "name": "Pharmacie DJIMBIA",
+    "address": "400m après le rond-point du Rotary, Tanghin",
+    "city": "Ouagadougou",
+    "phone": "+226 78 83 62 74",
+    "latitude": 12.401,
+    "longitude": -1.514,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 43,
+    "name": "Pharmacie DOMINIQUE KABORE",
+    "address": "200 mètres du rond-point de la Pa\u001ee d’oie, sur le blvd des Martyrs (ou blvd France - Afrique)",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 48 84",
+    "latitude": 12.33,
+    "longitude": -1.526,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 29,
+    "name": "Pharmacie DUNIA",
+    "address": "Avenue des Arts/ face au rond-point des Artistes ex sect. 14, 1200 logts",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 20 51",
+    "latitude": 12.359,
+    "longitude": -1.495,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 133,
+    "name": "Pharmacie EL SHADDAI",
+    "address": "Non loin du pont Anayele",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 00 02",
+    "latitude": 12.414,
+    "longitude": -1.463,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 110,
+    "name": "Pharmacie ELITE",
+    "address": "Avenue Yennega route de Yagma",
+    "city": "Ouagadougou",
+    "phone": "+226 71 68 45 55",
+    "latitude": 12.398,
+    "longitude": -1.613,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 20036,
+    "name": "Pharmacie ESPERANCE",
+    "address": "02 BP 1804 BOBO-DIOULASSO 02",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 47 17",
+    "latitude": 11.189,
+    "longitude": -4.27,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1041,
+    "name": "Pharmacie FAAG-YONRE",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 02 30",
+    "latitude": 12.25,
+    "longitude": -2.363,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 17730,
+    "name": "Pharmacie FABERE",
+    "address": "Sis à Tampouy, à 200m du complexe scolaire la sagesse sur la voie du collège Avé Maria en Direction du château d'eau de l'ONEA",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 05 75",
+    "latitude": 12.413,
+    "longitude": -1.571,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 59,
+    "name": "Pharmacie FASO",
+    "address": "Blvd France - Afrique à 300m de l’agence BOA France Afrique, Pa\u001fe-d’oie",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 19 29",
+    "latitude": 12.322198,
+    "longitude": -1.5280526,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 5,
+    "name": "Pharmacie FRATERNITE",
+    "address": "100m de ENAREF, côté ECOBANK",
+    "city": "Ouagadougou",
+    "phone": "+226 78 83 63 98",
+    "latitude": 12.39,
+    "longitude": -1.482,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19090,
+    "name": "Pharmacie GALIAM",
+    "address": "Tampouy, route de la mairie de Sig-Nonghin, non loin du rond point de la Cité AZIMO",
+    "city": "Ouagadougou",
+    "phone": "+226 25 65 31 65",
+    "latitude": 12.4,
+    "longitude": -1.566,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1039,
+    "name": "Pharmacie GALYS",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 05 07",
+    "latitude": 12.254,
+    "longitude": -2.383,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 68,
+    "name": "Pharmacie GEORGETTE",
+    "address": "Bassinko, route de Ouahigouya, à côté de la boulangerie Baraka",
+    "city": "Ouagadougou",
+    "phone": "+226 25 50 05 28",
+    "latitude": 12.41,
+    "longitude": -1.632,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 69143,
+    "name": "Pharmacie GOVA",
+    "address": "Située au pied de l'échangeur du Nord en venant de Tanghin",
+    "city": "Ouagadougou",
+    "phone": "+226 74 44 42 09",
+    "latitude": 12.392,
+    "longitude": -1.551,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 63489,
+    "name": "Pharmacie GUESWENDE",
+    "address": "Située à la Zone 1, entre le Lycée Privé Bangré Yiguia et le feu tricolore de la Maison de la femme sur le boulevard des Tensoba (ex-circulaire) non loin du bas-fonds aménagé",
+    "city": "Ouagadougou",
+    "phone": "+226 75 21 20 00",
+    "latitude": 12.363008,
+    "longitude": -1.478586,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 55958,
+    "name": "Pharmacie GUUDUMA",
+    "address": "Situé à Karpalla, sur le nouveau goudron allant de Saaba à Ouaga 2000",
+    "city": "Ouagadougou",
+    "phone": "+226 25 46 54 09",
+    "latitude": 12.331,
+    "longitude": -1.485,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1037,
+    "name": "Pharmacie HABIB",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 70 00 45 99",
+    "latitude": 12.253,
+    "longitude": -2.351,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1064,
+    "name": "Pharmacie HADIM",
+    "address": "",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 98 42 00",
+    "latitude": 11.178,
+    "longitude": -4.273,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 72,
+    "name": "Pharmacie HAMDALAYE",
+    "address": "Quartier Hamdalaye près du marché du 10 Yaar",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 36 94",
+    "latitude": 12.375,
+    "longitude": -1.551,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 796,
+    "name": "Pharmacie HANAHIM",
+    "address": "Bendogo",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 54 38",
+    "latitude": 12.396,
+    "longitude": -1.454,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 48638,
+    "name": "Pharmacie HANNIEL",
+    "address": "Saaba",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 60 20",
+    "latitude": 12.38,
+    "longitude": -1.452,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1061,
+    "name": "Pharmacie HARMONIE",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 07 17",
+    "latitude": 11.158,
+    "longitude": -4.321,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 50305,
+    "name": "Pharmacie HAVVAH",
+    "address": "BOBO",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 75 98",
+    "latitude": 11.165,
+    "longitude": -4.305,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 93,
+    "name": "Pharmacie HIPPODROME",
+    "address": "116 boulevard Tensoba Bugum, côté est de l’hippodrome de Nonsin",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 02 32",
+    "latitude": 12.376,
+    "longitude": -1.557,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 10,
+    "name": "Pharmacie HOPE",
+    "address": "Route de fada, Nioko 1, Saaba en allant vers la Consolatrice",
+    "city": "Ouagadougou",
+    "phone": "+226 71 14 22 22",
+    "latitude": 12.405,
+    "longitude": -1.432,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 128,
+    "name": "Pharmacie HÔPITAL",
+    "address": "A côté de l'hôpital Yalgado OUEDRAOGO",
+    "city": "Ouagadougou",
+    "phone": "+226 25 30 66 41",
+    "latitude": 12.382,
+    "longitude": -1.509,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1055,
+    "name": "Pharmacie HÔPITAL",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 98 37 47",
+    "latitude": 11.169,
+    "longitude": -4.303,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19551,
+    "name": "Pharmacie HORIZON",
+    "address": "Situé sur le goudron en face de Palace Hôtel, non loin de IST Ouaga 2000 I",
+    "city": "Ouagadougou",
+    "phone": "+226 73 17 06 06",
+    "latitude": 12.311,
+    "longitude": -1.545,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 134,
+    "name": "Pharmacie INDEPENDANCE",
+    "address": "Ouaga 2000, sur l'avenue de l'Ex-Joly Hotel, Actuel Zind-Naaba 2",
+    "city": "Ouagadougou",
+    "phone": "+226 78 83 61 24",
+    "latitude": 12.312,
+    "longitude": -1.525,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 15777,
+    "name": "Pharmacie IRIS",
+    "address": "Situé à Bonheur ville, à côté du rond point de la transition",
+    "city": "Ouagadougou",
+    "phone": "+226 54 21 01 01",
+    "latitude": 12.294,
+    "longitude": -1.578,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 8,
+    "name": "Pharmacie JABNEEL",
+    "address": "Route Côté Sud SONABEL Bendogo à 700M",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 66 01",
+    "latitude": 12.389,
+    "longitude": -1.458,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 486,
+    "name": "Pharmacie JEUNESSE",
+    "address": "Blvd de la Jeunesse, Hamdalaye à 200m de l’hippodrome",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 35 04",
+    "latitude": 12.372,
+    "longitude": -1.558,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 50,
+    "name": "Pharmacie JoBeR",
+    "address": "Pissy Secteur 6 (ex-sec. 17), en face du Château d’eau ONEA dit « Silmiraogo château ».",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 51 75",
+    "latitude": 12.324,
+    "longitude": -1.556,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1056,
+    "name": "Pharmacie JOLEAN",
+    "address": "SECT 22 COTÉ SUD CMA 22",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 98 21 20",
+    "latitude": 11.201,
+    "longitude": -4.315,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 73451,
+    "name": "Pharmacie JORIEL",
+    "address": "Située à Bassinko",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 98 98",
+    "latitude": 12.413,
+    "longitude": -1.656,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 33,
+    "name": "Pharmacie JOURDAIN",
+    "address": "Blvd Tansoba, 100m de l’hôpital pédiatrique",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 06 86",
+    "latitude": 12.373,
+    "longitude": -1.474,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 132,
+    "name": "Pharmacie KADIOGO",
+    "address": "1207, avenue Kwamé N’krumah, immeuble CNSS ; Face à Coris Bank siège",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 87 88",
+    "latitude": 12.36,
+    "longitude": -1.517,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 52910,
+    "name": "Pharmacie KALIFA TRAORE",
+    "address": "Située à Pissy",
+    "city": "Ouagadougou",
+    "phone": "+226 25 43 21 21",
+    "latitude": 12.316,
+    "longitude": -1.564,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19175,
+    "name": "Pharmacie KAMIN",
+    "address": "Sect. 06 Gounghin, côté est du marché de Gounghin",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 30 28",
+    "latitude": 12.358,
+    "longitude": -1.546,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1060,
+    "name": "Pharmacie KANTA",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 66 10 51",
+    "latitude": 11.184,
+    "longitude": -4.33,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 129,
+    "name": "Pharmacie KARPALA",
+    "address": "Route CFAO-KARPALA (Hopital ex-Sect 30)",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 14 14",
+    "latitude": 12.332,
+    "longitude": -1.493,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 39,
+    "name": "Pharmacie KATRA",
+    "address": "Située à Kalgondé après la gare RAHIMO",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 20 13",
+    "latitude": 12.3469307,
+    "longitude": -1.5030307,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 76,
+    "name": "Pharmacie KAWSAR",
+    "address": "Karpala à 600m de la division \u001escale (impôts)",
+    "city": "Ouagadougou",
+    "phone": "+226 73 20 77 87",
+    "latitude": 12.343,
+    "longitude": -1.469,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 12411,
+    "name": "Pharmacie KO-VIIGA",
+    "address": "RIMKIETA, 10030 BV 35005 OUAGADOUGOU Arrondissement 8, secteur 35",
+    "city": "Ouagadougou",
+    "phone": "+226 54 10 21 02",
+    "latitude": 12.385,
+    "longitude": -1.608,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 12,
+    "name": "Pharmacie KOSSODO",
+    "address": "En face de l’abattoir de Kossodo, après la BOA",
+    "city": "Ouagadougou",
+    "phone": "+226 25 35 63 04",
+    "latitude": 12.417,
+    "longitude": -1.473,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 32,
+    "name": "Pharmacie KOULOUBA",
+    "address": "Koulouba à 200m côté Ouest du marché de Boins-Yaaré",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 19 18",
+    "latitude": 12.367,
+    "longitude": -1.51,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 48329,
+    "name": "Pharmacie KOUMA",
+    "address": "Boulevard de l'Insurrection populaire (Ex-France-Afrique) Ouaga 2000, à 100m de Ouaga FM",
+    "city": "Ouagadougou",
+    "phone": "+226 25 38 57 42",
+    "latitude": 12.313,
+    "longitude": -1.529,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1043,
+    "name": "Pharmacie KUILIG NOORE",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 11 88",
+    "latitude": 12.251,
+    "longitude": -2.374,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 57,
+    "name": "Pharmacie LA CROIX",
+    "address": "Gounghin, En face du LNBTP, à côté de ESCO-IGES",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 12 64",
+    "latitude": 12.362,
+    "longitude": -1.544,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 70,
+    "name": "Pharmacie LA ROCHE",
+    "address": "A 100M de la CNSS de TAMPUY, en Face de l'ecole NAKIEMZANGA",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 51 32",
+    "latitude": 12.396,
+    "longitude": -1.582,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1040,
+    "name": "Pharmacie LAAFIA",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 00 00",
+    "latitude": 12.252,
+    "longitude": -2.362,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1529,
+    "name": "Pharmacie LAFIA",
+    "address": "SECT 10 ROUTE DE FARAMANA (VERS BOBO 2010)",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 54 37",
+    "latitude": 11.215,
+    "longitude": -4.31,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19114,
+    "name": "Pharmacie LAKARI",
+    "address": "SECTEUR 3 YOROKOKO 691",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 53 68 18 18",
+    "latitude": 11.176,
+    "longitude": -4.288,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 40064,
+    "name": "Pharmacie LAME",
+    "address": "Route de Bama, 200m de la station Ola Énergie",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 95 76 75",
+    "latitude": 11.226,
+    "longitude": -4.315,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 68425,
+    "name": "Pharmacie LAMOUSSA DAVID",
+    "address": "Av. du Général De Gaulles, en face du BUMIGEB",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 21 72",
+    "latitude": 11.171,
+    "longitude": -4.282,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 33711,
+    "name": "Pharmacie LANIBOUGNA",
+    "address": "Tanghin, quartier Nonghin, non loin de la Station Radar",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 07 97",
+    "latitude": 12.416,
+    "longitude": -1.524,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19721,
+    "name": "Pharmacie LANZANE",
+    "address": "En face de l’Auto-Ecole Magni\u001fcat à la Zone Une (1)",
+    "city": "Ouagadougou",
+    "phone": "+226 25 47 10 65",
+    "latitude": 12.364,
+    "longitude": -1.458,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 9756,
+    "name": "Pharmacie LAURIERS",
+    "address": "Située sur le goudron de Karpalla allant de NACO vers Gira Imana, située avant la station Shell",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 37 55",
+    "latitude": 12.336,
+    "longitude": -1.472,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 44,
+    "name": "Pharmacie LE ROCHER",
+    "address": "Rue séparant Ouaga 2000 et Pa\u001de d’oie à 1km de la Mosquée KANAZOE",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 83 87",
+    "latitude": 12.318,
+    "longitude": -1.518,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 38450,
+    "name": "Pharmacie LENDIMI",
+    "address": "Située à Balkuy, à 100m de l'Hôtel Viva",
+    "city": "Ouagadougou",
+    "phone": "+226 63 81 59 18",
+    "latitude": 12.304,
+    "longitude": -1.469,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 119,
+    "name": "Pharmacie LES GRÂCES",
+    "address": "Av. de la concorde nationale, secteur 17 Tanghin",
+    "city": "Ouagadougou",
+    "phone": "+226 60 80 80 77",
+    "latitude": 12.409,
+    "longitude": -1.514,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 64,
+    "name": "Pharmacie LINA",
+    "address": "Avenue Kwamé N’krumah non loin du Paradis des Meilleurs Vins",
+    "city": "Ouagadougou",
+    "phone": "+226 73 48 35 65",
+    "latitude": 12.355,
+    "longitude": -1.517,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 67726,
+    "name": "Pharmacie LOBBO",
+    "address": "Située à 300m au nord du Centre médical de Nagrin, juste à moins de 100m de l'entrée du marché de nagrin",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 26 48",
+    "latitude": 12.29,
+    "longitude": -1.535,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 108,
+    "name": "Pharmacie LOUIS PASTEUR",
+    "address": "Av. Dapoya à 400m de l’Église catholique",
+    "city": "Ouagadougou",
+    "phone": "+226 25 50 78 43",
+    "latitude": 12.381,
+    "longitude": -1.528,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1077,
+    "name": "Pharmacie LUCIEN",
+    "address": "01 BP 1183 BOBO-DIOULASSO 01",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 51 52",
+    "latitude": 11.173,
+    "longitude": -4.297,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 84,
+    "name": "Pharmacie MAGNIFICAT",
+    "address": "Sect.50 Karpala, 1km après rue Sankara Inoussa, 300m du dernier six-mètre à gauche",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 29 90",
+    "latitude": 12.329,
+    "longitude": -1.477,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 85,
+    "name": "Pharmacie MARE",
+    "address": "Gounghin, non loin du Stade du 4 août",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 11 28",
+    "latitude": 12.367,
+    "longitude": -1.551,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19092,
+    "name": "Pharmacie MARLASS",
+    "address": "Tanghin sect. 17, après Arbr Yaar en face de la boulangerie Fatim",
+    "city": "Ouagadougou",
+    "phone": "+226 78 55 00 52",
+    "latitude": 12.406,
+    "longitude": -1.54,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 131,
+    "name": "Pharmacie MARTIN",
+    "address": "Av. de la Dignité, non loin de la radio SAVANE FM",
+    "city": "Ouagadougou",
+    "phone": "+226 25 50 84 59",
+    "latitude": 12.3280431,
+    "longitude": -1.5510473,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1081,
+    "name": "Pharmacie MEDINE",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 09 10",
+    "latitude": 11.179,
+    "longitude": -4.299,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 11,
+    "name": "Pharmacie MEIRA",
+    "address": "Nioko 2 non loin du marché, route de Ziniaré, à 500m de la Station Total",
+    "city": "Ouagadougou",
+    "phone": "+226 25 65 12 46",
+    "latitude": 12.426,
+    "longitude": -1.463,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 89,
+    "name": "Pharmacie METEBA",
+    "address": "Ex Sect. 23 quartier Tanghin 365 rue JEAN-PAUL II",
+    "city": "Ouagadougou",
+    "phone": "+226 25 33 53 33",
+    "latitude": 12.395,
+    "longitude": -1.515,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 107,
+    "name": "Pharmacie MINITCHE",
+    "address": "Belleville non loin du rond-point de la transition.",
+    "city": "Ouagadougou",
+    "phone": "+226 72 25 76 76",
+    "latitude": 12.29,
+    "longitude": -1.574,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 102,
+    "name": "Pharmacie MISERICORDE",
+    "address": "Dassasgho, coté nord de l’Eglise de Karambiri à 300 mètres",
+    "city": "Ouagadougou",
+    "phone": "+226 25 65 22 64",
+    "latitude": 12.387,
+    "longitude": -1.463,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19544,
+    "name": "Pharmacie MITSPAH",
+    "address": "Ouagadougou, non loin de UPO, à 200M dans le quartier",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 85 85",
+    "latitude": 12.41,
+    "longitude": -1.46,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1085,
+    "name": "Pharmacie MODERNE",
+    "address": "SECT 1 EST MARCHÉ CENTRAL",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 02 50",
+    "latitude": 11.177,
+    "longitude": -4.298,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 6,
+    "name": "Pharmacie MUSEE",
+    "address": "Blvd Tansoba côté est du Mur du Musée National",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 68 41",
+    "latitude": 12.38,
+    "longitude": -1.469,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 77,
+    "name": "Pharmacie NAAB RAGA",
+    "address": "Samandin, Avenue Oumarou KANAZOE à 100m du marché de Naab Raga",
+    "city": "Ouagadougou",
+    "phone": "+226 70 14 39 77",
+    "latitude": 12.3523313,
+    "longitude": -1.5317179,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 79,
+    "name": "Pharmacie NAABA-KOOM",
+    "address": "200m de la Clinique Notre-Dame-de-la-Paix",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 33 34",
+    "latitude": 12.399,
+    "longitude": -1.503,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 49,
+    "name": "Pharmacie NAGRIN",
+    "address": "Route de Saponé avant l‘hôpital Blaise Compaoré",
+    "city": "Ouagadougou",
+    "phone": "+226 25 46 90 48",
+    "latitude": 12.266,
+    "longitude": -1.531,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 53675,
+    "name": "Pharmacie NANLE",
+    "address": "Située sur nouveau goudron allant de la Patte d'Oie à Cissin, devant la Pharmacie Santé Vitalité",
+    "city": "Ouagadougou",
+    "phone": "+226 25 47 70 80",
+    "latitude": 12.329,
+    "longitude": -1.543,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 31,
+    "name": "Pharmacie NATILGE",
+    "address": "Bvd Tansoaba Waonre, en face du feu tricolore de l’IDS",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 28 00",
+    "latitude": 12.359,
+    "longitude": -1.483,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 69391,
+    "name": "Pharmacie NAYALGBA",
+    "address": "Située en face du CSPS de KOUMDANYORE à 400m du commissariat de l’arrondissement 8",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 73 25",
+    "latitude": 12.364,
+    "longitude": -1.617,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 75,
+    "name": "Pharmacie NAYYIRA",
+    "address": "Katre Yaar après la gare de taxis",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 18 41",
+    "latitude": 12.347,
+    "longitude": -1.474,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1527,
+    "name": "Pharmacie NAZINDI-GOUBA",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 57 57",
+    "latitude": 11.196,
+    "longitude": -4.292,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1067,
+    "name": "Pharmacie NAZOUNKI",
+    "address": "SECT 22 À 300M DU STADE OMNISPORT SANGOULE LAMIZANA",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 31 00",
+    "latitude": 11.19,
+    "longitude": -4.326,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 30,
+    "name": "Pharmacie NEMADIS",
+    "address": "Rue Bogodogo à 500m du Rond point SANDOF en direction de SOGEL B (vers le SIAO)",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 09 66",
+    "latitude": 12.357,
+    "longitude": -1.491,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 54880,
+    "name": "Pharmacie NIOKO 1",
+    "address": "Située sur le nouveau goudron de Saaba, à côté de la route de Fada",
+    "city": "Ouagadougou",
+    "phone": "+226 61 97 70 48",
+    "latitude": 12.394,
+    "longitude": -1.432,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 66,
+    "name": "Pharmacie NONGUI",
+    "address": "Tampouy vers l’école Toecin",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 84 88",
+    "latitude": 12.386,
+    "longitude": -1.575,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19141,
+    "name": "Pharmacie NONSIN",
+    "address": "Nonsin, Rue 19.100 à côté du rond point des rails, route de Rimkieta",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 77 76",
+    "latitude": 12.37467922,
+    "longitude": -1.5702447,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 40265,
+    "name": "Pharmacie OUEDRAOGO REMI",
+    "address": "Av. des Tansoba KIEMA, sous l'immeuble résidence Alice face à la SONABEL Zad",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 16 52",
+    "latitude": 12.335,
+    "longitude": -1.499,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 64180,
+    "name": "Pharmacie OULAGNAN TRAORE",
+    "address": "Située au quartier Accart ville,  secteur N°9, Arrondissement N°6, non loin du marché de fruits.",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 57 93 93 56",
+    "latitude": 11.176,
+    "longitude": -4.313,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 32600,
+    "name": "Pharmacie PINGDBA",
+    "address": "Petit goudron allant vers Saaba, à côté du marché de 14 Yaar",
+    "city": "Ouagadougou",
+    "phone": "+226 78 37 93 81",
+    "latitude": 12.3734246,
+    "longitude": -1.4648036,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 52,
+    "name": "Pharmacie PISSY",
+    "address": "Côté Est CMA de Pissy",
+    "city": "Ouagadougou",
+    "phone": "+226 25 43 13 35",
+    "latitude": 12.337,
+    "longitude": -1.564,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 61079,
+    "name": "Pharmacie PRIM SANTE",
+    "address": "Situé non loin de l'échangeur de Gounghin, 200m du cimétière de Gounghin",
+    "city": "Ouagadougou",
+    "phone": "+226 50 04 89 92",
+    "latitude": 12.342,
+    "longitude": -1.553,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 56582,
+    "name": "Pharmacie PROGRES",
+    "address": "Pissy, route de Bobo, face à UBIPHARM",
+    "city": "Ouagadougou",
+    "phone": "+226 25 43 01 62",
+    "latitude": 12.343,
+    "longitude": -1.569,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19139,
+    "name": "Pharmacie PROVIDENCE",
+    "address": "Larlé, à 200m de la gare STAF",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 86 48",
+    "latitude": 12.373,
+    "longitude": -1.539,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 60555,
+    "name": "Pharmacie RACHEL YAGMA",
+    "address": "YAGMA, Côté Est du Sanctuaire marial, sur la nouvelle voie YAGMA - KAMBOINSIN, à 30 mètres du Groupe Scolaire EDIF, et du Centre de Formation Professionnelle de Yagma",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 70 09",
+    "latitude": 12.439,
+    "longitude": -1.601,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 69,
+    "name": "Pharmacie RAKISMANEGRE",
+    "address": "Non loin du Chateau d’eau de Tampouy, sur la voie de la nouvelle mairie de l’arrdt 9",
+    "city": "Ouagadougou",
+    "phone": "+226 62 50 58 18",
+    "latitude": 12.418,
+    "longitude": -1.569,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 34132,
+    "name": "Pharmacie RAYIBTIGA",
+    "address": "Av Jean-Baptiste OUEDRAOGO, 800 m au Nord de la Clinique Notre Dame de la Paix a, Somgandé",
+    "city": "Ouagadougou",
+    "phone": "+226 65 32 11 53",
+    "latitude": 12.405,
+    "longitude": -1.506,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1342,
+    "name": "Pharmacie REMEDIS",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 09 52",
+    "latitude": 11.165,
+    "longitude": -4.276,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 45400,
+    "name": "Pharmacie RENAISSANCE (Ex-St JULIEN)",
+    "address": "À 100m du rond-point de la Patte-d’oie, sur l‘avenue Bassawarga",
+    "city": "Ouagadougou",
+    "phone": "+226 68 91 10 10",
+    "latitude": 12.334,
+    "longitude": -1.529,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 38914,
+    "name": "Pharmacie RIMA",
+    "address": "Situé à Kamboinsin, sur la route menant à Pazani",
+    "city": "Ouagadougou",
+    "phone": "+226 50 61 07 07",
+    "latitude": 12.443,
+    "longitude": -1.564,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 56315,
+    "name": "Pharmacie RIMKIETA",
+    "address": "Située à proximité de la maison des jeunes de RIMKIETA",
+    "city": "Ouagadougou",
+    "phone": "+226 71 50 94 36",
+    "latitude": 12.373751,
+    "longitude": -1.615132,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 987,
+    "name": "Pharmacie SAABA",
+    "address": "A Saaba",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 86 99",
+    "latitude": 12.372,
+    "longitude": -1.429,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 60,
+    "name": "Pharmacie SACRE-COEUR",
+    "address": "Avenue Simon Compaoré, à 500m du lycée Mixte de Gounghin, en partant vers Watam Kaiser",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 60 60",
+    "latitude": 12.351,
+    "longitude": -1.546,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 42,
+    "name": "Pharmacie SAHEL",
+    "address": "Av. du Président Sangoulé LAMIZANA. Koulouba sur alignement du siège de ORANGE",
+    "city": "Ouagadougou",
+    "phone": "+226 25 31 81 95",
+    "latitude": 12.366,
+    "longitude": -1.515,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 127,
+    "name": "Pharmacie SAINT BERNARD",
+    "address": "Face à la trame d’accueil Ouaga 2000",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 14 82",
+    "latitude": 12.312,
+    "longitude": -1.489,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 121,
+    "name": "Pharmacie SAINT JEAN",
+    "address": "Rue 30.240 Blvd. Tansoaba; bâtiment de ISDA, 500m de l’Hôpital de Bogodgo ex-CMA 30",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 00 33",
+    "latitude": 12.343,
+    "longitude": -1.494,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 40,
+    "name": "Pharmacie SAINT LAZARE",
+    "address": "1200 logts, à côté du Pont (du Canal) de Bons Yaare",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 86 48",
+    "latitude": 12.369,
+    "longitude": -1.5,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19113,
+    "name": "Pharmacie SAKABY",
+    "address": "Située en face de la station Total Énergies de SAKABY route de Dédougou",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 60 75 36 36",
+    "latitude": 11.217,
+    "longitude": -4.286,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 790,
+    "name": "Pharmacie SAMANDIN EX-HEERA",
+    "address": "100m du théâtre populaire",
+    "city": "Ouagadougou",
+    "phone": "+226 50 35 53 78",
+    "latitude": 12.356,
+    "longitude": -1.534,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 58015,
+    "name": "Pharmacie SAMBA",
+    "address": "Située à Bindougousso, à 300m de la station Total Energies",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 04 37 24 24",
+    "latitude": 11.193,
+    "longitude": -4.265,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19110,
+    "name": "Pharmacie SANITAS",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 22 42",
+    "latitude": 11.162,
+    "longitude": -4.251,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 55908,
+    "name": "Pharmacie SENEVE",
+    "address": "Située à Wayalghin, à environ 2km dans le 6m en face de la station Oryx située après l'Echangeur de l'Est en allant à Kossodo",
+    "city": "Ouagadougou",
+    "phone": "+226 50 35 35 40",
+    "latitude": 12.404,
+    "longitude": -1.465,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1079,
+    "name": "Pharmacie SIBIRI",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 79 02",
+    "latitude": 11.169,
+    "longitude": -4.251,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1098,
+    "name": "Pharmacie SIFOMA",
+    "address": "CENTRE - VILLE SECT 9 ACCART",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 19 65",
+    "latitude": 11.182,
+    "longitude": -4.307,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 101,
+    "name": "Pharmacie SIG-NOGHIN",
+    "address": "Av. Naaba Ziiwendé 150m du rond point de Rimkieta",
+    "city": "Ouagadougou",
+    "phone": "+226 25 35 09 77",
+    "latitude": 12.3899349,
+    "longitude": -1.5976862,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 53,
+    "name": "Pharmacie SIGRI",
+    "address": "2828 Av. du Conseil de l’Entente Gounghin, non loin de la station Total et Marina Market",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 21 48",
+    "latitude": 12.358,
+    "longitude": -1.549,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 55565,
+    "name": "Pharmacie SILOE",
+    "address": "Samandin ,vers chez le Mogho-Naba en face du Château d’Eau  BAMA",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 27 46",
+    "latitude": 12.356,
+    "longitude": -1.527,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 73,
+    "name": "Pharmacie SIRA",
+    "address": "Route de Bobo, 100m de la Mairie de Boulmiougou",
+    "city": "Ouagadougou",
+    "phone": "+226 25 43 17 78",
+    "latitude": 12.342,
+    "longitude": -1.581,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 60297,
+    "name": "Pharmacie SISAOLE",
+    "address": "Sect 29 route de Nasso en face de la s Station Petro SAR sa.",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 77 57 56 06",
+    "latitude": 11.184,
+    "longitude": -4.344,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1082,
+    "name": "Pharmacie SIYARA",
+    "address": "SECT 1 FACE MARCHÉ CENTRAL",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 13 73",
+    "latitude": 11.176,
+    "longitude": -4.302,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1525,
+    "name": "Pharmacie SOLIDARITE",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 17 26",
+    "latitude": 11.187,
+    "longitude": -4.296,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19087,
+    "name": "Pharmacie SOMKETA",
+    "address": "Situé à Kamboinsin",
+    "city": "Ouagadougou",
+    "phone": "+226 05 05 74 00",
+    "latitude": 12.451,
+    "longitude": -1.551,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 37936,
+    "name": "Pharmacie SONDOGO",
+    "address": "Située à Sondogo",
+    "city": "Ouagadougou",
+    "phone": "+226 71 81 80 84",
+    "latitude": 12.318,
+    "longitude": -1.598,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 3,
+    "name": "Pharmacie SONG-TAABA",
+    "address": "100m de la SONABEL Bendogo, Cité de l’avenir",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 64 62",
+    "latitude": 12.395,
+    "longitude": -1.46,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1080,
+    "name": "Pharmacie SOULIGNE",
+    "address": "SECT 1 À 20 M DE BIB",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 08 16",
+    "latitude": 11.174,
+    "longitude": -4.3,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 23,
+    "name": "Pharmacie ST FRANCOIS D'ASSISE",
+    "address": "Zone du bois, en face du goudron allant vers Yalgado",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 85 85",
+    "latitude": 12.388,
+    "longitude": -1.491,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 73487,
+    "name": "Pharmacie ST MICHEL",
+    "address": "Rimkiéta non loin de la phcie Barkwendé",
+    "city": "Ouagadougou",
+    "phone": "+226 79 79 18 24",
+    "latitude": 12.375,
+    "longitude": -1.598,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 50951,
+    "name": "Pharmacie STE HENRIETTE",
+    "address": "Koudougou",
+    "city": "KOUDOUGOU",
+    "phone": "+226 70 78 66 37",
+    "latitude": 12.26,
+    "longitude": -2.373,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1166,
+    "name": "Pharmacie STE ODILE",
+    "address": "Karpala, non loin du lycée Thomas SANKARA",
+    "city": "Ouagadougou",
+    "phone": "+226 51 69 77 77",
+    "latitude": 12.333,
+    "longitude": -1.463,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1044,
+    "name": "Pharmacie STE PHILOMENE",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 11 44",
+    "latitude": 12.243,
+    "longitude": -2.363,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 67174,
+    "name": "Pharmacie SŨ-MAASEM",
+    "address": "Nioko 2 non loin du marché, route de Ziniaré, 500m avant la Station OLA",
+    "city": "Ouagadougou",
+    "phone": "+226 25 50 08 08",
+    "latitude": 12.433,
+    "longitude": -1.455,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19249,
+    "name": "Pharmacie SYA",
+    "address": "01 BP 775 BOBO-DIOULASSO 01",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 79 93",
+    "latitude": 11.174,
+    "longitude": -4.279,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 34,
+    "name": "Pharmacie TALBA",
+    "address": "Av. Charles De Gaulle, face au Scolasticat, Zogona",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 22 25",
+    "latitude": 12.376,
+    "longitude": -1.491,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1002,
+    "name": "Pharmacie TALE",
+    "address": "Pissy",
+    "city": "Ouagadougou",
+    "phone": "+226 71 62 08 08",
+    "latitude": 12.333,
+    "longitude": -1.605,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 116,
+    "name": "Pharmacie TANKO",
+    "address": "Face au CMA Paul VI sur la route de Kamboinsé",
+    "city": "Ouagadougou",
+    "phone": "+226 25 35 15 57",
+    "latitude": 12.399,
+    "longitude": -1.556,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 14,
+    "name": "Pharmacie TAOKO",
+    "address": "Blvd Tansoba, à 500m de l’échangeur de l’Est",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 69 27",
+    "latitude": 12.387,
+    "longitude": -1.468,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 19108,
+    "name": "Pharmacie TENE",
+    "address": "",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 70 70 43 05",
+    "latitude": 11.185,
+    "longitude": -4.276,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19093,
+    "name": "Pharmacie TENEDIA",
+    "address": "À 500 m de l'Université 2IE en face du CSPS DE KAMBOINSIN",
+    "city": "Ouagadougou",
+    "phone": "+226 63 93 00 19",
+    "latitude": 12.464,
+    "longitude": -1.555,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 15779,
+    "name": "Pharmacie TI BANGRE",
+    "address": "Située vers la sortie Ouest de Ouaga, devant la mairie de boulmiougou",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 45 95",
+    "latitude": 12.34,
+    "longitude": -1.586,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 67725,
+    "name": "Pharmacie TIIS-YONDO",
+    "address": "Situé à sonré à 100m du Centre Médical Saint Thérèse de l'enfant Jésus",
+    "city": "Ouagadougou",
+    "phone": "+226 50 37 27 27",
+    "latitude": 12.282,
+    "longitude": -1.573,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 86,
+    "name": "Pharmacie TRYPANO",
+    "address": "Derrière le Centre de Transfusion Sanguine (CNTS) Ouaga non loin de la Trypano",
+    "city": "Ouagadougou",
+    "phone": "+226 25 33 29 41",
+    "latitude": 12.381,
+    "longitude": -1.51,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 58,
+    "name": "Pharmacie UNITE",
+    "address": "Gounghin, Près de l'échangeur de l'ouest face au Jardin le Challenge",
+    "city": "Ouagadougou",
+    "phone": "+226 25 34 39 42",
+    "latitude": 12.352,
+    "longitude": -1.556,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 2,
+    "name": "Pharmacie UNIVERS",
+    "address": "Voie principale Saaba, à 500m de la Prefecture",
+    "city": "Ouagadougou",
+    "phone": "+226 25 41 99 65",
+    "latitude": 12.383,
+    "longitude": -1.426,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 117,
+    "name": "Pharmacie VIEL",
+    "address": "Route de Kamboincé , Porte des soeurs après CMA PAUL VI",
+    "city": "Ouagadougou",
+    "phone": "+226 25 45 98 25",
+    "latitude": 12.425,
+    "longitude": -1.551,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 36417,
+    "name": "Pharmacie VINCENT DE PAUL",
+    "address": "Située à la Zone 1, à côté de Bangré Yiguia",
+    "city": "Ouagadougou",
+    "phone": "+226 02 04 77 77",
+    "latitude": 12.359,
+    "longitude": -1.474,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19289,
+    "name": "Pharmacie VITALIS",
+    "address": "YEGUERE SECTEUR 22",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 98 12 17",
+    "latitude": 11.191,
+    "longitude": -4.314,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 70034,
+    "name": "Pharmacie WAPPASI LAAFI",
+    "address": "Située à Bonheur ville, à 300m du rond point de la transition",
+    "city": "Ouagadougou",
+    "phone": "+226 67 07 08 46",
+    "latitude": 12.304,
+    "longitude": -1.58,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 13,
+    "name": "Pharmacie WAYALGHIN",
+    "address": "Secteur 42, Wayalghin, en Face du camps CRS",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 52 08",
+    "latitude": 12.397,
+    "longitude": -1.479,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 36,
+    "name": "Pharmacie WEND KUUNI",
+    "address": "Blvd Charles De Gaulle non loin de la mosquée de l’AEEMB",
+    "city": "Ouagadougou",
+    "phone": "+226 25 36 20 15",
+    "latitude": 12.375632,
+    "longitude": -1.487486,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 123,
+    "name": "Pharmacie WEND LAMITA",
+    "address": "Sect. n°8 avenue du Yatenga Face école Kologh-Naba",
+    "city": "Ouagadougou",
+    "phone": "+226 78 83 63 41",
+    "latitude": 12.381,
+    "longitude": -1.55,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 68427,
+    "name": "Pharmacie WEND PANGA",
+    "address": "Située à la patte d’oie, non loin de de la grande mosquée de KANAZOE à 100 de la Station PETROFA côté ouest",
+    "city": "Ouagadougou",
+    "phone": "+226 25 50 29 29",
+    "latitude": 12.317,
+    "longitude": -1.53,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 55866,
+    "name": "Pharmacie WEND-DENDA",
+    "address": "Sect. 9, quartier Ouidi, Avenue Yatenga, entre la station Total de Larlé et ECOBANK Ouidi",
+    "city": "Ouagadougou",
+    "phone": "+226 71 50 94 92",
+    "latitude": 12.377,
+    "longitude": -1.544,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 99,
+    "name": "Pharmacie WEND-YAM",
+    "address": "Route de Ouahigouya, à la \u001en des deux voies, 500m du marché de bétail",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 30 47",
+    "latitude": 12.39,
+    "longitude": -1.591,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1116,
+    "name": "Pharmacie WOBI",
+    "address": "DIARRADOUGOU SECT 1",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 20 97 36 97",
+    "latitude": 11.185,
+    "longitude": -4.298,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 55743,
+    "name": "Pharmacie YAN-MAROU",
+    "address": "Située à Marcoussi",
+    "city": "Ouagadougou",
+    "phone": "+226 25 46 50 06",
+    "latitude": 12.411,
+    "longitude": -1.597,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 124,
+    "name": "Pharmacie YATHRIB",
+    "address": "200m du marché de Saaba",
+    "city": "Ouagadougou",
+    "phone": "+226 25 40 23 88",
+    "latitude": 12.373,
+    "longitude": -1.42,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 19317,
+    "name": "Pharmacie YEMPABOU",
+    "address": "Sur la route de Loumbila, après le passage piéton de Kossodo",
+    "city": "Ouagadougou",
+    "phone": "+226 25 39 40 61",
+    "latitude": 12.43629,
+    "longitude": -1.45106,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 35,
+    "name": "Pharmacie YENNENGA",
+    "address": "Blvd Tansoba face à la mairie de BOGODOGO",
+    "city": "Ouagadougou",
+    "phone": "+226 25 37 03 37",
+    "latitude": 12.351,
+    "longitude": -1.488,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 97,
+    "name": "Pharmacie YENTEMA",
+    "address": "Située sur le goudron de Nagrin, à 150m au Nord de la Cave du Sud",
+    "city": "Ouagadougou",
+    "phone": "+226 56 56 00 00",
+    "latitude": 12.277,
+    "longitude": -1.545,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 113,
+    "name": "Pharmacie ZIDOU",
+    "address": "Balkuy, en face de l’immeuble Yelhi",
+    "city": "Ouagadougou",
+    "phone": "+226 61 07 88 60",
+    "latitude": 12.304,
+    "longitude": -1.476,
+    "is_on_duty": false
+  },
+  {
+    "external_id": 1341,
+    "name": "Pharmacie ZOE",
+    "address": "Bobo Dioulasso",
+    "city": "Bobo Dioulasso",
+    "phone": "+226 63 10 07 75",
+    "latitude": 11.155,
+    "longitude": -4.325,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 26,
+    "name": "Pharmacie ZONE 1",
+    "address": "À 200m du marché de la Zone 1",
+    "city": "Ouagadougou",
+    "phone": "+226 25 48 15 13",
+    "latitude": 12.367,
+    "longitude": -1.47,
+    "is_on_duty": true
+  },
+  {
+    "external_id": 1042,
+    "name": "Pharmacie ZOODO",
+    "address": "KOUDOUGOU",
+    "city": "KOUDOUGOU",
+    "phone": "+226 25 44 07 05",
+    "latitude": 12.261,
+    "longitude": -2.36,
+    "is_on_duty": false
+  }
+]
+  $PHARMACIES_JSON$::jsonb) AS x(
+    external_id int,
+    name text,
+    address text,
+    city text,
+    phone text,
+    latitude double precision,
+    longitude double precision,
+    is_on_duty boolean
+  )
+),
+norm AS (
+  SELECT
+    external_id,
+    name,
+    address,
+    CASE
+      WHEN lower(city) LIKE 'bobo%' THEN 'Bobo-Dioulasso'
+      WHEN lower(city) LIKE 'koudougou%' OR upper(city) = 'KOUDOUGOU' THEN 'Koudougou'
+      ELSE city
+    END AS city,
+    phone,
+    latitude,
+    longitude,
+    COALESCE(is_on_duty, false) AS is_on_duty,
+    'Lun–Ven 8h–20h · Sam 8h–12h · Dim fermé (sauf garde)' AS opening_hours,
+    CASE WHEN COALESCE(is_on_duty, false) THEN 'De garde' ELSE NULL END AS status_label
+  FROM src
+)
+INSERT INTO public.pharmacies (external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label, duty_group)
+SELECT external_id, name, address, city, phone, latitude, longitude, is_on_duty, opening_hours, status_label, NULL
+FROM norm
+ON CONFLICT (external_id) WHERE external_id IS NOT NULL DO UPDATE SET
+  name = EXCLUDED.name,
+  address = EXCLUDED.address,
+  city = EXCLUDED.city,
+  phone = EXCLUDED.phone,
+  latitude = EXCLUDED.latitude,
+  longitude = EXCLUDED.longitude,
+  is_on_duty = EXCLUDED.is_on_duty,
+  opening_hours = EXCLUDED.opening_hours,
+  status_label = EXCLUDED.status_label;

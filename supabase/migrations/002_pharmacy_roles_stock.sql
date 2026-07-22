@@ -1,0 +1,3 @@
+-- Pharmacy roles, stock, delivery (applied via Supabase MCP)
+-- Tables: pharmacy_staff, pharmacy_stock
+-- orders.livreur_id, pharmacies.external_id
