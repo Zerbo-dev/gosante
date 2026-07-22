@@ -1,22 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, CircleMarker, useMap, useMapEvents } from "react-leaflet";
-import L from "leaflet";
+import { useEffect, useMemo } from "react";
+import { MapContainer, Marker, Tooltip, useMap, useMapEvents } from "react-leaflet";
 import type { LatLng } from "@/lib/routing";
+import {
+  BaseTileLayer,
+  InvalidateSizeOnMount,
+  MapFloatingControls,
+} from "@/components/maps/MapChrome";
+import {
+  DEFAULT_CENTER,
+  MAP_COLORS,
+  dropPinIcon,
+  userLocationIcon,
+} from "@/components/maps/mapTheme";
 import "leaflet/dist/leaflet.css";
-
-const deliveryIcon = new L.Icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png",
-  iconRetinaUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
 
 function MapViewController({
   value,
@@ -29,9 +27,9 @@ function MapViewController({
 
   useEffect(() => {
     if (value) {
-      map.flyTo([value.lat, value.lng], Math.max(map.getZoom(), 15), { duration: 0.6 });
+      map.flyTo([value.lat, value.lng], Math.max(map.getZoom(), 16), { duration: 0.55 });
     } else if (userLocation) {
-      map.flyTo([userLocation.lat, userLocation.lng], 14, { duration: 0.6 });
+      map.flyTo([userLocation.lat, userLocation.lng], 15, { duration: 0.55 });
     }
   }, [map, value?.lat, value?.lng, userLocation?.lat, userLocation?.lng]);
 
@@ -56,28 +54,30 @@ export default function DeliveryLocationPickerInner({
   onChange: (loc: LatLng) => void;
   userLocation: LatLng | null;
 }) {
-  const center = value ?? userLocation ?? { lat: 12.3714, lng: -1.5197 };
+  const center = value ?? userLocation ?? DEFAULT_CENTER;
+  const deliveryIcon = useMemo(() => dropPinIcon(MAP_COLORS.delivery), []);
+  const userIcon = useMemo(() => userLocationIcon(null), []);
 
   return (
     <MapContainer
       center={[center.lat, center.lng]}
-      zoom={14}
-      className="h-full w-full rounded-xl"
+      zoom={15}
+      className="gs-map h-full w-full"
       scrollWheelZoom
+      zoomControl={false}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+      <BaseTileLayer />
+      <InvalidateSizeOnMount deps={[value?.lat, value?.lng]} />
       <MapViewController value={value} userLocation={userLocation} />
       <MapClickHandler onPick={onChange} />
+      <PickerControls userLocation={userLocation} onChange={onChange} />
 
       {userLocation && (
-        <CircleMarker
-          center={[userLocation.lat, userLocation.lng]}
-          radius={9}
-          pathOptions={{ color: "#2563eb", fillColor: "#3b82f6", fillOpacity: 0.85, weight: 2 }}
-        />
+        <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon} zIndexOffset={300}>
+          <Tooltip direction="top" offset={[0, -12]}>
+            Votre position
+          </Tooltip>
+        </Marker>
       )}
 
       {value && (
@@ -85,14 +85,42 @@ export default function DeliveryLocationPickerInner({
           position={[value.lat, value.lng]}
           icon={deliveryIcon}
           draggable
+          zIndexOffset={500}
           eventHandlers={{
             dragend: (e) => {
               const { lat, lng } = e.target.getLatLng();
               onChange({ lat, lng });
             },
           }}
-        />
+        >
+          <Tooltip permanent direction="top" offset={[0, -36]} className="gs-tooltip-strong">
+            Glissez pour ajuster
+          </Tooltip>
+        </Marker>
       )}
     </MapContainer>
+  );
+}
+
+function PickerControls({
+  userLocation,
+  onChange,
+}: {
+  userLocation: LatLng | null;
+  onChange: (loc: LatLng) => void;
+}) {
+  const map = useMap();
+  return (
+    <MapFloatingControls
+      onLocate={
+        userLocation
+          ? () => {
+              onChange(userLocation);
+              map.flyTo([userLocation.lat, userLocation.lng], 16, { duration: 0.5 });
+            }
+          : undefined
+      }
+      locateDisabled={!userLocation}
+    />
   );
 }

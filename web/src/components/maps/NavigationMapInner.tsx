@@ -1,27 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Polyline, CircleMarker, useMap } from "react-leaflet";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { MapContainer, Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { LatLng } from "@/lib/routing";
 import type { MapMarker } from "./NavigationMap";
+import {
+  BaseTileLayer,
+  FitToPoints,
+  InvalidateSizeOnMount,
+  MapFloatingControls,
+} from "@/components/maps/MapChrome";
+import { RoutePolyline } from "@/components/maps/RoutePolyline";
+import {
+  DEFAULT_CENTER,
+  MAP_COLORS,
+  dropPinIcon,
+  popupHtml,
+  stopBadgeIcon,
+  toneDotIcon,
+  userLocationIcon,
+} from "@/components/maps/mapTheme";
 import "leaflet/dist/leaflet.css";
-
-const markerColors: Record<string, string> = {
-  emerald: "#059669",
-  blue: "#2563eb",
-  amber: "#d97706",
-  red: "#dc2626",
-};
-
-function makeIcon(color: string) {
-  return L.divIcon({
-    className: "",
-    html: `<div style="background:${color};width:16px;height:16px;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,.35)"></div>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
-  });
-}
 
 function MapFollow({
   userLocation,
@@ -33,9 +33,38 @@ function MapFollow({
   const map = useMap();
   useEffect(() => {
     if (followUser && userLocation) {
-      map.setView([userLocation.lat, userLocation.lng], map.getZoom(), { animate: true });
+      map.setView([userLocation.lat, userLocation.lng], Math.max(map.getZoom(), 15), {
+        animate: true,
+      });
     }
   }, [map, userLocation, followUser]);
+  return null;
+}
+
+function FitRouteOnLoad({
+  routeGeometry,
+  userLocation,
+  markers,
+}: {
+  routeGeometry: LatLng[];
+  userLocation: LatLng | null;
+  markers: MapMarker[];
+}) {
+  const map = useMap();
+  useEffect(() => {
+    if (routeGeometry.length > 1) {
+      const bounds = L.latLngBounds(
+        routeGeometry.map((p) => [p.lat, p.lng] as [number, number])
+      );
+      map.fitBounds(bounds, { padding: [48, 72], maxZoom: 16 });
+      return;
+    }
+    if (userLocation) {
+      map.setView([userLocation.lat, userLocation.lng], 14);
+    } else if (markers[0]) {
+      map.setView([markers[0].lat, markers[0].lng], 14);
+    }
+  }, [map, routeGeometry, userLocation, markers]);
   return null;
 }
 
@@ -54,56 +83,124 @@ export default function NavigationMapInner({
   markers: MapMarker[];
   waypoints: LatLng[];
 }) {
-  const center = userLocation ?? markers[0] ?? { lat: 12.3714, lng: -1.5197 };
+  const center = userLocation ?? markers[0] ?? DEFAULT_CENTER;
+  const [fitKey, setFitKey] = useState(0);
+  const userIcon = useMemo(() => userLocationIcon(heading), [heading]);
+
+  const fitPoints = useMemo(() => {
+    if (routeGeometry.length > 1) return routeGeometry;
+    const pts: LatLng[] = [];
+    if (userLocation) pts.push(userLocation);
+    markers.forEach((m) => pts.push({ lat: m.lat, lng: m.lng }));
+    waypoints.forEach((w) => pts.push(w));
+    return pts;
+  }, [routeGeometry, userLocation, markers, waypoints]);
+
+  const onFit = useCallback(() => setFitKey((k) => k + 1), []);
 
   return (
     <MapContainer
       center={[center.lat, center.lng]}
       zoom={14}
-      className="h-full w-full"
+      className="gs-map h-full w-full"
       scrollWheelZoom
+      zoomControl={false}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+      <BaseTileLayer />
+      <InvalidateSizeOnMount deps={[routeGeometry.length, markers.length]} />
       <MapFollow userLocation={userLocation} followUser={followUser} />
+      <FitRouteOnLoad
+        routeGeometry={routeGeometry}
+        userLocation={userLocation}
+        markers={markers}
+      />
+      <FitToPoints
+        points={fitPoints}
+        enabled={fitKey > 0}
+        trigger={fitKey}
+        padding={56}
+        maxZoom={16}
+      />
+      <NavControls userLocation={userLocation} onFit={onFit} showFit={fitPoints.length >= 2} />
 
-      {routeGeometry.length > 1 && (
-        <Polyline
-          positions={routeGeometry.map((p) => [p.lat, p.lng] as [number, number])}
-          pathOptions={{ color: "#34d399", weight: 6, opacity: 0.9 }}
-        />
-      )}
+      <RoutePolyline geometry={routeGeometry} color={MAP_COLORS.brand} />
 
       {waypoints.map((wp, i) => (
-        <CircleMarker
+        <Marker
           key={`wp-${i}`}
-          center={[wp.lat, wp.lng]}
-          radius={8}
-          pathOptions={{ color: "#2563eb", fillColor: "#3b82f6", fillOpacity: 0.9 }}
-        />
+          position={[wp.lat, wp.lng]}
+          icon={stopBadgeIcon(i + 1, MAP_COLORS.waypoint)}
+          zIndexOffset={250}
+        >
+          <Tooltip direction="top" offset={[0, -10]}>
+            Étape {i + 1}
+          </Tooltip>
+        </Marker>
       ))}
 
-      {markers.map((m) => (
-        <Marker
-          key={m.id}
-          position={[m.lat, m.lng]}
-          icon={makeIcon(markerColors[m.color ?? "emerald"])}
-        />
-      ))}
+      {markers.map((m) => {
+        const isDest = m.id === "dest" || m.color === "red";
+        const icon = isDest
+          ? dropPinIcon(MAP_COLORS.red, undefined)
+          : toneDotIcon(m.color ?? "emerald");
+        return (
+          <Marker
+            key={m.id}
+            position={[m.lat, m.lng]}
+            icon={icon}
+            zIndexOffset={isDest ? 350 : 200}
+          >
+            {m.label && (
+              <Popup className="gs-leaflet-popup" closeButton={false}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: popupHtml(m.label),
+                  }}
+                />
+              </Popup>
+            )}
+          </Marker>
+        );
+      })}
 
       {userLocation && (
         <Marker
           position={[userLocation.lat, userLocation.lng]}
-          icon={L.divIcon({
-            className: "",
-            html: `<div style="transform:rotate(${heading ?? 0}deg);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:18px solid #22d3ee;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))"></div>`,
-            iconSize: [16, 18],
-            iconAnchor: [8, 9],
-          })}
-        />
+          icon={userIcon}
+          zIndexOffset={600}
+        >
+          <Tooltip direction="top" offset={[0, -14]}>
+            Votre position
+          </Tooltip>
+        </Marker>
       )}
     </MapContainer>
+  );
+}
+
+function NavControls({
+  userLocation,
+  onFit,
+  showFit,
+}: {
+  userLocation: LatLng | null;
+  onFit: () => void;
+  showFit: boolean;
+}) {
+  const map = useMap();
+  return (
+    <MapFloatingControls
+      onLocate={
+        userLocation
+          ? () =>
+              map.flyTo([userLocation.lat, userLocation.lng], Math.max(map.getZoom(), 16), {
+                duration: 0.5,
+              })
+          : undefined
+      }
+      locateDisabled={!userLocation}
+      showFit={showFit}
+      onFit={onFit}
+    />
   );
 }

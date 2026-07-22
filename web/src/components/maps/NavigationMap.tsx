@@ -9,13 +9,13 @@ import {
   type LatLng,
   type RouteInfo,
 } from "@/lib/routing";
-import { Loader2, Navigation } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2, Navigation } from "lucide-react";
 
 const NavigationMapInner = dynamic(() => import("./NavigationMapInner"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full min-h-[280px] items-center justify-center rounded-2xl bg-slate-900 text-sm text-slate-400">
-      <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Carte…
+    <div className="gs-map-skeleton flex h-full min-h-[280px] items-center justify-center text-sm text-slate-500">
+      <Loader2 className="mr-2 h-5 w-5 animate-spin text-teal-600" /> Carte…
     </div>
   ),
 });
@@ -34,7 +34,7 @@ export function NavigationMap({
   waypoints = [],
   extraMarkers = [],
   followUser = true,
-  className = "h-[min(50dvh,380px)] sm:h-[min(55vh,420px)]",
+  className = "h-[min(52dvh,400px)] sm:h-[min(58vh,440px)]",
 }: {
   origin?: LatLng | null;
   destination: LatLng;
@@ -108,7 +108,22 @@ export function NavigationMap({
 
   return (
     <div className="space-y-3">
-      <div className={`overflow-hidden rounded-2xl ${className}`}>
+      <div className={`gs-map-shell relative overflow-hidden rounded-2xl border border-slate-200/80 shadow-sm ${className}`}>
+        {route && currentStep && (
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-[500] p-3">
+            <div className="rounded-2xl bg-slate-950/90 px-3.5 py-3 text-white shadow-xl backdrop-blur-md">
+              <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-wide text-teal-300">
+                <span className="inline-flex items-center gap-1 font-semibold">
+                  <Navigation className="h-3.5 w-3.5" /> Prochaine étape
+                </span>
+                <span className="normal-case tracking-normal text-slate-300">
+                  {formatDistance(route.distanceMeters)} · {formatDuration(route.durationSeconds)}
+                </span>
+              </div>
+              <p className="mt-1.5 text-sm font-semibold leading-snug">{currentStep.instruction}</p>
+            </div>
+          </div>
+        )}
         <NavigationMapInner
           userLocation={userLocation}
           heading={heading}
@@ -124,40 +139,49 @@ export function NavigationMap({
       )}
 
       {route && (
-        <div className="rounded-2xl bg-slate-900 p-4 text-white shadow-lg">
-          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
-            <span className="font-semibold">
-              {formatDistance(route.distanceMeters)} · {formatDuration(route.durationSeconds)}
-            </span>
-            <span className="flex items-center gap-1 text-emerald-300">
-              <Navigation className="h-4 w-4" /> Navigation active
-            </span>
+        <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-sm font-semibold text-slate-900">
+                {formatDistance(route.distanceMeters)} · {formatDuration(route.durationSeconds)}
+              </p>
+              <p className="text-xs text-slate-500">Itinéraire calculé</p>
+            </div>
+            {route.steps.length > 1 && (
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  disabled={stepIndex <= 0}
+                  onClick={() => setStepIndex((i) => Math.max(0, i - 1))}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 disabled:opacity-40"
+                  aria-label="Étape précédente"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <span className="min-w-[4.5rem] text-center text-xs text-slate-500">
+                  {stepIndex + 1} / {route.steps.length}
+                </span>
+                <button
+                  type="button"
+                  disabled={stepIndex >= route.steps.length - 1}
+                  onClick={() => setStepIndex((i) => Math.min(route.steps.length - 1, i + 1))}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 disabled:opacity-40"
+                  aria-label="Étape suivante"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            )}
           </div>
           {currentStep && (
-            <p className="mt-2 text-base font-medium leading-snug">{currentStep.instruction}</p>
-          )}
-          {route.steps.length > 1 && (
-            <div className="mt-3 flex gap-2">
-              <button
-                type="button"
-                disabled={stepIndex <= 0}
-                onClick={() => setStepIndex((i) => Math.max(0, i - 1))}
-                className="rounded-lg bg-white/10 px-3 py-1 text-xs disabled:opacity-40"
-              >
-                Précédent
-              </button>
-              <button
-                type="button"
-                disabled={stepIndex >= route.steps.length - 1}
-                onClick={() => setStepIndex((i) => Math.min(route.steps.length - 1, i + 1))}
-                className="rounded-lg bg-white/10 px-3 py-1 text-xs disabled:opacity-40"
-              >
-                Suivant
-              </button>
-              <span className="self-center text-xs text-slate-400">
-                Étape {stepIndex + 1}/{route.steps.length}
-              </span>
-            </div>
+            <p className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm leading-snug text-slate-800">
+              {currentStep.instruction}
+              {currentStep.distanceMeters > 0 && (
+                <span className="ml-1 text-slate-500">
+                  · {formatDistance(currentStep.distanceMeters)}
+                </span>
+              )}
+            </p>
           )}
         </div>
       )}
