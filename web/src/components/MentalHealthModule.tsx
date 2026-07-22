@@ -162,6 +162,7 @@ export function MentalHealthModule() {
           .from("mental_health_journal")
           .select("*")
           .eq("user_id", user.id)
+          .is("deleted_at", null)
           .order("created_at", { ascending: false })
           .limit(60),
         supabase
@@ -173,6 +174,7 @@ export function MentalHealthModule() {
           .from("mental_chat_threads")
           .select("id, title, updated_at")
           .eq("user_id", user.id)
+          .is("deleted_at", null)
           .order("updated_at", { ascending: false })
           .limit(40),
       ]);
@@ -240,10 +242,15 @@ export function MentalHealthModule() {
   }
 
   async function deleteThread(threadId: string) {
-    if (!window.confirm("Supprimer cette conversation ?")) return;
-    const { error } = await supabase.from("mental_chat_threads").delete().eq("id", threadId);
-    if (error) {
-      setAiError(error.message);
+    if (!window.confirm("Retirer cette conversation de votre historique ?")) return;
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "chat_thread", id: threadId }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      setAiError(data.error || "Impossible de supprimer la conversation.");
       return;
     }
     setThreads((current) => current.filter((t) => t.id !== threadId));
@@ -354,7 +361,17 @@ export function MentalHealthModule() {
   }
 
   async function deleteEntry(id: string) {
-    await supabase.from("mental_health_journal").delete().eq("id", id);
+    if (!window.confirm("Retirer cette note de votre journal ?")) return;
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "journal", id }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      setAiError(data.error || "Impossible de supprimer la note.");
+      return;
+    }
     setEntries((current) => current.filter((entry) => entry.id !== id));
   }
 

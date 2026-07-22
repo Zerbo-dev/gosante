@@ -167,6 +167,7 @@ export function MedicalRecordModule() {
           .from("medical_history_entries")
           .select("*")
           .eq("user_id", user.id)
+          .is("deleted_at", null)
           .order("entry_date", { ascending: false }),
       ]);
 
@@ -251,7 +252,17 @@ export function MedicalRecordModule() {
   }
 
   async function deleteHistory(id: string) {
-    await supabase.from("medical_history_entries").delete().eq("id", id);
+    if (!window.confirm("Retirer cette entrée de votre historique ?")) return;
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "medical_history", id }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(data.error || "Impossible de supprimer cette entrée.");
+      return;
+    }
     setHistory((h) => h.filter((x) => x.id !== id));
   }
 

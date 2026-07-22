@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { ORDER_STATUS_LABELS } from "@/lib/auth-shared";
-import { Package, CheckCircle, Clock, XCircle, KeyRound, MapPin, Truck } from "lucide-react";
+import { Package, CheckCircle, Clock, XCircle, KeyRound, MapPin, Truck, Trash2 } from "lucide-react";
 import { RatingForm } from "@/components/RatingForm";
 import { MyRatingDisplay, type MyRating } from "@/components/MyRatingDisplay";
 import { NavigationMap } from "@/components/maps/NavigationMap";
@@ -43,6 +43,7 @@ export function OrdersModule() {
         .select(
           "*, pharmacies(name, city, latitude, longitude), order_items(medication_dci, quantity, unit_price)"
         )
+        .is("patient_deleted_at", null)
         .order("created_at", { ascending: false });
 
       const list = (data as OrderRow[]) ?? [];
@@ -87,6 +88,27 @@ export function OrdersModule() {
     };
   }, [supabase]);
 
+  async function archiveOrder(id: string) {
+    if (
+      !window.confirm(
+        "Retirer cette commande de votre historique ? Elle restera disponible pour le suivi interne."
+      )
+    ) {
+      return;
+    }
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "order", id }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(data.error || "Impossible de retirer cette commande.");
+      return;
+    }
+    setOrders((prev) => prev.filter((o) => o.id !== id));
+  }
+
   return (
       <div className="space-y-4 sm:space-y-6">
         <div>
@@ -115,7 +137,7 @@ export function OrdersModule() {
                     {new Date(order.created_at).toLocaleString("fr-FR")}
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <Badge label={ORDER_STATUS_LABELS[order.status] ?? order.status} />
                   <PaymentBadge status={order.payment_status} />
                   {order.urgency_level && order.urgency_level !== "normal" && (
@@ -128,6 +150,17 @@ export function OrdersModule() {
                     >
                       {order.urgency_level === "emergency" ? "Urgence vitale" : "Urgent"}
                     </span>
+                  )}
+                  {(order.status === "completed" || order.status === "cancelled") && (
+                    <button
+                      type="button"
+                      onClick={() => archiveOrder(order.id)}
+                      className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-slate-500 hover:bg-slate-100 hover:text-red-600"
+                      title="Retirer de mon historique"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                      Retirer
+                    </button>
                   )}
                 </div>
               </div>

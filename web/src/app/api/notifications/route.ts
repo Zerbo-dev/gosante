@@ -12,6 +12,7 @@ export async function GET() {
     .from("notifications")
     .select("id, title, body, type, href, read_at, created_at")
     .eq("user_id", user.id)
+    .is("deleted_at", null)
     .order("created_at", { ascending: false })
     .limit(40);
 
@@ -29,7 +30,11 @@ export async function PATCH(request: NextRequest) {
   } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
 
-  const body = (await request.json()) as { id?: string; markAll?: boolean };
+  const body = (await request.json()) as {
+    id?: string;
+    markAll?: boolean;
+    delete?: boolean;
+  };
   const now = new Date().toISOString();
 
   if (body.markAll) {
@@ -37,7 +42,8 @@ export async function PATCH(request: NextRequest) {
       .from("notifications")
       .update({ read_at: now })
       .eq("user_id", user.id)
-      .is("read_at", null);
+      .is("read_at", null)
+      .is("deleted_at", null);
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   }
@@ -46,11 +52,23 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: "id ou markAll requis" }, { status: 400 });
   }
 
+  if (body.delete) {
+    const { error } = await supabase
+      .from("notifications")
+      .update({ deleted_at: now })
+      .eq("id", body.id)
+      .eq("user_id", user.id)
+      .is("deleted_at", null);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true });
+  }
+
   const { error } = await supabase
     .from("notifications")
     .update({ read_at: now })
     .eq("id", body.id)
-    .eq("user_id", user.id);
+    .eq("user_id", user.id)
+    .is("deleted_at", null);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ ok: true });
 }

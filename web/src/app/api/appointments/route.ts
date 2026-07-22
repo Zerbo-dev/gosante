@@ -65,6 +65,7 @@ export async function GET(request: NextRequest) {
     .from("appointments")
     .select("*, psychologists(id, full_name, specialty, city, phone, user_id)")
     .eq("user_id", user.id)
+    .is("patient_deleted_at", null)
     .order("scheduled_at", { ascending: true });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
