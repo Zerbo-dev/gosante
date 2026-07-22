@@ -1,34 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Polyline, useMap } from "react-leaflet";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { MapContainer, Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { LatLng } from "@/lib/routing";
 import type { Pharmacy } from "@/types";
+import {
+  BaseTileLayer,
+  FitToPoints,
+  InvalidateSizeOnMount,
+  MapFloatingControls,
+} from "@/components/maps/MapChrome";
+import { RoutePolyline } from "@/components/maps/RoutePolyline";
+import {
+  DEFAULT_CENTER,
+  pharmacyPinIcon,
+  popupHtml,
+  userLocationIcon,
+} from "@/components/maps/mapTheme";
 import "leaflet/dist/leaflet.css";
-
-const userIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  className: "user-marker",
-});
-
-const pharmacyIcon = new L.DivIcon({
-  className: "",
-  html: `<div style="background:#059669;width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,.35)"></div>`,
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
-});
-
-const selectedIcon = new L.DivIcon({
-  className: "",
-  html: `<div style="background:#dc2626;width:18px;height:18px;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,.4)"></div>`,
-  iconSize: [18, 18],
-  iconAnchor: [9, 9],
-});
 
 function MapController({
   userLocation,
@@ -38,12 +28,6 @@ function MapController({
   selected: Pharmacy | null;
 }) {
   const map = useMap();
-
-  useEffect(() => {
-    // Carte souvent montée hors écran (mobile liste) — recalcule la taille
-    const t = window.setTimeout(() => map.invalidateSize(), 50);
-    return () => window.clearTimeout(t);
-  }, [map]);
 
   useEffect(() => {
     const valid =
@@ -60,11 +44,11 @@ function MapController({
         [userLocation.lat, userLocation.lng],
         [selected.latitude, selected.longitude],
       ]);
-      map.fitBounds(bounds, { padding: [48, 48], maxZoom: 15 });
+      map.fitBounds(bounds, { padding: [56, 56], maxZoom: 15 });
     } else if (valid) {
-      map.flyTo([selected.latitude, selected.longitude], 15, { duration: 0.8 });
+      map.flyTo([selected.latitude, selected.longitude], 15, { duration: 0.7 });
     } else if (userOk) {
-      map.flyTo([userLocation.lat, userLocation.lng], 14, { duration: 0.8 });
+      map.flyTo([userLocation.lat, userLocation.lng], 14, { duration: 0.7 });
     }
   }, [map, userLocation, selected]);
 
@@ -90,42 +74,132 @@ export default function PharmacyMapInner({
   routeGeometry,
   onSelect,
 }: PharmacyMapProps) {
-  const center: LatLng = userLocation ?? { lat: 12.3714, lng: -1.5197 };
+  const center: LatLng = userLocation ?? DEFAULT_CENTER;
+  const [fitKey, setFitKey] = useState(0);
+
+  const icons = useMemo(() => {
+    const cache = new Map<string, L.DivIcon>();
+    const get = (selectedPin: boolean, onDuty: boolean) => {
+      const key = `${selectedPin ? 1 : 0}-${onDuty ? 1 : 0}`;
+      let icon = cache.get(key);
+      if (!icon) {
+        icon = pharmacyPinIcon({ selected: selectedPin, onDuty });
+        cache.set(key, icon);
+      }
+      return icon;
+    };
+    return { get };
+  }, []);
+
+  const userIcon = useMemo(() => userLocationIcon(null), []);
+
+  const fitPoints = useMemo(() => {
+    const pts: LatLng[] = [];
+    if (userLocation) pts.push(userLocation);
+    if (selected) pts.push({ lat: selected.latitude, lng: selected.longitude });
+    if (routeGeometry.length > 1) {
+      pts.push(routeGeometry[0], routeGeometry[routeGeometry.length - 1]);
+    }
+    return pts;
+  }, [userLocation, selected, routeGeometry]);
+
+  const onFit = useCallback(() => setFitKey((k) => k + 1), []);
 
   return (
     <MapContainer
       center={[center.lat, center.lng]}
       zoom={13}
-      className="h-full w-full rounded-xl"
+      className="gs-map h-full w-full"
       scrollWheelZoom
+      zoomControl={false}
+      attributionControl
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+      <BaseTileLayer />
+      <InvalidateSizeOnMount deps={[pharmacies.length, selected?.id]} />
       <MapController userLocation={userLocation} selected={selected} />
+      <PharmacyControls userLocation={userLocation} onFit={onFit} showFit={fitPoints.length >= 2} />
+      <FitToPoints
+        points={fitPoints}
+        enabled={fitKey > 0}
+        trigger={fitKey}
+        padding={64}
+        maxZoom={15}
+      />
 
       {userLocation && (
-        <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon} />
+        <Marker
+          position={[userLocation.lat, userLocation.lng]}
+          icon={userIcon}
+          zIndexOffset={400}
+        >
+          <Tooltip direction="top" offset={[0, -12]} opacity={1}>
+            Vous êtes ici
+          </Tooltip>
+        </Marker>
       )}
 
       {pharmacies
         .filter((p) => Number.isFinite(p.latitude) && Number.isFinite(p.longitude))
-        .map((p) => (
-        <Marker
-          key={pKey(p)}
-          position={[p.latitude, p.longitude]}
-          icon={selected && pKey(selected) === pKey(p) ? selectedIcon : pharmacyIcon}
-          eventHandlers={{ click: () => onSelect(p) }}
-        />
-      ))}
+        .map((p) => {
+          const isSelected = selected != null && pKey(selected) === pKey(p);
+          return (
+            <Marker
+              key={pKey(p)}
+              position={[p.latitude, p.longitude]}
+              icon={icons.get(isSelected, !!p.is_on_duty)}
+              zIndexOffset={isSelected ? 500 : p.is_on_duty ? 200 : 100}
+              eventHandlers={{ click: () => onSelect(p) }}
+            >
+              <Popup className="gs-leaflet-popup" closeButton={false}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: popupHtml(
+                      p.name,
+                      p.address || p.city,
+                      p.is_on_duty ? "Pharmacie de garde" : p.status_label || null
+                    ),
+                  }}
+                />
+                <button
+                  type="button"
+                  className="gs-popup-cta"
+                  onClick={() => onSelect(p)}
+                >
+                  Sélectionner
+                </button>
+              </Popup>
+            </Marker>
+          );
+        })}
 
-      {routeGeometry.length > 1 && (
-        <Polyline
-          positions={routeGeometry.map((p) => [p.lat, p.lng] as [number, number])}
-          pathOptions={{ color: "#059669", weight: 5, opacity: 0.85 }}
-        />
-      )}
+      <RoutePolyline geometry={routeGeometry} />
     </MapContainer>
+  );
+}
+
+function PharmacyControls({
+  userLocation,
+  onFit,
+  showFit,
+}: {
+  userLocation: LatLng | null;
+  onFit: () => void;
+  showFit: boolean;
+}) {
+  const map = useMap();
+  return (
+    <MapFloatingControls
+      onLocate={
+        userLocation
+          ? () =>
+              map.flyTo([userLocation.lat, userLocation.lng], Math.max(map.getZoom(), 15), {
+                duration: 0.55,
+              })
+          : undefined
+      }
+      locateDisabled={!userLocation}
+      showFit={showFit}
+      onFit={onFit}
+    />
   );
 }
