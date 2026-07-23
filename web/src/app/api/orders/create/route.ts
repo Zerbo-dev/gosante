@@ -91,16 +91,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (!deliveryAddress?.trim()) {
-    return NextResponse.json({ error: "Indiquez une adresse de livraison" }, { status: 400 });
-  }
-
   if (deliveryLat == null || deliveryLng == null) {
     return NextResponse.json(
-      { error: "Partagez votre position ou placez le point sur la carte" },
+      { error: "Placez le point de livraison sur la carte" },
       { status: 400 }
     );
   }
+
+  const resolvedAddress =
+    deliveryAddress?.trim() ||
+    `Livraison GPS ${Number(deliveryLat).toFixed(5)}, ${Number(deliveryLng).toFixed(5)}`;
 
   const deliveryCode = generateDeliveryCode();
   const total = items.reduce((sum, i) => sum + (i.unitPrice ?? 0) * i.quantity, 0);
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
   const payment = await processMockPayment({
     method: paymentMethod,
     amount: total,
-    phone: customerPhone ?? deliveryPhone,
+    phone: customerPhone || undefined,
   });
 
   if (!payment.success) {
@@ -125,8 +125,8 @@ export async function POST(request: NextRequest) {
       payment_status: payment.paymentStatus,
       mock_payment_ref: payment.reference,
       status: payment.paymentStatus === "paid" ? "confirmed" : "pending",
-      delivery_address: deliveryAddress,
-      delivery_phone: deliveryPhone ?? customerPhone ?? null,
+      delivery_address: resolvedAddress,
+      delivery_phone: customerPhone?.trim() || null,
       delivery_lat: deliveryLat,
       delivery_lng: deliveryLng,
       urgency_level: urgencyLevel,
