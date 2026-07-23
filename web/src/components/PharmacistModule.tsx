@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { ORDER_STATUS_LABELS } from "@/lib/auth-shared";
-import { Loader2, Plus, RefreshCw, ShieldCheck, Trash2 } from "lucide-react";
+import { Download, FileSpreadsheet, Loader2, Plus, RefreshCw, ShieldCheck, Trash2, Upload } from "lucide-react";
 import type { RealtimeChannel } from "@supabase/supabase-js";
+import * as XLSX from "xlsx";
 
 interface StockRow {
   id: string;
@@ -42,6 +43,9 @@ export function PharmacistModule() {
   const [loading, setLoading] = useState(true);
   const [form, setForm] = useState({ dci: "", designation: "", dosage: "", quantity: "0", price: "" });
   const [saving, setSaving] = useState(false);
+  const [importing, setImporting] = useState(false);
+  const [replaceOnImport, setReplaceOnImport] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [msgTone, setMsgTone] = useState<"success" | "warning">("success");
 
@@ -112,12 +116,16 @@ export function PharmacistModule() {
     setSaving(true);
     setMsg(null);
 
+    const dci = form.dci.trim();
+    const dosage = form.dosage.trim() || null;
+    const medication_dci = dosage ? `${dci} — ${dosage}` : dci;
+
     const { error } = await supabase.from("pharmacy_stock").upsert(
       {
         pharmacy_id: pharmacyId,
-        medication_dci: form.dci.trim(),
-        designation: form.designation || null,
-        dosage: form.dosage || null,
+        medication_dci,
+        designation: form.designation || dci,
+        dosage,
         quantity: parseInt(form.quantity, 10) || 0,
         unit_price: form.price ? parseFloat(form.price) : null,
       },
@@ -127,11 +135,98 @@ export function PharmacistModule() {
     setSaving(false);
     if (error) {
       setMsg(error.message);
+      setMsgTone("warning");
       return;
     }
     setForm({ dci: "", designation: "", dosage: "", quantity: "0", price: "" });
     setMsg("Stock mis à jour");
+    setMsgTone("success");
     loadStock(pharmacyId);
+  }
+
+  function normalizeHeader(h: string): string {
+    return h
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "_")
+      .replace(/^_|_$/g, "");
+  }
+
+  function mapImportRow(raw: Record<string, unknown>) {
+    const mapped: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(raw)) {
+      mapped[normalizeHeader(k)] = v;
+    }
+    const dci =
+      mapped.dci ??
+      mapped.medication_dci ??
+      mapped.principe_actif ??
+      mapped.nom ??
+      mapped.medicament;
+    const designation = mapped.designation ?? mapped.libelle ?? mapped.produit ?? dci;
+    const dosage = mapped.dosage ?? mapped.dose ?? mapped.posologie ?? null;
+    const quantity = mapped.quantity ?? mapped.quantite ?? mapped.qty ?? mapped.stock ?? 0;
+    const unit_price =
+      mapped.unit_price ?? mapped.prix ?? mapped.prix_unitaire ?? mapped.pvp ?? mapped.price ?? null;
+    return {
+      dci: dci != null ? String(dci).trim() : "",
+      designation: designation != null ? String(designation).trim() : null,
+      dosage: dosage != null && String(dosage).trim() ? String(dosage).trim() : null,
+      quantity: Number(quantity) || 0,
+      unit_price:
+        unit_price === null || unit_price === undefined || unit_price === ""
+          ? null
+          : Number(unit_price),
+    };
+  }
+
+  async function handleImportFile(file: File) {
+    if (!pharmacyId) return;
+    setImporting(true);
+    setMsg(null);
+    try {
+      const buf = await file.arrayBuffer();
+      const wb = XLSX.read(buf, { type: "array" });
+      const sheet = wb.Sheets[wb.SheetNames[0]];
+      const json = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: "" });
+      const rows = json.map(mapImportRow).filter((r) => r.dci);
+      if (rows.length === 0) {
+        setMsg("Fichier vide ou colonnes non reconnues (il faut une colonne dci / médicament).");
+        setMsgTone("warning");
+        setImporting(false);
+        return;
+      }
+
+      const res = await fetch("/api/stock/import", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pharmacyId,
+          rows,
+          mode: replaceOnImport ? "replace" : "upsert",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setMsg(data.error || "Import impossible");
+        setMsgTone("warning");
+      } else {
+        setMsg(
+          `${data.imported} ligne(s) importée(s)${
+            replaceOnImport ? " (stock remplacé)" : " (fusionnées)"
+          }.`
+        );
+        setMsgTone("success");
+        loadStock(pharmacyId);
+      }
+    } catch (e) {
+      setMsg(e instanceof Error ? e.message : "Erreur lecture fichier");
+      setMsgTone("warning");
+    } finally {
+      setImporting(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
   }
 
   async function updateQty(row: StockRow, delta: number) {
@@ -234,6 +329,50 @@ export function PharmacistModule() {
         <div className="grid gap-4 lg:grid-cols-2">
           <section className="rounded-2xl bg-white p-4 shadow-sm sm:p-5">
             <h2 className="mb-4 font-semibold text-slate-900">Stocks médicaments</h2>
+
+            <div className="mb-4 rounded-xl border border-dashed border-emerald-200 bg-emerald-50/50 p-3">
+              <div className="mb-2 flex items-center gap-2 text-sm font-medium text-emerald-900">
+                <FileSpreadsheet className="h-4 w-4" />
+                Import Excel / CSV
+              </div>
+              <p className="mb-3 text-xs text-slate-600">
+                Colonnes acceptées : <code>dci</code>, <code>designation</code>, <code>dosage</code>,{" "}
+                <code>quantity</code> (ou quantité), <code>unit_price</code> (ou prix).
+              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href="/templates/stock-import-modele.csv"
+                  download
+                  className="inline-flex items-center gap-1 rounded-lg border bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
+                >
+                  <Download className="h-3.5 w-3.5" /> Modèle CSV
+                </a>
+                <label className="inline-flex cursor-pointer items-center gap-1 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white">
+                  <Upload className="h-3.5 w-3.5" />
+                  {importing ? "Import…" : "Charger un fichier"}
+                  <input
+                    ref={fileRef}
+                    type="file"
+                    accept=".xlsx,.xls,.csv"
+                    className="hidden"
+                    disabled={importing}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleImportFile(f);
+                    }}
+                  />
+                </label>
+                <label className="flex items-center gap-1.5 text-xs text-slate-600">
+                  <input
+                    type="checkbox"
+                    checked={replaceOnImport}
+                    onChange={(e) => setReplaceOnImport(e.target.checked)}
+                  />
+                  Remplacer tout le stock
+                </label>
+              </div>
+            </div>
+
             <form onSubmit={handleAddStock} className="mb-4 grid gap-2 sm:grid-cols-2">
               <input
                 placeholder="DCI *"
@@ -289,6 +428,7 @@ export function PharmacistModule() {
                     <div className="font-medium">{row.medication_dci}</div>
                     <div className="text-xs text-slate-500">
                       {row.designation} {row.dosage && `· ${row.dosage}`}
+                      {row.unit_price != null && ` · ${row.unit_price} FCFA`}
                     </div>
                   </div>
                   <div className="flex items-center gap-1">

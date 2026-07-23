@@ -586,8 +586,11 @@ export function PharmacyModule() {
         ) : (
           <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)]">
             <div className="min-w-0 rounded-2xl bg-white p-3 shadow-sm sm:p-5">
-              <h2 className="mb-4 font-semibold">Recherche médicaments (LNME 2023)</h2>
-              <MedicationSearch />
+              <h2 className="mb-1 font-semibold">Médicaments en stock</h2>
+              <p className="mb-4 text-xs text-slate-500">
+                Démo : recherche dans le stock des pharmacies pilotes (pas la LNME).
+              </p>
+              <MedicationSearch pharmacyId={selected?.id ?? null} />
             </div>
             <div className="min-w-0 space-y-4">
               <div className="rounded-xl border bg-white p-3 text-sm sm:p-4">

@@ -1,0 +1,322 @@
+[
+  {
+    "dci": "Paracétamol",
+    "designation": "Paracétamol 500 mg comprimé",
+    "dosage": "500 mg",
+    "form": "comprimé",
+    "unit_price": 100,
+    "quantity": 200
+  },
+  {
+    "dci": "Paracétamol",
+    "designation": "Paracétamol 1000 mg comprimé",
+    "dosage": "1000 mg",
+    "form": "comprimé",
+    "unit_price": 150,
+    "quantity": 120
+  },
+  {
+    "dci": "Ibuprofène",
+    "designation": "Ibuprofène 400 mg comprimé",
+    "dosage": "400 mg",
+    "form": "comprimé",
+    "unit_price": 200,
+    "quantity": 80
+  },
+  {
+    "dci": "Amoxicilline",
+    "designation": "Amoxicilline 500 mg gélule",
+    "dosage": "500 mg",
+    "form": "gélule",
+    "unit_price": 350,
+    "quantity": 60
+  },
+  {
+    "dci": "Amoxicilline + Acide clavulanique",
+    "designation": "Amoxicilline / Acide clavulanique 1 g comprimé",
+    "dosage": "1 g",
+    "form": "comprimé",
+    "unit_price": 1200,
+    "quantity": 40
+  },
+  {
+    "dci": "Artéméther + Luméfantrine",
+    "designation": "Artéméther / Luméfantrine 20/120 mg comprimé",
+    "dosage": "20/120 mg",
+    "form": "comprimé",
+    "unit_price": 900,
+    "quantity": 50
+  },
+  {
+    "dci": "Artésunate",
+    "designation": "Artésunate 60 mg injectable",
+    "dosage": "60 mg",
+    "form": "injectable",
+    "unit_price": 2500,
+    "quantity": 25
+  },
+  {
+    "dci": "Métronidazole",
+    "designation": "Métronidazole 250 mg comprimé",
+    "dosage": "250 mg",
+    "form": "comprimé",
+    "unit_price": 150,
+    "quantity": 90
+  },
+  {
+    "dci": "Ciprofloxacine",
+    "designation": "Ciprofloxacine 500 mg comprimé",
+    "dosage": "500 mg",
+    "form": "comprimé",
+    "unit_price": 400,
+    "quantity": 55
+  },
+  {
+    "dci": "Oméprazole",
+    "designation": "Oméprazole 20 mg gélule",
+    "dosage": "20 mg",
+    "form": "gélule",
+    "unit_price": 300,
+    "quantity": 70
+  },
+  {
+    "dci": "Métformine",
+    "designation": "Métformine 850 mg comprimé",
+    "dosage": "850 mg",
+    "form": "comprimé",
+    "unit_price": 250,
+    "quantity": 100
+  },
+  {
+    "dci": "Amlodipine",
+    "designation": "Amlodipine 5 mg comprimé",
+    "dosage": "5 mg",
+    "form": "comprimé",
+    "unit_price": 200,
+    "quantity": 85
+  },
+  {
+    "dci": "Losartan",
+    "designation": "Losartan 50 mg comprimé",
+    "dosage": "50 mg",
+    "form": "comprimé",
+    "unit_price": 450,
+    "quantity": 65
+  },
+  {
+    "dci": "Salbutamol",
+    "designation": "Salbutamol 100 µg aérosol",
+    "dosage": "100 µg",
+    "form": "aérosol",
+    "unit_price": 1800,
+    "quantity": 30
+  },
+  {
+    "dci": "Cétirizine",
+    "designation": "Cétirizine 10 mg comprimé",
+    "dosage": "10 mg",
+    "form": "comprimé",
+    "unit_price": 150,
+    "quantity": 110
+  },
+  {
+    "dci": "Dompéridone",
+    "designation": "Dompéridone 10 mg comprimé",
+    "dosage": "10 mg",
+    "form": "comprimé",
+    "unit_price": 180,
+    "quantity": 75
+  },
+  {
+    "dci": "SRO",
+    "designation": "Sels de réhydratation orale sachet",
+    "dosage": "sachet",
+    "form": "poudre",
+    "unit_price": 100,
+    "quantity": 150
+  },
+  {
+    "dci": "Zinc",
+    "designation": "Sulfate de zinc 20 mg comprimé dispersible",
+    "dosage": "20 mg",
+    "form": "comprimé",
+    "unit_price": 50,
+    "quantity": 200
+  },
+  {
+    "dci": "Fer + Acide folique",
+    "designation": "Fer / Acide folique comprimé",
+    "dosage": "comprimé",
+    "form": "comprimé",
+    "unit_price": 75,
+    "quantity": 180
+  },
+  {
+    "dci": "Albendazole",
+    "designation": "Albendazole 400 mg comprimé",
+    "dosage": "400 mg",
+    "form": "comprimé",
+    "unit_price": 200,
+    "quantity": 95
+  },
+  {
+    "dci": "Diclofénac",
+    "designation": "Diclofénac 50 mg comprimé",
+    "dosage": "50 mg",
+    "form": "comprimé",
+    "unit_price": 150,
+    "quantity": 100
+  },
+  {
+    "dci": "Tramadol",
+    "designation": "Tramadol 50 mg gélule",
+    "dosage": "50 mg",
+    "form": "gélule",
+    "unit_price": 300,
+    "quantity": 40
+  },
+  {
+    "dci": "Insuline",
+    "designation": "Insuline humaine rapide flacon",
+    "dosage": "100 UI/ml",
+    "form": "injectable",
+    "unit_price": 3500,
+    "quantity": 20
+  },
+  {
+    "dci": "Glibenclamide",
+    "designation": "Glibenclamide 5 mg comprimé",
+    "dosage": "5 mg",
+    "form": "comprimé",
+    "unit_price": 100,
+    "quantity": 90
+  },
+  {
+    "dci": "Hydrochlorothiazide",
+    "designation": "Hydrochlorothiazide 25 mg comprimé",
+    "dosage": "25 mg",
+    "form": "comprimé",
+    "unit_price": 75,
+    "quantity": 80
+  },
+  {
+    "dci": "Dexaméthasone",
+    "designation": "Dexaméthasone 4 mg injectable",
+    "dosage": "4 mg",
+    "form": "injectable",
+    "unit_price": 500,
+    "quantity": 35
+  },
+  {
+    "dci": "Phénoxyméthylpénicilline",
+    "designation": "Pénicilline V 250 mg comprimé",
+    "dosage": "250 mg",
+    "form": "comprimé",
+    "unit_price": 200,
+    "quantity": 50
+  },
+  {
+    "dci": "Cotrimoxazole",
+    "designation": "Sulfaméthoxazole / Triméthoprime 400/80 mg",
+    "dosage": "400/80 mg",
+    "form": "comprimé",
+    "unit_price": 150,
+    "quantity": 70
+  },
+  {
+    "dci": "Nystatine",
+    "designation": "Nystatine suspension orale",
+    "dosage": "100 000 UI/ml",
+    "form": "suspension",
+    "unit_price": 800,
+    "quantity": 25
+  },
+  {
+    "dci": "Vitamine A",
+    "designation": "Rétinol 200 000 UI capsule",
+    "dosage": "200 000 UI",
+    "form": "capsule",
+    "unit_price": 50,
+    "quantity": 120
+  },
+  {
+    "dci": "Morphine",
+    "designation": "Morphine 10 mg/ml injectable",
+    "dosage": "10 mg/ml",
+    "form": "injectable",
+    "unit_price": 1500,
+    "quantity": 15
+  },
+  {
+    "dci": "Diazépam",
+    "designation": "Diazépam 5 mg comprimé",
+    "dosage": "5 mg",
+    "form": "comprimé",
+    "unit_price": 100,
+    "quantity": 40
+  },
+  {
+    "dci": "Solution saline",
+    "designation": "NaCl 0,9 % 500 ml perfusion",
+    "dosage": "0,9 %",
+    "form": "perfusion",
+    "unit_price": 600,
+    "quantity": 45
+  },
+  {
+    "dci": "Glucose",
+    "designation": "Glucose 5 % 500 ml perfusion",
+    "dosage": "5 %",
+    "form": "perfusion",
+    "unit_price": 600,
+    "quantity": 45
+  },
+  {
+    "dci": "Pansement",
+    "designation": "Compresses stériles 10x10 (boîte)",
+    "dosage": "boîte",
+    "form": "dispositif",
+    "unit_price": 500,
+    "quantity": 60
+  },
+  {
+    "dci": "Antiseptique",
+    "designation": "Polyvidone iodée 10 % solution",
+    "dosage": "10 %",
+    "form": "solution",
+    "unit_price": 750,
+    "quantity": 40
+  },
+  {
+    "dci": "Condom",
+    "designation": "Préservatif masculin (boîte de 3)",
+    "dosage": "boîte x3",
+    "form": "dispositif",
+    "unit_price": 200,
+    "quantity": 100
+  },
+  {
+    "dci": "Test de grossesse",
+    "designation": "Test de grossesse urinaire",
+    "dosage": "unitaire",
+    "form": "dispositif",
+    "unit_price": 500,
+    "quantity": 50
+  },
+  {
+    "dci": "Paracétamol sirop",
+    "designation": "Paracétamol 120 mg/5 ml sirop pédiatrique",
+    "dosage": "120 mg/5 ml",
+    "form": "sirop",
+    "unit_price": 800,
+    "quantity": 55
+  },
+  {
+    "dci": "ORS + Zinc kit",
+    "designation": "Kit SRO + Zinc (diarrhée enfant)",
+    "dosage": "kit",
+    "form": "kit",
+    "unit_price": 350,
+    "quantity": 70
+  }
+]
