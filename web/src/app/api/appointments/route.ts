@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createJitsiRoomId } from "@/lib/jitsi";
 import { checkVisioAccess } from "@/lib/visio-access";
+import { isMissingColumnError } from "@/lib/soft-delete";
 
 async function getMyPsychologistId(
   supabase: Awaited<ReturnType<typeof createClient>>,
@@ -61,11 +62,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ appointments: data ?? [], psychologist: psy });
   }
 
-  const { data, error } = await supabase
-    .from("appointments")
-    .select("*, psychologists(id, full_name, specialty, city, phone, user_id)")
-    .eq("user_id", user.id)
-    .order("scheduled_at", { ascending: true });
+  const base = () =>
+    supabase
+      .from("appointments")
+      .select("*, psychologists(id, full_name, specialty, city, phone, user_id)")
+      .eq("user_id", user.id)
+      .order("scheduled_at", { ascending: true });
+
+  let { data, error } = await base().is("patient_deleted_at", null);
+  if (error && isMissingColumnError(error)) {
+    ({ data, error } = await base());
+  }
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 

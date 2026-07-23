@@ -12,6 +12,7 @@ import {
   MapPin,
   Phone,
   Shield,
+  Trash2,
   UserRound,
   Video,
   X,
@@ -239,6 +240,27 @@ export function ConsultationModule() {
     } else {
       setError(data.error ?? "Annulation impossible");
     }
+  }
+
+  async function archiveAppt(id: string) {
+    if (
+      !window.confirm(
+        "Retirer ce rendez-vous de votre historique ? Il restera visible côté professionnel."
+      )
+    ) {
+      return;
+    }
+    const res = await fetch("/api/patient/archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "appointment", id }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error || "Impossible de retirer ce rendez-vous.");
+      return;
+    }
+    setAppointments((prev) => prev.filter((a) => a.id !== id));
   }
 
   function psychologistIsOnline(appt: Appointment) {
@@ -630,11 +652,22 @@ export function ConsultationModule() {
                               {new Date(a.scheduled_at).toLocaleDateString("fr-FR")}
                             </span>
                           </div>
-                          <span
-                            className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${meta.className}`}
-                          >
-                            {meta.label}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${meta.className}`}
+                            >
+                              {meta.label}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => archiveAppt(a.id)}
+                              className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-slate-500 hover:bg-slate-100 hover:text-red-600"
+                              title="Retirer de mon historique"
+                            >
+                              <Trash2 className="h-3.5 w-3.5" />
+                              Retirer
+                            </button>
+                          </div>
                         </div>
                         {a.status === "completed" && !a.patient_rated_at && a.psychologists?.id && (
                           <div className="mt-3">

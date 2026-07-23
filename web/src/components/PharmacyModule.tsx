@@ -8,7 +8,7 @@ import { CartPanel, MedicationSearch } from "@/components/pharmacy/MedicationSea
 import { useCart } from "@/lib/cart";
 import {
   DEFAULT_HOURS,
-  fetchPharmacies,
+  fetchPharmaciesMeta,
   getPharmacyOpenState,
   sortPharmaciesByDistance,
 } from "@/lib/pharmacies";
@@ -66,6 +66,8 @@ export function PharmacyModule() {
   const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [activeDutyGroups, setActiveDutyGroups] = useState<string[]>([]);
+  const [dutySource, setDutySource] = useState<"rotations" | "legacy" | null>(null);
   const [userLocation, setUserLocation] = useState<LatLng | null>(null);
   const [selected, setSelected] = useState<Pharmacy | null>(null);
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
@@ -83,12 +85,12 @@ export function PharmacyModule() {
   const [checkoutMsg, setCheckoutMsg] = useState<string | null>(null);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("mobile_money");
   const [deliveryAddress, setDeliveryAddress] = useState("");
-  const [deliveryPhone, setDeliveryPhone] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [urgencyLevel, setUrgencyLevel] = useState<UrgencyLevel>("normal");
   const [deliveryLocation, setDeliveryLocation] = useState<LatLng | null>(null);
   const [showNav, setShowNav] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [confirmNoLivreur, setConfirmNoLivreur] = useState(false);
   const { items, clear, total } = useCart();
 
   useEffect(() => {
@@ -101,9 +103,11 @@ export function PharmacyModule() {
   }, []);
 
   useEffect(() => {
-    fetchPharmacies()
+    fetchPharmaciesMeta()
       .then((data) => {
-        setPharmacies(data);
+        setPharmacies(data.pharmacies);
+        setActiveDutyGroups(data.activeDutyGroups ?? []);
+        setDutySource(data.dutySource ?? null);
         setLoaded(true);
       })
       .catch((e) => {
@@ -202,20 +206,11 @@ export function PharmacyModule() {
     };
   }, [userLocation, selected?.id, selected?.external_id, selected?.latitude, selected?.longitude]);
 
-  async function handleCheckout() {
-    if (!selected) {
-      setCheckoutMsg("Sélectionnez une pharmacie avant de commander.");
-      setTab("carte");
-      return;
-    }
-    if (!deliveryLocation) {
-      setCheckoutMsg("Placez le pin de livraison sur la carte ou utilisez votre position.");
-      return;
-    }
-    const deliveryLat = deliveryLocation.lat;
-    const deliveryLng = deliveryLocation.lng;
+  async function submitOrder() {
+    if (!selected || !deliveryLocation) return;
     setCheckoutLoading(true);
     setCheckoutMsg(null);
+    setConfirmNoLivreur(false);
     try {
       const res = await fetch("/api/orders/create", {
         method: "POST",
@@ -236,11 +231,10 @@ export function PharmacyModule() {
           pharmacyPhone: selected?.phone,
           pharmacyLat: selected?.latitude,
           pharmacyLng: selected?.longitude,
-          deliveryAddress,
-          deliveryPhone,
+          deliveryAddress: deliveryAddress.trim() || undefined,
           customerPhone,
-          deliveryLat,
-          deliveryLng,
+          deliveryLat: deliveryLocation.lat,
+          deliveryLng: deliveryLocation.lng,
           urgencyLevel,
           paymentMethod,
         }),
@@ -249,6 +243,7 @@ export function PharmacyModule() {
       if (!res.ok) throw new Error(data.error ?? "Erreur commande");
       clear();
       setDeliveryLocation(null);
+      setDeliveryAddress("");
       const codeMsg = data.deliveryCode
         ? `Commande enregistrée ! Paiement: ${data.paymentStatus === "paid" ? "confirmé" : "à encaisser"} · Code livraison : ${data.deliveryCode}.`
         : (data.message ?? "Commande enregistrée !");
@@ -260,6 +255,34 @@ export function PharmacyModule() {
     } finally {
       setCheckoutLoading(false);
     }
+  }
+
+  async function handleCheckout() {
+    if (!selected) {
+      setCheckoutMsg("Sélectionnez une pharmacie avant de commander.");
+      setTab("carte");
+      return;
+    }
+    if (!deliveryLocation) {
+      setCheckoutMsg("Placez le pin de livraison sur la carte ou utilisez votre position.");
+      return;
+    }
+
+    setCheckoutLoading(true);
+    setCheckoutMsg(null);
+    try {
+      const availRes = await fetch("/api/livreurs/availability", { cache: "no-store" });
+      const avail = await availRes.json().catch(() => ({ online: 0, available: false }));
+      if (availRes.ok && !avail.available) {
+        setCheckoutLoading(false);
+        setConfirmNoLivreur(true);
+        return;
+      }
+    } catch {
+      // Si le check échoue, on laisse commander (le backend gérera)
+    }
+
+    await submitOrder();
   }
 
   const filtered = useMemo(() => {
@@ -306,7 +329,7 @@ export function PharmacyModule() {
             <h1 className="text-xl font-bold text-slate-900 sm:text-2xl">Pharmacie</h1>
             <p className="break-words text-sm text-slate-600 sm:text-base">
               {loaded
-                ? `${pharmacies.length} pharmacies · LNME 2023 · commandes & paiement`
+                ? `${pharmacies.length} pharmacies · stock démo · commandes & paiement`
                 : "Chargement des pharmacies…"}
             </p>
           </div>
@@ -348,6 +371,26 @@ export function PharmacyModule() {
         {loadError && (
           <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {loadError}
+          </div>
+        )}
+        {tab === "carte" && activeDutyGroups.length > 0 && dutySource === "rotations" && (
+          <div className="flex flex-wrap items-center gap-2 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-orange-950">
+            <Shield className="h-4 w-4 shrink-0 text-orange-600" />
+            <span>
+              Cette semaine : groupe{" "}
+              <span className="font-semibold">{activeDutyGroups.join(", ")}</span> de garde
+              (programme 2026)
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setOnDutyOnly(true);
+                setShowFilters(true);
+              }}
+              className="ml-auto text-xs font-medium text-orange-800 underline"
+            >
+              Voir les pharmacies de garde
+            </button>
           </div>
         )}
         {geoError && tab === "carte" && (
@@ -562,8 +605,11 @@ export function PharmacyModule() {
         ) : (
           <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)]">
             <div className="min-w-0 rounded-2xl bg-white p-3 shadow-sm sm:p-5">
-              <h2 className="mb-4 font-semibold">Recherche médicaments (LNME 2023)</h2>
-              <MedicationSearch />
+              <h2 className="mb-1 font-semibold">Médicaments en stock</h2>
+              <p className="mb-4 text-xs text-slate-500">
+                Démo : recherche dans le stock des pharmacies pilotes (pas la LNME).
+              </p>
+              <MedicationSearch pharmacyId={selected?.id ?? null} />
             </div>
             <div className="min-w-0 space-y-4">
               <div className="rounded-xl border bg-white p-3 text-sm sm:p-4">
@@ -604,33 +650,34 @@ export function PharmacyModule() {
                 disabled={!selected}
               />
               <div className="rounded-xl border bg-white p-4 text-sm">
-                <label className="mb-2 block font-medium">Adresse de livraison</label>
+                <div className="mb-3 rounded-xl border border-emerald-200 bg-emerald-50 p-3">
+                  <DeliveryLocationPicker
+                    value={deliveryLocation}
+                    onChange={setDeliveryLocation}
+                    userLocation={userLocation}
+                    onLocate={locateDelivery}
+                    locating={locating}
+                  />
+                </div>
+                <label className="mb-2 block font-medium">
+                  Précision (optionnel)
+                  <span className="ml-1 font-normal text-slate-500">immeuble, porte, repère…</span>
+                </label>
                 <input
                   value={deliveryAddress}
                   onChange={(e) => setDeliveryAddress(e.target.value)}
                   className="mb-3 w-full rounded-lg border px-3 py-2"
-                  placeholder="Quartier, secteur…"
+                  placeholder="Ex. portail vert, 2ᵉ maison à gauche"
                 />
-                <div className="mb-3 grid gap-3 sm:grid-cols-2">
-                  <label className="block font-medium">
-                    Téléphone du patient
-                    <input
-                      value={customerPhone}
-                      onChange={(e) => setCustomerPhone(e.target.value)}
-                      className="mt-1 w-full rounded-lg border px-3 py-2"
-                      placeholder="+226 70 00 00 00"
-                    />
-                  </label>
-                  <label className="block font-medium">
-                    Téléphone livraison
-                    <input
-                      value={deliveryPhone}
-                      onChange={(e) => setDeliveryPhone(e.target.value)}
-                      className="mt-1 w-full rounded-lg border px-3 py-2"
-                      placeholder="Numéro à joindre"
-                    />
-                  </label>
-                </div>
+                <label className="mb-3 block font-medium">
+                  Téléphone du patient
+                  <input
+                    value={customerPhone}
+                    onChange={(e) => setCustomerPhone(e.target.value)}
+                    className="mt-1 w-full rounded-lg border px-3 py-2"
+                    placeholder="+226 70 00 00 00"
+                  />
+                </label>
                 <label className="mb-2 block font-medium">Niveau d'urgence</label>
                 <select
                   value={urgencyLevel}
@@ -641,15 +688,6 @@ export function PharmacyModule() {
                   <option value="urgent">Urgent</option>
                   <option value="emergency">Urgence vitale</option>
                 </select>
-                <div className="mb-3 rounded-xl border border-emerald-200 bg-emerald-50 p-3">
-                  <DeliveryLocationPicker
-                    value={deliveryLocation}
-                    onChange={setDeliveryLocation}
-                    userLocation={userLocation}
-                    onLocate={locateDelivery}
-                    locating={locating}
-                  />
-                </div>
                 <label className="mb-2 block font-medium">Paiement test GoSanté</label>
                 <select
                   value={paymentMethod}
@@ -667,9 +705,43 @@ export function PharmacyModule() {
                 </div>
                 {total > 0 && (
                   <p className="mt-2 text-xs text-slate-500">
-                    Total estimé : {total.toLocaleString("fr-FR")} FCFA (prix PVP officiels)
+                    Total estimé : {total.toLocaleString("fr-FR")} FCFA
                   </p>
                 )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {confirmNoLivreur && (
+          <div className="fixed inset-0 z-[80] flex items-end justify-center bg-slate-900/50 p-4 sm:items-center">
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="w-full max-w-md rounded-2xl bg-white p-5 shadow-xl"
+            >
+              <h3 className="text-lg font-semibold text-slate-900">Aucun livreur disponible</h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Aucun livreur n’est en ligne pour le moment. La livraison pourra être retardée
+                jusqu’à ce qu’un livreur se connecte. Voulez-vous commander quand même ?
+              </p>
+              <div className="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <button
+                  type="button"
+                  disabled={checkoutLoading}
+                  onClick={() => setConfirmNoLivreur(false)}
+                  className="rounded-lg border px-4 py-2.5 text-sm font-medium text-slate-700"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="button"
+                  disabled={checkoutLoading}
+                  onClick={() => submitOrder()}
+                  className="rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-60"
+                >
+                  {checkoutLoading ? "Envoi…" : "Oui, commander quand même"}
+                </button>
               </div>
             </div>
           </div>
